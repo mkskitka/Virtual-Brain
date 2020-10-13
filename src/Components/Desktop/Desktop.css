@@ -1,0 +1,84 @@
+.Desktop-Icon {
+    width: 70px;
+    height: 60px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: #fffbe8;
+    font-size: 14px;
+    position: absolute;
+}
+
+#terminal {
+    top: 41%;
+    left: 50%;
+    background-image: url("../../../public/terminal.jpg");
+    border-width: 1px;
+    border-style: solid;
+    border-color: magenta;
+}
+
+#projects{
+    left: 34.5%;
+    top: 40%;
+    background-image: url("../../../public/folder.png");
+}
+
+#about {
+    left: 43%;
+    top: 40%;
+    background-image: url("../../../public/file.png");
+}
+
+#record-player {
+    top: 40%;
+    left: 58%;
+    background-image: url("../../../public/RECORD.png");
+    width: 76px;
+    height: 73px;
+}
+
+.monster {
+    width: 150px;
+    height: 200px;
+    position: absolute;
+    right:100px;
+    bottom: 100%;
+}
+
+.watermark {
+    position: absolute;
+    color: #ccc;
+    bottom: 0px;
+    padding: 5px;
+    font-size: 12px;
+}
+
+#contact-bar {
+    width: 180px;
+    position: absolute;
+    top: 13px;
+    right: 15px;
+}
+.Icon {
+    margin: 5px;
+    opacity: 1;
+    width: 32px;
+    height: 32px;
+}
+.Git {
+    margin-left: 8px;
+    width: 32px;
+    height: 32px;
+}
+
+.Mail {
+    margin-left: 12px;
+}
+
+.Li {
+    padding: 1px;
+}
+.Icon:Hover {
+    opacity: 1;
+    cursor: pointer;
+}
