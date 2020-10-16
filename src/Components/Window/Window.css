@@ -14,7 +14,6 @@
     backdrop-filter: blur(4px);
     display: flex;
     flex-direction: column;
-    overflow: hidden;
 }
 
 .Window-Header {
@@ -22,6 +21,7 @@
     height: 35px;
     z-index: 2;
     position: relative;
+
 }
 .Window-Body {
     position: relative;

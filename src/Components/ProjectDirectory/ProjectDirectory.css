@@ -9,8 +9,6 @@
 
 .Project-Directory-Content {
     padding: 15px;
-    overflow-y: scroll;
-    overflow-x: hidden;
     position: relative;
 
 }

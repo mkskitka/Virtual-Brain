@@ -1,14 +1,16 @@
 import React, {useEffect} from 'react';
 import $ from "jquery"
-import {VIDEO_CONFIGS} from "../../Config/constants";
+import {VIDEO_CONFIGS, projects} from "../../Config/constants";
 import "./ActiveProject.css"
 import {useDispatch, useSelector} from "react-redux";
-import {ADD_DIRECTORY_WINDOW} from "../../Redux/actions";
+import {ADD_DIRECTORY_WINDOW, REMOVE_DIRECTORY_WINDOW} from "../../Redux/actions";
 
 function ActiveProject(props) {
 
     const active_project = useSelector(state => state.active_project)
+    const active_windows = useSelector(state => state.active_windows)
     const dispatch = useDispatch()
+
 
     useEffect(() => {
 
@@ -18,6 +20,16 @@ function ActiveProject(props) {
                 dispatch({type: ADD_DIRECTORY_WINDOW, id: active_project})
                 return config;
             })
+        }
+        if(active_project === null) {
+            $(".Window-Body").css("overflowY", 'scroll')
+            $(".Window-Body").css("overflowX", 'hidden')
+            for(let i=0; i<projects.length;i++) {
+                if (active_windows.includes(projects[i].id)){
+                    dispatch({type: REMOVE_DIRECTORY_WINDOW, id: projects[i].id})
+                }
+            }
+
         }
 
         console.log("active project changed ", active_project)

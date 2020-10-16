@@ -3,6 +3,7 @@ import Draggable from "react-draggable";
 import { REMOVE_DIRECTORY_WINDOW } from "../../Redux/actions";
 import './Window.css'
 import {useDispatch} from "react-redux";
+import $ from "jquery";
 
 function Window(props) {
 
@@ -29,7 +30,7 @@ function Window(props) {
                         </div>
                         <div className={"Window-Title"} key={"title"}>{config.title.toUpperCase()}</div>
                     </div>
-                    <div className={"Window-Body"}>
+                    <div className={"Window-Body"} >
                      {content}
                     </div>
             </div>

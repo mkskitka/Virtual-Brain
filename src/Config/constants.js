@@ -10,7 +10,6 @@ const project_style = {
     width: '24%',
     maxHeight: "90%",
     position: "absolute",
-    overflowY: "scroll",
     left: "2%",
     top: "4%",
 }

@@ -69,7 +69,6 @@ function ProjectDirectory(props) {
 
     function animateBackToMenu(e) {
         dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})
-        $(".Project-Directory-Content").css("overflowY", "scroll");
         $("#" + active_project).animate({
             left: 0,
         }, 800)
@@ -95,7 +94,6 @@ function ProjectDirectory(props) {
 
     function projectSelectAnimation(active_project) {
         let project = _.find(projects, {id:active_project})
-        $(".Project-Directory-Content").css("overflowY", "hidden");
         $(".Project-Directory-Content").animate({
             height: project.writeup_y,
         }, 1000)
