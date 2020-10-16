@@ -7,7 +7,6 @@ import {ADD_DIRECTORY_WINDOW} from "../../Redux/actions";
 
 function ActiveProject(props) {
 
-//CLEAN
     const active_project = useSelector(state => state.active_project)
     const dispatch = useDispatch()
 
