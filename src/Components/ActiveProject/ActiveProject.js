@@ -1,20 +1,30 @@
 import React, {useEffect} from 'react';
 import $ from "jquery"
-import {VIDEO_CONFIGS} from "../Config/constants";
-import Video from "./Video/Video"
+import {VIDEO_CONFIGS} from "../../Config/constants";
 import "./ActiveProject.css"
-import Window from "./Window/Window";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {ADD_DIRECTORY_WINDOW} from "../../Redux/actions";
 
 function ActiveProject(props) {
 
 //CLEAN
     const active_project = useSelector(state => state.active_project)
+    const dispatch = useDispatch()
 
     useEffect(() => {
+
+        if(active_project !== null) {
+            let videos = VIDEO_CONFIGS[active_project];
+            videos.map(function (config) {
+                dispatch({type: ADD_DIRECTORY_WINDOW, id: active_project})
+                return config;
+            })
+        }
+
         console.log("active project changed ", active_project)
 
         if(active_project === "AP") {
+            console.log("Astropunk changing background")
             $(".Desktop-Background").css("background-repeat", "repeat")
             $(".Active-Project").fadeOut(0)
             $(".Desktop-Background").css("background-image", "url(/static.gif)");
@@ -54,22 +64,9 @@ function ActiveProject(props) {
         }
     }, [active_project])
 
-    function Videos(props) {
-        console.log("IN VIDEOS")
-        let videos = VIDEO_CONFIGS[active_project];
-        console.log("videos", videos)
-        return (
-            videos.map(function(config){return (<Window content={<Video config={config} id={active_project}/>}
-                                                    config={config.windowConfig} id={active_project}/>) })
-        );
-    }
-    console.log(active_project)
+
     return (
-        <div className={"Active-Project"}>{
-            (active_project !== null) ?
-            <Videos/> : ""
-            }
-        </div>
+        ""
     );
 }
 

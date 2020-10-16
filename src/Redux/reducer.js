@@ -31,8 +31,6 @@ function brainReducer(state = initialState, action) {
                 terminal_open: !state.terminal_open,
             })
         case OPEN_CLOSE_RECORD:
-            console.log("In reducer open close record")
-            console.log(!state.record_open)
             let open = !state.record_open
             return Object.assign({}, state, {
                 record_open: open,

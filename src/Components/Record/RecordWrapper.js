@@ -1,5 +1,5 @@
 import Draggable from "react-draggable";
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Record.css'
 import {useSelector} from "react-redux";
 import P5Wrapper from 'react-p5-wrapper';
@@ -18,6 +18,10 @@ const record_close_button_style = {
 }
 
 function RecordWrapper() {
+
+    useEffect(function() {
+        console.log("record mounting")
+    }, [])
 
     const active_song = useSelector(state=> state.active_song)
 

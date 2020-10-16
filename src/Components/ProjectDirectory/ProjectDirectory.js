@@ -2,7 +2,6 @@ import React, {useEffect} from 'react';
 import { projects } from '../../Config/constants'
 import { useSelector, useDispatch } from 'react-redux';
 import { CHANGE_ACTIVE_PROJECT } from "../../Redux/actions";
-import { WINDOW_CONFIGS } from "../../Config/constants";
 import "./ProjectDirectory.css"
 import $ from "jquery"
 import _ from "lodash"
@@ -11,7 +10,7 @@ let dir_height;
 function ProjectDirectory(props) {
 
     const dispatch = useDispatch()
-    const config = WINDOW_CONFIGS["projects"]
+    const config = props.config;
     const active_project = useSelector(state => state.active_project);
 
     useEffect(() => {

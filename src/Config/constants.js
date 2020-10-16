@@ -1,7 +1,8 @@
 import React from 'react';
-import ProjectDirectory from "../Components/Window/ProjectDirectory";
+import ProjectDirectory from "../Components/ProjectDirectory/ProjectDirectory";
 import TerminalT from "../Components/Terminal/Terminal";
 import {astropunk_bio, sheldon_bio, music64_bio, creature_bio, mental_health_tech_bio, animation_bio} from "./writeups";
+import Video from "../Components/Video/Video";
 
 const project_style = {
     borderColor: "#0055ff",
@@ -46,9 +47,34 @@ const video_content_template = {
     top: -65,
 }
 
-export const WINDOW_CONTENT = {
-    "projects": [<ProjectDirectory/>],
-    "terminal": [<TerminalT/>]
+export const VIDEO_CONFIGS = {
+    "AP": [{
+        ...video_content_template,
+        src_path: './videos/AstropunkReel.mov',
+        title: "",
+    }],
+    "IE": [],
+    "AR": [{
+        ...video_content_template,
+        src_path: './videos/AnimationReel.mov',
+        title: "",
+    }],
+    "MXT": [],
+    "C": [{
+        ...video_content_template,
+        src_path: './videos/Creature.mov',
+        title: "",
+    }],
+    "Sh": [],
+    'VV': [{
+        ...video_content_template,
+        src_path: './videos/ViolinsVibrato.mov',
+        title: "",
+    }],
+    "GD": [],
+    "VB": [],
+    "MD": [],
+    "CR": [],
 }
 
 export const WINDOW_CONFIGS = {
@@ -75,35 +101,18 @@ export const WINDOW_CONFIGS = {
 
 }
 
-export const VIDEO_CONFIGS = {
-    "AP": [{
-        ...video_content_template,
-        src_path: './videos/AstropunkReel.mov',
-        title: "",
-     }],
-    "IE": [],
-    "AR": [{
-        ...video_content_template,
-        src_path: './videos/AnimationReel.mov',
-        title: "",
-    }],
-    "MXT": [],
-    "C": [{
-        ...video_content_template,
-        src_path: './videos/Creature.mov',
-        title: "",
-    }],
-    "Sh": [],
-    'VV': [{
-        ...video_content_template,
-        src_path: './videos/ViolinsVibrato.mov',
-        title: "",
-    }],
-    "GD": [],
-    "VB": [],
-    "MD": [],
-    "CR": [],
+export const WINDOW_CONTENT = {
+    "projects": [<ProjectDirectory config={WINDOW_CONFIGS["projects"][0]}/>],
+    "terminal": [<TerminalT/>],
+    "AP": [<Video config={VIDEO_CONFIGS["AP"][0]} id={"AP"}/>],
+    "AR": [<Video config={VIDEO_CONFIGS["AR"][0]} id={"AR"}/>],
+    "C": [<Video config={VIDEO_CONFIGS["C"][0]} id={"C"}/>],
+    "VV": [<Video config={VIDEO_CONFIGS["VV"][0]} id={"VV"}/>],
 }
+
+
+
+
 
 
 export const projects = [

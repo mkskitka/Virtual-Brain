@@ -5,8 +5,8 @@ import Draggable from "react-draggable";
 import $ from "jquery"
 import _Terminal from "../Terminal/Terminal"
 import Monster from '../Monster/monster';
-import MemoizedWindow from '../Window/Window';
-import ActiveProject from '../ActiveProject'
+import Window from '../Window/Window';
+import ActiveProject from '../ActiveProject/ActiveProject'
 
 import {ADD_DIRECTORY_WINDOW, OPEN_CLOSE_RECORD} from "../../Redux/actions"
 import { WINDOW_CONFIGS, WINDOW_CONTENT } from '../../Config/constants'
@@ -26,8 +26,8 @@ function Desktop() {
     console.log("record open ", record_open)
 
     useEffect(() => {
-        console.log("Desktop component mounting")
         openFolder()
+
     }, [])
 
     useEffect(() => {
@@ -125,8 +125,9 @@ function Desktop() {
             {/* Multi Media Display Windows */}
 
             {/* Directory Windows */}
-            <div>
-                <Windows/>
+            <div> {
+                Windows()
+            }
             </div>
 
             {/* Active Project */}
@@ -147,7 +148,7 @@ function Desktop() {
         const DOM_windows =  windows.map(function(w) {
             return ( WINDOW_CONFIGS[w].map(function(config, i) {
                 console.log("key: ", "window-"+w)
-                return(<MemoizedWindow key={"window-"+w} config={config} content={WINDOW_CONTENT[w][i]} id={w}/> );
+                return(<Window key={"window-"+w} config={config} content={WINDOW_CONTENT[w][i]} id={w}/> );
             }))});
 
         return(

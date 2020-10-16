@@ -10,12 +10,10 @@ function Window(props) {
     const dispatch = useDispatch()
 
     function closeWindow(e) {
-        console.log("closing window ", id)
         dispatch({type: REMOVE_DIRECTORY_WINDOW, id: id});
     }
 
     useEffect(function() {
-        console.log("window ", id, " mounting")
     }, [])
 
     return (
@@ -39,5 +37,5 @@ function Window(props) {
     );
 }
 
-const MemoizedWindow = React.memo(Window)
-export default MemoizedWindow;
+
+export default Window;
