@@ -1,0 +1,42 @@
+.Project-Link {
+    zIndex: 2;
+    cursor: pointer;
+    text-align: left;
+    opacity: 1;
+    color: #0091ff;
+    position: relative;
+}
+
+.Project-Directory-Content {
+    padding: 15px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    position: relative;
+
+}
+.Project-Link:Hover {
+    opacity: 1;
+    color: #00ffff !important;
+}
+
+.Project-Title {
+    width: 100%;
+    height: 30px;
+    font-size: 20px;
+}
+
+.Project-Description {
+     width: 100%;
+     height: 30px;
+     padding-left: 20px;
+     font-size: 12px;
+     opacity: .8;
+     top: -8px;
+     position: relative;
+     opacity: .8;
+    color: #0077ff;
+ }
+
+.Project-Description:Hover {
+
+}

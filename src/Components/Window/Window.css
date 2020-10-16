@@ -1,0 +1,36 @@
+.Close-Button {
+    width: 25px;
+    height: 25px;
+    right: 0px;
+    position: absolute;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.Window {
+    border-width: 3px;
+    border-style: solid;
+    background-color: rgba(0, 0, 0, .5)    /*  10% opaque green */ ;
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.Window-Header {
+    width: 100%;
+    height: 35px;
+    z-index: 2;
+    position: relative;
+}
+.Window-Body {
+    position: relative;
+    z-index: 0;
+}
+
+.Window-Title {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+
+}

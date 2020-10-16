@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../App.css"
+import "../../App.css"
 import $ from "jquery"
 
 function Monster() {
@@ -10,9 +10,7 @@ function Monster() {
         setTimeout(function(){
             $( ".monster" ).animate({
                 bottom: "-=" + String($(window).height()),
-            }, 500, function() {
-
-            });
+            }, 500, function() {});
             setTimeout(function () { blink() }, 3000)
             setTimeout(function () { headright() }, 6000)
             setTimeout(function () { squat() }, 10000)
@@ -21,7 +19,7 @@ function Monster() {
             setTimeout(function(){$( ".monster" ).attr("src", "standing.png");}, 1000)
             setTimeout(function(){$( ".monster" ).css("bottom", "0px");}, 1000)
 
-        }, 1000);
+        }, 2000);
         $(document).keydown(function(e){
             console.log(e.which)
             switch (e.which){

@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "jquery": "^3.5.1",
+    "lodash": "^4.17.20",
     "p5": "^1.1.9",
     "react": "^16.13.1",
     "react-audio-player": "^0.11.1",

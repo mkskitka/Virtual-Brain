@@ -8,9 +8,20 @@
     position: absolute;
 }
 
+.Desktop {
+    width: 100%;
+    height: 100%;
+}
+.Desktop-Background {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+}
+
 #terminal {
     top: 41%;
-    left: 50%;
+    right: 52%;
     background-image: url("../../../public/terminal.jpg");
     border-width: 1px;
     border-style: solid;
@@ -18,20 +29,20 @@
 }
 
 #projects{
-    left: 34.5%;
+    right: 60%;
     top: 40%;
     background-image: url("../../../public/folder.png");
 }
 
 #about {
-    left: 43%;
+    right: 43%;
     top: 40%;
     background-image: url("../../../public/file.png");
 }
 
 #record-player {
     top: 40%;
-    left: 58%;
+    right: 37%;
     background-image: url("../../../public/RECORD.png");
     width: 76px;
     height: 73px;
@@ -57,7 +68,7 @@
     width: 180px;
     position: absolute;
     top: 13px;
-    right: 15px;
+    right: -30px;
 }
 .Icon {
     margin: 5px;
