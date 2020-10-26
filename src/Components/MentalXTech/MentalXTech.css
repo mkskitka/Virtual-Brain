@@ -1,0 +1,100 @@
+#currentDisplay {
+    color: #ccc;
+    width: 70%;
+    height: 80%;
+    position: absolute;
+    display: inline-block;
+    position: absolute;
+    left: 20%;
+    top: 10%;
+}
+.Vis-Svg {
+    position: relative;
+    left: 30px
+}
+
+.Dropdown {
+    color: white !important;
+    background-color: #111 !important;
+    margin: 10px;
+    z-index: 1;
+}
+
+.Dropdown * {
+    background-color: #111 !important;
+    color: white !important;
+    border-top: none !important;
+}
+
+
+#num_people {
+    font-size: 20px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+}
+.input-field {
+    width: 250px;
+}
+html { overflow-y: scroll; }
+body { position: absolute; }
+.form-control-lg{
+    position: absolute;
+    width: 100px;
+}
+#buttons {
+    position: absolute;
+    width: 250px;
+    height: 400px;
+    left: 10%;
+    top: 45px;
+    position: absolute;
+}
+#reset {
+    position: relative;
+    opacity: .8;
+}
+.Question {
+    font-size: 20px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: lighter;
+}
+.btn:focus{
+    background-color: #4dd0e1
+}
+#key {
+    font-size: 15px;
+}
+#block_q {
+    width: 250px;
+    font-size: 20px
+}
+#color_q {
+    width: 250px;
+
+}
+
+#divider {
+    height: 120px;
+}
+
+
+#b_resp {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 18px;
+}
+.Title {
+    font-size: 25px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: bold;
+    right: 50px;
+    top: -30px;
+    position: absolute;
+    text-align: right;
+    width: 25%;
+
+}
+#explain {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    width: 500px;
+}

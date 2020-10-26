@@ -1,22 +1,23 @@
 import React, { useEffect } from 'react';
 import Terminal from 'terminal-in-react';
 import pseudoFileSystemPlugin from 'terminal-in-react-pseudo-file-system-plugin';
+import {dirStructure} from "../../Config/directoryStructure";
+import "./Terminal.css"
+
 import $ from "jquery";
 
-const FileSystemPlugin = pseudoFileSystemPlugin();
+const FileSystemPlugin = pseudoFileSystemPlugin(dirStructure);
 
 
 const terminal_style = {
     position: "relative",
     backdropFilter: 'blur(4px)',
     top: "-60px",
-
 }
 
 function TerminalT() {
 
     useEffect(() => {
-        console.log("Terminal Mounts")
         $("#terminal_comm").mouseup(function (e) {
             $("#terminal_comm").focus();
         });
@@ -27,16 +28,17 @@ function TerminalT() {
                 <div id="terminal_comm" style={terminal_style}>
                     <Terminal
                         watchConsoleLogging={false}
-                        color='#ff00ff'
+                        color='#03ecfc'
                         backgroundColor='rgba(0, 0, 0, .2)'
                         barColor='black'
                         fontFamily={"Quicksand, sans-serif !important"}
-                        promptSymbol='>_'
+                        promptSymbol='>'
                         plugins={[
                             FileSystemPlugin,
                         ]}
-                        style={{fontWeight: "normal", font: "sans-serif", fontSize: "1em"}}
+                        style={{color: "blue !important"}}
                         commands={{
+                            's': (print) => {print("\nACCESS DENIED.\n")},
                         }}
                         descriptions={{
                         }}

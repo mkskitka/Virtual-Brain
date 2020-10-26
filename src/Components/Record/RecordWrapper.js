@@ -8,7 +8,7 @@ import ReactAudioPlayer from 'react-audio-player';
 
 const record_style = {
     top:"0px",
-    right: "20%",
+    right: "50%",
     position: "absolute"
 }
 const record_close_button_style = {

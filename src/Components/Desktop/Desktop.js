@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import './Desktop.css';
 import Draggable from "react-draggable";
 import $ from "jquery"
-import _Terminal from "../Terminal/Terminal"
 import Monster from '../Monster/monster';
 import Window from '../Window/Window';
 import ActiveProject from '../ActiveProject/ActiveProject'
+import MentalXTech from "../MentalXTech/MentalXTech";
 
 import {ADD_DIRECTORY_WINDOW, OPEN_CLOSE_RECORD} from "../../Redux/actions"
 import { WINDOW_CONFIGS, WINDOW_CONTENT } from '../../Config/constants'
@@ -14,16 +14,15 @@ import RecordWrapper from "../Record/RecordWrapper";
 
 let FIRST_ENGAGEMENT = false
 let FIRST_ENGAGEMENT_ANIMATION = false
-const animate_right = -80
+const animate_right = -50
 
 function Desktop() {
 
     const dispatch = useDispatch()
-    const windows = useSelector(state => state.active_windows);
     const active_windows = useSelector(state => state.active_windows);
+    const active_project = useSelector(state => state.active_project)
     const record_open = useSelector(state=> state.record_open);
 
-    console.log("record open ", record_open)
 
     useEffect(() => {
         openFolder()
@@ -88,6 +87,9 @@ function Desktop() {
     return (
         <div className={"Desktop"}>
 
+            {active_project === "MXT" &&
+            <MentalXTech/>
+            }
             <div className={"Desktop-Background"}></div>
 
             {/* Contact Bar */}
@@ -124,11 +126,9 @@ function Desktop() {
 
             {/* Multi Media Display Windows */}
 
-            {/* Directory Windows */}
-            <div> {
+            {/* Directory Windows */}{
                 Windows()
             }
-            </div>
 
             {/* Active Project */}
             <div>
@@ -145,10 +145,10 @@ function Desktop() {
 
     function Windows() {
 
-        const DOM_windows =  windows.map(function(w) {
+        const DOM_windows =  active_windows.map(function(w) {
             return ( WINDOW_CONFIGS[w].map(function(config, i) {
-                console.log("key: ", "window-"+w)
-                return(<Window key={"window-"+w} config={config} content={WINDOW_CONTENT[w][i]} id={w}/> );
+                console.log("key: ", "window-"+w+i)
+                return(<Window key={"window-"+w+i} config={config} content={WINDOW_CONTENT[w][i]} id={w}/> );
             }))});
 
         return(
@@ -176,11 +176,10 @@ function Desktop() {
                 if (!isDragging) {
                     let id = e.target.id;
                     FIRST_ENGAGEMENT = true;
-                    if(id === "projects" || id === "terminal") {
+                    if(id === "projects" || id === "terminal" || id == "about") {
                         openWindow(id)
                     }
                     if(id === "record-player") {
-                        console.log("opening record player")
                         dispatch({type: OPEN_CLOSE_RECORD})
                     }
                 }

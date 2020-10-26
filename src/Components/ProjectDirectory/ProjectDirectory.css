@@ -5,35 +5,94 @@
     opacity: 1;
     color: #0091ff;
     position: relative;
+    margin: 2px;
+}
+
+.Project-Wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.Project-Wrapper {
+
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+    opacity: 0;
+}
+
+.Project-Menu {
+    width: 100%;
+    position: fixed;
+    background-color: #000;
+    top: 30px;
+    height: 50px;
+    z-index: 1;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, .7)    /*  10% opaque green */ ;
+    backdrop-filter: blur(4px);
+
+}
+
+.Project-Menu > div {
+    text-align: center;
+    top: 10px;
+    position: relative;
+    color: #0091ff;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.Selected {
+    text-decoration: underline;
+    font-weight: bolder;
+    color: #00ffff !important;
 }
 
 .Project-Directory-Content {
-    padding: 15px;
     position: relative;
+    width: 90%;
+    left:5%;
+    top: 50px;
 
 }
-.Project-Link:Hover {
+.Project-Title:Hover {
     opacity: 1;
     color: #00ffff !important;
 }
 
 .Project-Title {
-    width: 100%;
-    height: 30px;
     font-size: 20px;
+    position: relative;
+}
+
+.Writeup {
+    padding-left: 25px;
+    padding-right: 25px;
+    position: relative;
+    opacity: 0;
 }
 
 .Project-Description {
-     width: 100%;
      height: 30px;
      padding-left: 20px;
-     font-size: 12px;
+     font-size: 14px;
      opacity: .8;
-     top: -8px;
+     top: 0px;
      position: relative;
      opacity: .8;
     color: #0077ff;
  }
+
+.Back-Button:Hover {
+    cursor: pointer;
+
+}
+.Back-Button {
+    width: 25px;
+    height: 25px;
+    position: relative;
+}
 
 .Project-Description:Hover {
 

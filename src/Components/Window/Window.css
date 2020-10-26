@@ -1,8 +1,6 @@
 .Close-Button {
-    width: 25px;
-    height: 25px;
     right: 0px;
-    position: absolute;
+    position: fixed;
     margin: 5px;
     cursor: pointer;
 }
@@ -26,6 +24,7 @@
 .Window-Body {
     position: relative;
     z-index: 0;
+    scrollbar-width: none;  /* Firefox */
 }
 
 .Window-Title {

@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import "../../App.css"
 import $ from "jquery"
 
+let BLOCKING = false
+
 function Monster() {
 
     // Similar to componentDidMount and componentDidUpdate:
@@ -12,7 +14,7 @@ function Monster() {
                 bottom: "-=" + String($(window).height()),
             }, 500, function() {});
             setTimeout(function () { blink() }, 3000)
-            setTimeout(function () { headright() }, 6000)
+            setTimeout(function () { teleport() }, 3000)
             setTimeout(function () { squat() }, 10000)
 
             setTimeout(function(){$( ".monster" ).attr("src", "monster_fall.gif");}, 280)
@@ -50,17 +52,59 @@ function Monster() {
         }
     }
 
-    function headright(){
-        if($( ".monster" ).attr("src") === "standing.png") {
-            $( ".monster" ).attr("src", "turn_right.png");
-            setTimeout(function(){ $( ".monster" ).attr("src", "standing.png");}, 2000)
-            let after = Math.floor(Math.random() * 20000) + 10000
-            setTimeout(function(){headright()}, after);
+    // function headright(){
+    //     if($( ".monster" ).attr("src") === "standing.png") {
+    //         $( ".monster" ).attr("src", "turn_right.png");
+    //         setTimeout(function(){ $( ".monster" ).attr("src", "standing.png");}, 2000)
+    //         let after = Math.floor(Math.random() * 20000) + 10000
+    //         setTimeout(function(){headright()}, after);
+    //     }
+    //     else {
+    //         let after = Math.floor(Math.random() * 20000) + 10000
+    //         setTimeout(function(){headright()}, after);
+    //     }
+    // }
+
+    function teleport() {
+        let transport_to = Math.floor(Math.random() * 4) + 1
+        $( ".monster" ).attr("src", "turn_right.png");
+        BLOCKING = true;
+        if(transport_to === 1) {
+            setTimeout(function () {
+                $(".monster").css({'transform': 'rotate(180deg)'});
+                $(".monster").css("top", "-20px");
+                $(".monster").css("left", "50%");
+                $(".monster").attr("src", "standing.png");
+            }, 2000)
         }
-        else {
-            let after = Math.floor(Math.random() * 20000) + 10000
-            setTimeout(function(){headright()}, after);
+        if(transport_to === 2) {
+            setTimeout(function () {
+                $(".monster").css({'transform': 'rotate(90deg)'});
+                $(".monster").css("top", "20%");
+                $(".monster").css("left", "0px");
+                $(".monster").attr("src", "standing.png");
+            }, 2000)
         }
+        if(transport_to === 3) {
+            setTimeout(function () {
+                $(".monster").css({'transform': 'rotate(-90deg)'});
+                $(".monster").css("top", "70%");
+                $(".monster").css("left", "90%");
+                $(".monster").attr("src", "standing.png");
+            }, 2000)
+        }
+        if(transport_to === 4) {
+            setTimeout(function () {
+                $(".monster").css({'transform': 'rotate(0deg)'});
+                $(".monster").css("top", "77%");
+                $(".monster").css("left", "20%");
+                $(".monster").attr("src", "standing.png");
+            }, 2000)
+        }
+        let after = Math.floor(Math.random() * 30000) + 15000
+        setTimeout(function () {
+            teleport();
+        }, after)
     }
 
     function squat(){

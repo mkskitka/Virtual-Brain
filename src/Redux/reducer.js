@@ -21,10 +21,10 @@ function brainReducer(state = initialState, action) {
             }
             return Object.assign({}, state)
         case REMOVE_DIRECTORY_WINDOW:
-            let new_active_windows = Object.assign([], state.active_windows);
-            new_active_windows = new_active_windows.filter(w => w !== action.id)
+            //let new_active_windows = Object.assign([], state.active_windows);
+            let active_windows = state.active_windows.filter(w => w !== action.id)
              return Object.assign({}, state, {
-                 active_windows: new_active_windows,
+                 active_windows: active_windows,
               })
         case OPEN_CLOSE_TERMINAL:
             return Object.assign({}, state, {

@@ -8,6 +8,10 @@
     position: absolute;
 }
 
+.Desktop-Icon:Hover {
+    cursor: pointer;
+}
+
 .Desktop {
     width: 100%;
     height: 100%;
@@ -68,18 +72,16 @@
     width: 180px;
     position: absolute;
     top: 13px;
-    right: -30px;
+    left: 0px;
 }
 .Icon {
     margin: 5px;
     opacity: 1;
-    width: 32px;
-    height: 32px;
+    width: 36px;
+    height: 36px;
 }
 .Git {
     margin-left: 8px;
-    width: 32px;
-    height: 32px;
 }
 
 .Mail {

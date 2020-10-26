@@ -22,8 +22,6 @@ function ActiveProject(props) {
             })
         }
         if(active_project === null) {
-            $(".Window-Body").css("overflowY", 'scroll')
-            $(".Window-Body").css("overflowX", 'hidden')
             for(let i=0; i<projects.length;i++) {
                 if (active_windows.includes(projects[i].id)){
                     dispatch({type: REMOVE_DIRECTORY_WINDOW, id: projects[i].id})
@@ -48,21 +46,26 @@ function ActiveProject(props) {
             }, 900);
 
         }
-        if(active_project === "C") {
+        else if(active_project === "C") {
             $(".Active-Project").fadeOut(0)
             $(".Desktop-Background").fadeOut(0)
                 $(".Desktop-Background").css("background-image", "url(/treecreature.png)")
                 $(".Desktop-Background").css("background-repeat", "no-repeat")
                 $(".Desktop-Background").css("background-position", "right top")
-                $(".Desktop-Background").css("opacity", ".5")
+                $(".Desktop-Background").css("filter", "brightness(.4)")
                 setTimeout(function () {
                     $(".Active-Project").fadeIn(1000)
                     $(".Desktop-Background").fadeIn(1000)
                 }, 100)
         }
-        if(active_project === "AR") {
+        else if(active_project === "AR") {
             $(".Desktop-Background").fadeOut(0)
         }
+        else {
+
+            $(".Desktop-Background").css("background-image", "");
+        }
+
         if(active_project === null) {
             $(".Desktop-Background").animate({
                 opacity: "0"
