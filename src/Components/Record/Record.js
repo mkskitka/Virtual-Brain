@@ -1,8 +1,10 @@
 
+let active_song = "";
+
 // general constants
 let slow = 0;
-let width = 390
-let height =250
+const width = 390
+const height =250
 
 // init constants
 
@@ -22,11 +24,11 @@ let record_spinning = false;
 let record_x_total = 0;
 let record_z = 0;
 let record_x = 0;
-let depth_increment = 1;    // ***
-let x_increment = 1.4;        // ***
+let depth_increment = 0;    // ***
+let x_increment = 0;        // ***
 let angle_increment = 0;    // ***
 let record_angle = 0;
-let depth_max = 70;
+const depth_max = 70;
 
 // record arm constants
 let record_arm_x_increment = 0;  // ***
@@ -36,7 +38,7 @@ let record_arm_x_rotate = 0;
 
 
 let record_arm_y_increment = 0; // ***
-let record_arm_y_max = 7;
+const record_arm_y_max = 7;
 let record_arm_y_total = 0;
 let record_arm_y_rotate = 0;
 
@@ -57,21 +59,20 @@ export default function record_sketch (p, canvasParentRef) {
 
     p.mouseClicked = function () {
         if(p.mouseY > 170 && p.mouseY < 200 && p.mouseX > 315 && p.mouseX < 370) {
-            button_clicked = true;
-            button_down = true;
+            if(CURRENT_STYLUS_ACTION === NONE) {
+                button_clicked = true;
+                button_down = true;
+            }
         }
     };
 
     p.myCustomRedrawAccordingToNewPropsHandler = function (props) {
-        if(props.play && !currently_playing && !record_spinning) {
-            start()
-        }
-        if(props.pause && currently_playing) {
-            console.log("pausing in record.js")
-            stop()
-        }
-        if(props.next) {
+        if(props.song !== active_song){
+            active_song = props.song
             next()
+        }
+        if(props.stop) {
+            stop()
         }
     };
 
@@ -88,13 +89,17 @@ export default function record_sketch (p, canvasParentRef) {
         CURRENT_STYLUS_ACTION = MOVE_UP
     }
     function next() {
-        stop()
+        let wait = 1000
+        if(record_spinning) {
+            stop()
+            wait = 3000
+        }
         setTimeout(function() {
             record_x_total = 0;
             depth_increment = 1
             angle_increment= 0;
             x_increment = 1.4;
-        }, 3000)
+        }, wait)
     }
 
     p.draw = function () {
@@ -156,9 +161,6 @@ export default function record_sketch (p, canvasParentRef) {
         p.push()
         p.translate(0, 0, 1);
         p.push()
-        // if(typeof(album_art) !== "string") {
-        //     p.texture(album_art)
-        // }
         p.ellipse(0, 0, 134/3+(3*12) - 13 , 140/3+(3*12) - 13);
         p.pop()
         p.stroke(0);
@@ -172,9 +174,6 @@ export default function record_sketch (p, canvasParentRef) {
         p.push()
         p.translate(0, 0, -1);
         p.push()
-        // if(album_art !== null) {
-        //     p.texture(album_art)
-        // }
         p.ellipse(0, 0, 134/3+(3*12) - 13 , 140/3+(3*12) - 13);
         p.pop()
         p.stroke(0);
@@ -288,9 +287,6 @@ export default function record_sketch (p, canvasParentRef) {
 
             start()
         }
-        // if(record_x_total > 35 && record_x_total < 40) {
-        //     album_art = p.loadImage(new_album_art)
-        // }
 
         //STYLUS MOTION CONDITIONALS
 

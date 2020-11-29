@@ -87,9 +87,7 @@ function Desktop() {
     return (
         <div className={"Desktop"}>
 
-            {active_project === "MXT" &&
-            <MentalXTech/>
-            }
+
             <div className={"Desktop-Background"}></div>
 
             {/* Contact Bar */}
@@ -139,17 +137,24 @@ function Desktop() {
                 <RecordWrapper/> : ""}
             </div>
 
+            {active_project === "MXT" &&
+            <MentalXTech/>
+            }
+
         </div>
 
     );
 
     function Windows() {
 
-        const DOM_windows =  active_windows.map(function(w) {
-            return ( WINDOW_CONFIGS[w].map(function(config, i) {
-                console.log("key: ", "window-"+w+i)
-                return(<Window key={"window-"+w+i} config={config} content={WINDOW_CONTENT[w][i]} id={w}/> );
-            }))});
+        let DOM_windows = []
+            for (const [key, value] of Object.entries(WINDOW_CONFIGS)) {
+                 if(active_windows.includes(key))
+                     DOM_windows = DOM_windows.concat(WINDOW_CONFIGS[key].map(function(config, i) {
+                         return (<Window key={"window-" + key +i} config={config} content={WINDOW_CONTENT[key][i]} id={key}/>);
+                     }))
+                else DOM_windows.push("")
+            };
 
         return(
             DOM_windows
@@ -164,15 +169,15 @@ function Desktop() {
 
     function openFolder() {
         var isDragging = false;
+            $(".Desktop-Icon")
+                .mousedown(function (e) {
+                    isDragging = false
+                    setTimeout(function () {
+                        isDragging = true;
+                    }, 500)
+                })
         $(".Desktop-Icon")
-            .mousedown(function (e) {
-                $(window).mousemove(function () {
-                    isDragging = true;
-                    $(window).unbind("mousemove");
-                });
-            })
             .mouseup(function (e) {
-                $(window).unbind("mousemove");
                 if (!isDragging) {
                     let id = e.target.id;
                     FIRST_ENGAGEMENT = true;
@@ -183,7 +188,6 @@ function Desktop() {
                         dispatch({type: OPEN_CLOSE_RECORD})
                     }
                 }
-                isDragging = false
             });
     }
 }

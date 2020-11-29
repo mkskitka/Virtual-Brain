@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react';
 import { projects } from '../../Config/constants'
 import { useSelector, useDispatch } from 'react-redux';
 import { CHANGE_ACTIVE_PROJECT } from "../../Redux/actions";
@@ -9,17 +9,33 @@ let dir_height;
 let dir_width;
 let range
 
+const projectCategories = ["ALL", "HCI", "NEW", "AI"]
+
 function ProjectDirectory(props) {
 
     const dispatch = useDispatch()
     const config = props.config;
     const active_project = useSelector(state => state.active_project);
+    const [projectCategory, setProjectCategory] = useState('ALL');
+
 
     useEffect(() => {
 
          $(".Project-Wrapper").fadeTo(1000, 1);
         return function cleanup() { dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])
+
+    useEffect( () => {
+        projectCategories.forEach(cat => {
+                if (projectCategory.includes(cat)) {
+                    $("#" + cat).addClass("Selected")
+                }
+                else {
+                        $("#"+cat).removeClass("Selected")
+                    }
+            })
+        }, [projectCategory]
+    )
 
     let writeup = ""
 
@@ -31,20 +47,29 @@ function ProjectDirectory(props) {
     }
 
     const project_list = projects.map(function(p) {
-        return(
-            <div key={p.id} id={p.id} className={"Project-Link" +" Project-Link"+p.id}  onClick={(e) => onFileClick(p.id)}>
-                <div key={p.title} id={"Project-Title"+p.id} className={"Project-Title"}>{p.title.toUpperCase()}</div>
-                <div key={p.title + "_desc"} id={"Project-Description"+p.id} className={"Project-Description"}>{p.description}</div>
-            </div>);
+        if(projectCategory === "ALL" || p.tags.includes(projectCategory)) {
+            return (
+                <div key={p.id} id={p.id} className={"Project-Link" + " Project-Link" + p.id}
+                     onClick={(e) => onFileClick(p.id)}>
+                    <div key={p.title} id={"Project-Title" + p.id}
+                         className={"Project-Title"}>{p.title.toUpperCase()}</div>
+                    <div key={p.title + "_desc"} id={"Project-Description" + p.id}
+                         className={"Project-Description"}>{p.description}</div>
+                </div>
+            );
+        }
+        else {
+            return ""
+        }
         });
 
     return (
         <div className={"Project-Wrapper"} style={{position: "relative"}}>
                 <div className={"Project-Menu"}>
-                    <div className={"Selected"}>ALL</div>
-                    <div >{'UI'}</div>
-                    <div >NEW MEDIA</div>
-                    <div>AI</div>
+                    <div id={'ALL'} onClick={() => setProjectCategory("ALL")}className={"Selected"}>ALL</div>
+                    <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>HCI</div>
+                    <div id={'NEW'}  onClick={() => setProjectCategory("NEW MEDIA")}>NEW MEDIA</div>
+                    <div id={'AI'}  onClick={() => setProjectCategory("AI")}>AI</div>
                 </div>
             {active_project !== null &&
                 <div className={"Back-Button-Container"} style={{position: "fixed"}}>
@@ -166,7 +191,7 @@ function ProjectDirectory(props) {
 
                         $("#Window-Body-projects").css("overflow", "hidden");
                         $("#" + active_project).animate({
-                            left: 40,
+                            left: 30,
                         }, 800, function () {
                             dispatch({type: CHANGE_ACTIVE_PROJECT, project: active_project})
                             $(".Back-Button-Container").css("top", top1)

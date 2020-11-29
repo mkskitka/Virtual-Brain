@@ -3,12 +3,19 @@ import $ from "jquery"
 import {VIDEO_CONFIGS, projects} from "../../Config/constants";
 import "./ActiveProject.css"
 import {useDispatch, useSelector} from "react-redux";
-import {ADD_DIRECTORY_WINDOW, REMOVE_DIRECTORY_WINDOW} from "../../Redux/actions";
+import {
+    ADD_DIRECTORY_WINDOW,
+    REMOVE_DIRECTORY_WINDOW,
+    CHANGE_ACTIVE_SONG,
+    OPEN_CLOSE_RECORD
+} from "../../Redux/actions";
 
 function ActiveProject(props) {
 
     const active_project = useSelector(state => state.active_project)
+    const active_song = useSelector(state => state.active_song)
     const active_windows = useSelector(state => state.active_windows)
+    const record_open = useSelector(state => state.record_open)
     const dispatch = useDispatch()
 
 
@@ -17,11 +24,15 @@ function ActiveProject(props) {
         if(active_project !== null) {
             let videos = VIDEO_CONFIGS[active_project];
             videos.map(function (config) {
+                console.log("in videos map")
                 dispatch({type: ADD_DIRECTORY_WINDOW, id: active_project})
                 return config;
             })
         }
         if(active_project === null) {
+            if(active_song === "sheldon.m4a" && record_open) {
+                document.getElementById("audio-player").pause();
+            }
             for(let i=0; i<projects.length;i++) {
                 if (active_windows.includes(projects[i].id)){
                     dispatch({type: REMOVE_DIRECTORY_WINDOW, id: projects[i].id})
@@ -60,6 +71,13 @@ function ActiveProject(props) {
         }
         else if(active_project === "AR") {
             $(".Desktop-Background").fadeOut(0)
+        }
+        else if(active_project === "SH") {
+            if (!record_open) {
+                dispatch({type: OPEN_CLOSE_RECORD})
+            }
+            dispatch({type: CHANGE_ACTIVE_SONG, song: "sheldon.m4a"})
+
         }
         else {
 

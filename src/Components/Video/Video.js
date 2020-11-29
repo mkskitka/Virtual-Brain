@@ -20,7 +20,6 @@ function Video(props) {
                  position: "absolute",
                  left: config.left,
                  top: config.top,
-                 zIndex: "5"
              }}>
             <div>
                 <Player
