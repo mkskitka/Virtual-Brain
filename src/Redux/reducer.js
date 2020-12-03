@@ -3,7 +3,7 @@ import { ADD_DIRECTORY_WINDOW, REMOVE_DIRECTORY_WINDOW, OPEN_CLOSE_TERMINAL, CHA
     CHANGE_ACTIVE_SONG, OPEN_CLOSE_RECORD } from "./actions"
 
 const initialState = {
-    active_windows:[],
+    active_windows:["PersonalStatement"],
     terminal_open: false,
     record_open: false,
     active_project: null,

@@ -160,6 +160,21 @@ export const WINDOW_CONFIGS = {
     "AR": [video_window_template],
     "C": [video_window_template],
     "VV": [video_window_template],
+    "PersonalStatement": [{ ...picture_window_template,
+                            style: {
+                                ...picture_window_template.style,
+                                top: "20%",
+                                left: "10%",
+                                opacity: ".8",
+                                width: "400px",
+                                height: "400px",
+                            },
+                            titleStyle: {
+                                fontSize: "64px",
+                            },
+                            title: 'Personal Statement  Coming......... 12/5/20',
+                        }
+    ],
     "SH": [], // NO extra windows
 }
 
@@ -173,6 +188,9 @@ export const WINDOW_CONTENT = {
     "AR": [<Video config={VIDEO_CONFIGS["AR"][0]} id={"AR"}/>],
     "C": [<Video config={VIDEO_CONFIGS["C"][0]} id={"C"}/>],
     "VV": [<Video config={VIDEO_CONFIGS["VV"][0]} id={"VV"}/>],
+    "PersonalStatement":  [
+    <div style={{...picture_content_template,
+        'backgroundImage':"url(/comingsoon.gif)"}} id={"cs"}/>],
 }
 
 

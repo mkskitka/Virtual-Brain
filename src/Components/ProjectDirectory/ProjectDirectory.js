@@ -65,27 +65,29 @@ function ProjectDirectory(props) {
 
     return (
         <div className={"Project-Wrapper"} style={{position: "relative"}}>
+            {active_project !== null &&
+            <div className={"Back-Button-Container"} style={{position: "fixed"}}>
+                <div className={"Back-Button"} style={{top: "0px", zIndex: '10'}} onClick={backToMenu} />
+                <div className={"Back-Button"} style={{top: "0px", position: "absolute"}}>
+                    <svg width="25px" height="25px" >
+                        <line x1="0" y1="12.5" x2="25" y2="0" style={{stroke:config.style.borderColor, strokeWidth:'3'}} />
+                        <line x1="0" y1="12.5" x2="25" y2="25" style={{stroke:config.style.borderColor, strokeWidth:'3'}} />
+                    </svg>
+                </div>
+            </div>
+            }
                 <div className={"Project-Menu"}>
                     <div id={'ALL'} onClick={() => setProjectCategory("ALL")}className={"Selected"}>ALL</div>
                     <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>HCI</div>
                     <div id={'NEW'}  onClick={() => setProjectCategory("NEW MEDIA")}>NEW MEDIA</div>
                     <div id={'AI'}  onClick={() => setProjectCategory("AI")}>AI</div>
                 </div>
-            {active_project !== null &&
-                <div className={"Back-Button-Container"} style={{position: "fixed"}}>
-                <div className={"Back-Button"} style={{top: "0px", zIndex: '1'}} onClick={backToMenu} />
-                <div className={"Back-Button"} style={{top: "0px", position: "absolute"}}>
-                <svg width="25px" height="25px" >
-                    <line x1="0" y1="12.5" x2="25" y2="0" style={{stroke:config.style.borderColor, strokeWidth:'3'}} />
-                    <line x1="0" y1="12.5" x2="25" y2="25" style={{stroke:config.style.borderColor, strokeWidth:'3'}} />
-                </svg>
-            </div>
-                </div>}
+
         <div className={"Project-Directory-Content"}>{
              project_list}
-            <div style={{position: "absolute", top: "60px"}}> {
+            <div style={{top: "60px", width: "100%"}}> {
              ((active_project === null) ? "" :
-                 <div style={{position: "relative"}}>
+                 <div style={{width: "100%"}}>
                      <div className={"Writeup"}> {
                          writeup
                      }</div>
@@ -108,7 +110,7 @@ function ProjectDirectory(props) {
     }
 
     function animateBackToMenu() {
-        let p = _.find(projects, function(p) { return p.id === active_project; });
+        let project = _.find(projects, function(p) { return p.id === active_project; });
         dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})
 
         $("#Project-Title"+active_project).css("color", '#0091ff');
@@ -156,6 +158,8 @@ function ProjectDirectory(props) {
         $(".Project-Title").finish()
         $(".Project-Link").finish()
 
+        $(".Writeup").fadeTo(0, 0);
+
         $(".Window-Body").css("overflow", "hidden")
         $(".Project-Menu").hide()
 
@@ -195,12 +199,17 @@ function ProjectDirectory(props) {
                         }, 800, function () {
                             dispatch({type: CHANGE_ACTIVE_PROJECT, project: active_project})
                             $(".Back-Button-Container").css("top", top1)
-                            let top = ($("#" + active_project).height())
 
                             $(".Writeup").finish()
-                            $(".Writeup").css("top", top-60);
+                            let project = _.find(projects, function(p) { return p.id === active_project; });
+                            console.log("proj",project)
+                            if(project.title.length > 15) {
+                                $(".Writeup").css("top", '100px');
+                            }
+                            else {
+                                $(".Writeup").css("top", '50px');
+                            }
                             $(".Writeup").fadeTo(700, 1)
-
                             $("#Project-Title"+active_project).finish()
                             $("#Project-Title"+active_project).css("color", "#00ffff");
 

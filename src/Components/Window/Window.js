@@ -39,7 +39,7 @@ function Window(props) {
                                 <line x1={xH} y1="0" x2="0" y2={xH} style={{stroke:config.style.borderColor, strokeWidth:xS}} />
                             </svg>
                         </div>
-                        <div className={"Window-Title"} key={"title"+id}>{config.title.toUpperCase()}</div>
+                        <div style={(config.titleStyle) ? config.titleStyle : null} className={"Window-Title"} key={"title"+id}>{config.title.toUpperCase()}</div>
                     </div>
                     <div className={"Window-Body"} id={"Window-Body-"+id} style={config.bodyStyle} >
                      {content}

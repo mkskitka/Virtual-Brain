@@ -1,5 +1,4 @@
 .Project-Link {
-    zIndex: 2;
     cursor: pointer;
     text-align: left;
     opacity: 1;
@@ -51,10 +50,11 @@
 
 .Project-Directory-Content {
     position: relative;
-    width: 90%;
-    left:5%;
+    width: 100%;
+    height: 100%;
     top: 50px;
-
+    padding-left: 25px;
+    padding-right: 25px;
 }
 .Project-Title:Hover {
     opacity: 1;
@@ -67,10 +67,9 @@
 }
 
 .Writeup {
-    padding-left: 25px;
-    padding-right: 25px;
-    position: relative;
     opacity: 0;
+    position: absolute;
+    width: calc(100% - 50px);
 }
 
 .Project-Description {
