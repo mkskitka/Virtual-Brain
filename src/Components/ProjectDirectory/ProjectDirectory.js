@@ -64,10 +64,11 @@ function ProjectDirectory(props) {
         });
 
     return (
-        <div className={"Project-Wrapper"} style={{position: "relative"}}>
+        <div>
+        <div>
             {active_project !== null &&
             <div className={"Back-Button-Container"} style={{position: "fixed"}}>
-                <div className={"Back-Button"} style={{top: "0px", zIndex: '10'}} onClick={backToMenu} />
+                <div className={"Back-Button-Click"} style={{top: "0px", position: 'absolute', zIndex: '10'}} onClick={animateBackToMenu} />
                 <div className={"Back-Button"} style={{top: "0px", position: "absolute"}}>
                     <svg width="25px" height="25px" >
                         <line x1="0" y1="12.5" x2="25" y2="0" style={{stroke:config.style.borderColor, strokeWidth:'3'}} />
@@ -76,6 +77,8 @@ function ProjectDirectory(props) {
                 </div>
             </div>
             }
+        </div>
+        <div className={"Project-Wrapper"} style={{position: "relative"}}>
                 <div className={"Project-Menu"}>
                     <div id={'ALL'} onClick={() => setProjectCategory("ALL")}className={"Selected"}>ALL</div>
                     <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>HCI</div>
@@ -97,11 +100,9 @@ function ProjectDirectory(props) {
 
         </div>
         </div>
+        </div>
     );
 
-    function backToMenu() {
-        animateBackToMenu()
-    }
 
     function onFileClick(id) {
         if(active_project === null) {
@@ -114,8 +115,9 @@ function ProjectDirectory(props) {
         dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})
 
         $("#Project-Title"+active_project).css("color", '#0091ff');
+        $(".Project-Menu").css("zIndex", "1")
 
-        $("#Project-Title"+active_project).animate({fontSize: "20px"}, 1000)
+        $("#Project-Title"+active_project).animate({fontSize: "1.8em"}, 1000)
         $("#" + active_project).animate({
             left: 0,
         }, 800)
@@ -142,7 +144,7 @@ function ProjectDirectory(props) {
                         top: "+=" + String(range),
                     }, 1000, function () {
                         $("#Window-Body-projects").css("overflowY", "scroll");
-                        $(".Project-Menu").show()
+                        $(".Project-Menu").css("opacity", "1")
                     });
 
             }
@@ -157,11 +159,12 @@ function ProjectDirectory(props) {
         $(".Window-Body").finish()
         $(".Project-Title").finish()
         $(".Project-Link").finish()
+        $(".Project-Menu").css("zIndex", "-1")
 
         $(".Writeup").fadeTo(0, 0);
 
         $(".Window-Body").css("overflow", "hidden")
-        $(".Project-Menu").hide()
+        $(".Project-Menu").css("opacity", "0")
 
         let project = _.find(projects, {id:active_project})
         $(".Window-projects").animate({
@@ -191,7 +194,7 @@ function ProjectDirectory(props) {
                     $("#" + active_project).animate({
                         top: "-=" + String(Math.round(range)),
                     }, 1000, function () {
-                        $("#Project-Title"+active_project).animate({fontSize: "36px"}, 1000)
+                        $("#Project-Title"+active_project).animate({fontSize: "2.5em"}, 1000)
 
                         $("#Window-Body-projects").css("overflow", "hidden");
                         $("#" + active_project).animate({
@@ -204,10 +207,10 @@ function ProjectDirectory(props) {
                             let project = _.find(projects, function(p) { return p.id === active_project; });
                             console.log("proj",project)
                             if(project.title.length > 15) {
-                                $(".Writeup").css("top", '100px');
+                                $(".Writeup").css("top", '12em');
                             }
                             else {
-                                $(".Writeup").css("top", '50px');
+                                $(".Writeup").css("top", '9em');
                             }
                             $(".Writeup").fadeTo(700, 1)
                             $("#Project-Title"+active_project).finish()

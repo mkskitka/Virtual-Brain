@@ -6,29 +6,47 @@ export const astropunk_bio =
     "By the end of the game you have developed your own song without needing to learn all that confusing audio software " +
     "having a blast along the way. The project is still in development and is expected out late 2020.";
 
-export const music64_bio = "A video collaboration with Bailey Warner. Together we compiled a list of intimate videos," +
-    "that captures the chaotic nature of college and the humbling emotions that come with 'figuring it all out'"+
-    'I did the music design, hoping to give the sound layers of emotion and chaos and sometimes reflective stillness. ';
+export const music64_bio = "A video collaboration with Bailey Warner. Together we compiled a list of intimate videos, " +
+    "that capture the chaotic nature of college and the humbling emotions that come with 'figuring it all out'. "+
+    'I composed the music and some of the collage film in this piece. ';
 
 export const sheldon_bio = "An experimental sound project that involved me carrying my phone with me everywhere I went for a " +
-    "day recording samples for this piece. Here the progression of my day unfold."
+    "day recording the audio of my life. Listen to the progression of my day unfold. The project showcases my incessant need " +
+    "to document personal histories in new ways. This song reminds me of an entire year in college. I was surprised by intrigued to " +
+    "find that samples of audio from one day could capture an entire year of life. "
 
-export const animation_bio = "(in order as they appear) 1. Adults Only: Found Objects " +
-    "sexual feeling. 2. NOT NAMED: 35MM film projection, 3. Monster House: Charcoal, 4. NOT NAMED: post-it note scraps," +
-    "5. Kevin: shadow puppets, 6. Object Transitions: Pencil Illustration";
+export const animation_bio = "(in order as they appear) "+
+    "1. NOT NAMED using 35MM film projection, 2. Adults Only using Found Objects \" 3. A Puma Dance using mixed media" +
+    "4. Kevin Dances using paper shadow puppets,  4. NOT NAMED using paper scraps,\" 5. Monster House using Charcoal. " +
+    " Animation is fascinating to me in it's ability to make us question where the fictitious world we are observing collides with our own, recoloring it anew. " +
+    "The intimate tedious process of stop-motion animation " +
+    "has it's very own place in my heart. It's process is so intimate yet disparate from the output. Intimate in that " +
+    "every mark must be given the utmost attention and study to maintain a timeline that is coherent. Disparate in that one frame can never " +
+    "foreshadow the affective output. You don't really know what your going to get until you run the frames through." +
+    " Animation showcases our brains beautiful ability to make sense of very little information " +
+    "and our imaginative brain powers as well. ";
 
 export const visualization_bio = "(in order as they appear) 1. Lobbyview: Visualization is hosted on lobbyview.org, which" +
     "is an tool to navigate and research open source US lobbying data. Site and lobbying research created by Professor In" +
     "Song Kim of the MIT Political Science department."
 
-export const creature_bio = "A project done in two parts. A children's story about a young boy coping with Trauma. Trauma " +
-    "in the story is depicted by the dreams that Jordan is subject to. A more serious tale that can be used as a tool to " +
-    "introduce young children to mental health topics and the stigma surrounding mental illness. The second part consisting " +
-    "of an experimental web platform to tell the story. The book is created virtually and paintings are loaded onto the" +
-    "virtual pages."
+export const creature_bio = "A project done in two parts. One part, a children's story about a young boy coping with trauma." +
+    " Jordan's dreams in the story are analogous to his trauma. A more serious tale that can be used as a way to " +
+    "introduce young children to mental health topics and to be critical of the stigma surrounding mental illness." +
+    " The second part consisting " +
+    "of an experimental web platform to tell the story. The user can flip through a picture book of paintings inspired " +
+    "by Chinese ink paintings. "
 
-export const mental_health_tech_bio = "A D3.js visualization that tells an aggregate narrative and" +
-    " one that is deeply personal. " +
-    "Statistics are not just numbers. They are collections of humans each one complex with their histories. How can we" +
-    " analyze trends in data without reducing humans to a fraction of a number? The design of this visualization was deeply"+
-    "inspired by this dichodomy."
+export const mental_health_tech_bio = "This visualization is based on survey data from employees working in tech industries" +
+    " in the US responding to" +
+    " questions about mental health in the workplace. Feeling gratitude towards these people," +
+    " I wanted a design that showcased their individuality. The graphical display opens with a small" +
+    " dot on a screen with the words, \"one person\".  The rest of the screen " +
+    " populates with people who proceeded to fly around as you cluster and color them by their survey responses." +
+    " Once a person is rendered as a dot they do not change identity or disappear to maintain presence." +
+    " I generalized this display to allow the loading of other datasets and it can be downloaded from github." +
+    "You can render any survey data with a little formatting, instantly humanized! " +
+    " Instead of reducing people to numbers, we can give them stories in graphics. " +
+    " It is an interesting research question: how we can further personify data? "
+
+export const generative_design_bio = "Coming Soon."

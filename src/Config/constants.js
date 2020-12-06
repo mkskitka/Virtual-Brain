@@ -1,9 +1,10 @@
 import React from 'react';
 import ProjectDirectory from "../Components/ProjectDirectory/ProjectDirectory";
 import TerminalT from "../Components/Terminal/Terminal";
-import {astropunk_bio, sheldon_bio, music64_bio, creature_bio, mental_health_tech_bio, animation_bio} from "./writeups";
+import {astropunk_bio, sheldon_bio, music64_bio, creature_bio, mental_health_tech_bio, animation_bio, generative_design_bio} from "./writeups";
 import Video from "../Components/Video/Video";
 import About from "../Components/About/About";
+import PersonalStatement from "../Components/PersonalStatement/About";
 
 
 // TEAL #00ffff
@@ -156,6 +157,15 @@ export const WINDOW_CONFIGS = {
             bodyStyle: {overflow: "scroll", height: "100%", position: "relative"},
             header: false}
         ],
+    "personal_statement" : [
+        {   title: "",
+            drag_disabled: true,
+            style: about_style,
+            xH: 50,
+            xS: 5,
+            bodyStyle: {overflow: "scroll", height: "100%", position: "relative"},
+            header: false}
+    ],
     "AP": [video_window_template, picture_window_template],
     "AR": [video_window_template],
     "C": [video_window_template],
@@ -172,7 +182,7 @@ export const WINDOW_CONFIGS = {
                             titleStyle: {
                                 fontSize: "64px",
                             },
-                            title: 'Personal Statement  Coming......... 12/5/20',
+                            title: 'Personal Statement Coming......... TODAY!',
                         }
     ],
     "SH": [], // NO extra windows
@@ -182,6 +192,7 @@ export const WINDOW_CONTENT = {
     "projects": [<ProjectDirectory config={WINDOW_CONFIGS["projects"][0]}/>],
     "terminal": [<TerminalT/>],
     "about": [<About/>],
+    "personal_statement": [<PersonalStatement/>],
     "AP": [<Video config={VIDEO_CONFIGS["AP"][0]} id={"AP+1"}/>,
         <div style={{...picture_content_template,
             'backgroundImage':"url(/astropunk-mockup.png)"}} id={"AP+2"}/>],
@@ -189,8 +200,7 @@ export const WINDOW_CONTENT = {
     "C": [<Video config={VIDEO_CONFIGS["C"][0]} id={"C"}/>],
     "VV": [<Video config={VIDEO_CONFIGS["VV"][0]} id={"VV"}/>],
     "PersonalStatement":  [
-    <div style={{...picture_content_template,
-        'backgroundImage':"url(/comingsoon.gif)"}} id={"cs"}/>],
+    <div style={{...picture_content_template}} id={"cs"}/>],
 }
 
 
@@ -203,7 +213,7 @@ export const projects = [
         id: "IE",
         title: "Isolation Experiments",
         description: "Created in Quarentine",
-        writeup: "testing",
+        writeup: "coming soon",
         tags: ["NEW MEDIA", "HCI"]
     },
     {
@@ -254,28 +264,28 @@ export const projects = [
         id: "GD",
         title: "Generative Design",
         description: "Code Art!",
-        writeup: creature_bio,
+        writeup: generative_design_bio,
         tags: ["NEW MEDIA"]
     },
     {
         id: "VB",
         title: "Virtual Brain",
         description: "This Website",
-        writeup: creature_bio,
+        writeup: generative_design_bio,
         tags: ["NEW MEDIA", "HCI"]
     },
     {
         id: "MD",
         title: "ML Doodles",
         description: "Finding Trends in the Subconcious",
-        writeup: creature_bio,
+        writeup: generative_design_bio,
         tags: ["NEW MEDIA", "AI"]
     },
     {
         id: "CR",
         title: "Canopy Room on The Run",
         description: "Reimagining a physical favorite,virtually",
-        writeup: creature_bio,
+        writeup: generative_design_bio,
         tags: ["NEW MEDIA", "HCI"]
     },
     // {

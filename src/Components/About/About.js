@@ -48,6 +48,7 @@ function About() {
             <div className={"bio"}>{bio25}</div>
             <div className={"bio"}>{bio3}</div>
             <div className={"bio"}>{bio4}</div>
+            <div className={"bio"}>{bio5}</div>
         </div>
         </div>
     );
@@ -56,15 +57,19 @@ function About() {
 export default About;
 
 export const bio0= "";
-export const bio1= "Welcome to my " +
-    "   ~ VIRTUAL BRAIN ~.  ";
-export const bio2="I'm a self described phenomenological investigator X dreamy engineer, " +
-    " always on the hunt for new inter-disciplinary, art inclusive research spaces. ";
-export const bio25=    " Imaginative applications of human facing technologies especially when  " +
-    " applied to exploring the vast reaches of human-interpersonal communication, " +
-    "get's me absolutely jazzed to work everyday. ";
-export const bio3= " You too? Shoot me an email about ideas for collaboration. ";
-export const bio4= " - MK Skitka";
+export const bio1= "Hi, I'm MK.";
+export const bio2 =  "Welcome to my " +
+"   ~ VIRTUAL BRAIN ~"
+export const bio25=" My wish is that you can get to know me better through this website than though anything I could write here. " +
+    "With that said, I would describe myself as a Phenomenological Investigator and Maker of Things. " +
+    " I'm currently looking for opportunities to study paradigms of producing affect in the intersections and fringes of new" +
+    " media interfaces. Working in AI research for over two years now, I have an appreciation and understanding for the capabilities of advancing computation" +
+    ". I am now looking to leave research in the theoretical, studying this uncharted landscape of interaction through an applied approach." +
+    " My goal is to democratize " +
+    "technology to empower voices left unheard, normalize vulnerability in communication and broaden the space of human expressiveness to create a more unified world.";
+export const bio3=    "  ";
+export const bio4= " Please reach out if you are interesting in collaborating. Wishing you a sound mind during these unprecedented times.";
+export const bio5= " - MK Skitka";
 
 
 

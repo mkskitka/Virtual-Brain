@@ -118,6 +118,11 @@ function Desktop() {
                     <div style={{top: '70px', position: 'absolute'}}>ABOUT</div>
                 </div>
             </Draggable>
+            <Draggable>
+                <div id="personal_statement" className="Desktop-Icon">
+                    <div style={{top: '70px', position: 'absolute'}}>MIT MEDIA LAB PERSONAL STATEMENT</div>
+                </div>
+            </Draggable>
 
             <div className={"watermark"}>© Mary Kate Skitka Virtual Brain</div>
             <Monster/>
@@ -181,7 +186,7 @@ function Desktop() {
                 if (!isDragging) {
                     let id = e.target.id;
                     FIRST_ENGAGEMENT = true;
-                    if(id === "projects" || id === "terminal" || id == "about") {
+                    if(id === "projects" || id === "terminal" || id == "about" || id=="personal_statement") {
                         openWindow(id)
                     }
                     if(id === "record-player") {

@@ -38,14 +38,13 @@
     top: 10px;
     position: relative;
     color: #0091ff;
-    font-size: 17px;
+    font-size: 1.3em;
     cursor: pointer;
 }
 
 .Selected {
     font-weight: bolder;
     color: #00ffff !important;
-    font-size: 20px;
 }
 
 .Project-Directory-Content {
@@ -59,33 +58,44 @@
 .Project-Title:Hover {
     opacity: 1;
     color: #00ffff !important;
+    position: relative;
 }
 
 .Project-Title {
-    font-size: 20px;
+    font-size: 1.7em;
     position: relative;
 }
 
 .Writeup {
     opacity: 0;
-    position: absolute;
+    position: fixed;
     width: calc(100% - 50px);
 }
 
 .Project-Description {
      height: 30px;
      padding-left: 20px;
-     font-size: 14px;
+     font-size: 1.0em;
      opacity: .8;
-     top: 0px;
+     top: -10px;
      position: relative;
      opacity: .8;
     color: #0077ff;
+    position: relative;
  }
 
-.Back-Button:Hover {
+.Back-Button-Container:Hover {
     cursor: pointer;
-
+}
+.Back-Button-Container {
+    z-index: 30;
+}
+.Back-Button-Click {
+    width: 25px;
+    height: 25px;
+    position: relative;
+    margin-left: 10px;
+    margin-top: 16px;
 }
 .Back-Button {
     width: 25px;
