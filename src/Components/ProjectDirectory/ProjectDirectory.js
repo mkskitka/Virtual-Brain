@@ -153,7 +153,6 @@ function ProjectDirectory(props) {
 
     function projectSelectAnimation(active_project) {
 
-        $(".Project-Directory-Content").finish()
         $(".Window-projects").finish()
         $(".Project-Menu").finish()
         $(".Window-Body").finish()

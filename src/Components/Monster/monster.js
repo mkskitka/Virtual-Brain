@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../../App.css"
+import "./monster.css"
 import $ from "jquery"
 
 let BLOCKING = false

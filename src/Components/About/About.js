@@ -57,16 +57,17 @@ function About() {
 export default About;
 
 export const bio0= "";
-export const bio1= "Hi, I'm MK.";
+export const bio1= "Hi, I'm MK :)";
 export const bio2 =  "Welcome to my " +
 "   ~ VIRTUAL BRAIN ~"
-export const bio25=" My wish is that you can get to know me better through this website than though anything I could write here. " +
-    "With that said, I would describe myself as a Phenomenological Investigator and Maker of Things. " +
-    " I'm currently looking for opportunities to study paradigms of producing affect in the intersections and fringes of new" +
-    " media interfaces. Working in AI research for over two years now, I have an appreciation and understanding for the capabilities of advancing computation" +
-    ". I am now looking to leave research in the theoretical, studying this uncharted landscape of interaction through an applied approach." +
+export const bio25=" " +
+    " I like to investigate Phenomenology through the Making of Things. Often I use software but I also love mixed mediums. " +
+    " I'm currently looking for opportunities to study paradigms of producing affect at the intersections and fringes of new" +
+    " media interfaces. Working in AI research for over two years, I have an appreciation and understanding of" +
+    " the capabilities of advancing computation" +
+    ". I am excited to expand beyond a formal experimental process to study the uncharted landscape of new media interaction through an applied approach." +
     " My goal is to democratize " +
-    "technology to empower voices left unheard, normalize vulnerability in communication and broaden the space of human expressiveness to create a more unified world.";
+    "technology to empower suppressed voices, normalize vulnerability in communication and broaden the space of human expressiveness to create a more unified world.";
 export const bio3=    "  ";
 export const bio4= " Please reach out if you are interesting in collaborating. Wishing you a sound mind during these unprecedented times.";
 export const bio5= " - MK Skitka";

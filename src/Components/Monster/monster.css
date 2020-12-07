@@ -1,0 +1,7 @@
+.monster {
+    width: 10em;
+    height: 14em;
+    position: absolute;
+    right:100px;
+    bottom: 100%;
+}

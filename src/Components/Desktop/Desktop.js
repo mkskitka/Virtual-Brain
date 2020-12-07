@@ -38,7 +38,7 @@ function Desktop() {
                 }, 1000, function () {
                     $("#record-player").animate(
                         {
-                            top: "-=200"
+                            top: "-=260"
                         }
                     )
                 }
@@ -49,7 +49,7 @@ function Desktop() {
                 }, 1300, function () {
                     $("#about").animate(
                         {
-                            top: "-=100"
+                            top: "-=140"
                         }
                     )
                 }
@@ -60,7 +60,7 @@ function Desktop() {
                 }, 1500,  function () {
                     $("#terminal").animate(
                         {
-                            top: "+=100"
+                            top: "+=140"
                         }
                     )
                 }
@@ -110,17 +110,17 @@ function Desktop() {
             </Draggable>
             <Draggable>
                 <div id="projects" className={"Desktop-Icon"}>
-                    <div style={{top: '70px', position: 'absolute'}}>PROJECTS</div>
+                    <div style={{top: '100%', position: 'absolute'}}>PROJECTS</div>
                 </div>
             </Draggable>
             <Draggable>
                 <div id="about" className="Desktop-Icon">
-                    <div style={{top: '70px', position: 'absolute'}}>ABOUT</div>
+                    <div style={{top: '100%', position: 'absolute'}}>ABOUT</div>
                 </div>
             </Draggable>
             <Draggable>
                 <div id="personal_statement" className="Desktop-Icon">
-                    <div style={{top: '70px', position: 'absolute'}}>MIT MEDIA LAB PERSONAL STATEMENT</div>
+                    <div style={{top: '100%', position: 'absolute'}}>MIT MEDIA LAB PERSONAL STATEMENT</div>
                 </div>
             </Draggable>
 

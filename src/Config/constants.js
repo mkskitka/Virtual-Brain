@@ -43,19 +43,19 @@ const about_style = {
     zIndex: 2,
 }
 
-const video_window_template = {
+let video_window_template = {
     title: "",
     drag_disabled: false,
     bottom_bar: false,
+    video_aspect_ratio: true,
     style: {
         borderColor: "#0055ff",
         color: "#0055ff",
-        width: '600px',
-        height: '340px',
+        width: '.50',
         position: "absolute",
         overflow: "hidden",
-        left: "40%",
-        top: "30%"
+        left: "32%",
+        top: "15%"
     },
     bodyStyle: {},
 
@@ -65,14 +65,15 @@ const picture_window_template = {
     title: "",
     drag_disabled: false,
     bottom_bar: false,
+    video_aspect_ratio: true,
     style: {
         borderColor: "#0055ff",
         color: "#0055ff",
         position: "absolute",
         overflow: "hidden",
-        width: '300px',
+        width: '.3',
         height: '200px',
-        left: "20%",
+        left: "25%",
         top: "60%"
     },
     bodyStyle: {width: "100%", height: "100%"},
@@ -82,7 +83,7 @@ const picture_window_template = {
 const video_content_template = {
     width: 600,
     height: 400,
-    top: -30,
+    percent_of_screen_width: .55,
     header: true,
 }
 
@@ -124,7 +125,7 @@ export const VIDEO_CONFIGS = {
     "WB": [],
 }
 
-export const WINDOW_CONFIGS = {
+export let WINDOW_CONFIGS = {
     "projects": [
         {
             title: "",

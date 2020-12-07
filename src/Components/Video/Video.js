@@ -1,6 +1,7 @@
 import React, { useEffect} from 'react';
 import { Player, ControlBar} from 'video-react';
 import "./Video.css"
+import $ from "jquery";
 
 import {useSelector} from "react-redux";
 
@@ -9,9 +10,9 @@ function Video(props) {
     const active_project = useSelector(state => state.active_project)
     const {config} = props
 
-    useEffect(() => {
-
-    }, [active_project])
+    let width = $(window).width() * config.percent_of_screen_width
+    let height = width * .66;
+    let top = -height * .08 + 'px';
 
     return (
         <div className={"Video"}
@@ -19,7 +20,7 @@ function Video(props) {
                  overflow: "hidden",
                  position: "absolute",
                  left: config.left,
-                 top: config.top,
+                 top: top,
              }}>
             <div>
                 <Player
@@ -28,9 +29,9 @@ function Video(props) {
                     playsInline={false}
                     loop={true}
                     fluid={false}
-                    videoHeight={500}
-                    width={config.width}
-                    height={config.height}
+                    videoHeight={height}
+                    width={width}
+                    height={height}
                     aspectRatio={"16:9"}
                 >
                     <source src={config.src_path} />
