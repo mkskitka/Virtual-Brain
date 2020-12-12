@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import Draggable from "react-draggable";
-import { REMOVE_DIRECTORY_WINDOW } from "../../Redux/actions";
+import {CHANGE_ACTIVE_PROJECT, REMOVE_DIRECTORY_WINDOW} from "../../Redux/actions";
 import './Window.css'
 import {useDispatch, useSelector} from "react-redux";
 import $ from 'jquery'
@@ -15,8 +15,8 @@ function Window(props) {
 
     let { config, content, id } = props;
     const dispatch = useDispatch()
-    const active_windows = useSelector(state => state.active_windows)
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    const isMobile = useMediaQuery({ maxWidth: 767 })
     const drag_disabled =  isTabletOrMobile;
 
     function closeWindow(e) {
@@ -29,11 +29,21 @@ function Window(props) {
 
     let width = config.style.width;
     let height = config.style.height;
-    let top = 0;
+
+    useEffect(() => {
+    }, [])
 
     if(config.video_aspect_ratio) {
-      width = $(window).width() * width * 1.1;
-      height = width * .55;
+      if (isMobile) {
+          width = "96%";
+          height = $(window).width() * .55;
+          config.style.left = "2%";
+          config.style.top = "65%";
+      }
+      else {
+          width = $(window).width() * width * 1.1;
+          height = width * .55;
+      }
     }
 
     return (

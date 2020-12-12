@@ -108,9 +108,11 @@ function Desktop() {
             <Draggable disabled={icon_drag_disabled}>
                 <div id="record-player" className={"Desktop-Icon"}/>
             </Draggable>
-            <Draggable disabled={icon_drag_disabled}>
-                <div id="terminal" className={"Desktop-Icon"}/>
-            </Draggable>
+            { !isTabletOrMobile &&
+                <Draggable disabled={icon_drag_disabled}>
+                    <div id="terminal" className={"Desktop-Icon"}/>
+                </Draggable>
+            }
             <Draggable disabled={icon_drag_disabled}>
                 <div id="projects" className={"Desktop-Icon"}>
                     <div style={{top: '100%', position: 'absolute'}}>PROJECTS</div>

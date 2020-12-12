@@ -5,6 +5,7 @@ import { CHANGE_ACTIVE_PROJECT } from "../../Redux/actions";
 import "./ProjectDirectory.css"
 import $ from "jquery"
 import _ from "lodash"
+import {useMediaQuery} from "react-responsive";
 let dir_height;
 let dir_width;
 let range
@@ -17,11 +18,15 @@ function ProjectDirectory(props) {
     const config = props.config;
     const active_project = useSelector(state => state.active_project);
     const [projectCategory, setProjectCategory] = useState('ALL');
+    const isMobile = useMediaQuery({ maxWidth: 767 })
 
 
     useEffect(() => {
+        $(".Project-Wrapper").fadeTo(1000, 1);
+        if(isMobile) {
+            $(".Window-projects").css("width", "96%").css("height", '98%').css("top", "1%").css("overflowY", "hidden").css("zIndex", "2")
 
-         $(".Project-Wrapper").fadeTo(1000, 1);
+        }
         return function cleanup() { dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])
 
@@ -121,16 +126,6 @@ function ProjectDirectory(props) {
         $("#" + active_project).animate({
             left: 0,
         }, 800)
-        $(".Window-projects").animate({
-            height: $(window).height() * .9,
-        }, 1000, function () {
-            $(".Window-projects").css("height", "90%");
-        })
-        $(".Window-projects").animate({
-            width:  $(window).width() * .27
-        }, 1000, function () {
-            $(".Window-projects").css("width", "27%");
-        })
 
         for(let i=0; i<projects.length; i++) {
             let p = projects[i];
@@ -149,6 +144,16 @@ function ProjectDirectory(props) {
 
             }
         }
+        /* *********************************************************************
+        *                                                                      *
+        *                      MOBILE RESPONSIVENESS                           *
+        *                                                                      *
+        ********************************************************************* */
+        if (isMobile) {
+            $(".Window-projects").animate({
+                height: dir_height,
+            }, 3000);
+        }
     }
 
     function projectSelectAnimation(active_project) {
@@ -159,26 +164,14 @@ function ProjectDirectory(props) {
         $(".Project-Title").finish()
         $(".Project-Link").finish()
         $(".Project-Menu").css("zIndex", "-1")
-
         $(".Writeup").fadeTo(0, 0);
-
         $(".Window-Body").css("overflow", "hidden")
         $(".Project-Menu").css("opacity", "0")
 
         let project = _.find(projects, {id:active_project})
-        $(".Window-projects").animate({
-            height: project.writeup_y,
-        }, 1000)
-        if(typeof project.writeup_x !== "undefined") {
-            $(".Window-projects").animate({
-                width: project.writeup_x,
-            }, 1000)
-        }
 
         for(let i=0; i<projects.length; i++) {
             let p = projects[i];
-
-
             $("#" + p.id).finish()
             if(p.id !== active_project) {
                 $("#" + p.id).animate({
@@ -222,6 +215,16 @@ function ProjectDirectory(props) {
         }
         dir_height = $(".Window-projects").height()
         dir_width = $(".Window-projects").width()
+        /* *********************************************************************
+        *                                                                      *
+        *                      MOBILE RESPONSIVENESS                           *
+        *                                                                      *
+        ********************************************************************* */
+        if (isMobile) {
+            $(".Window-projects").animate({
+                height: dir_height/1.55,
+            }, 3000);
+        }
      }
 }
 

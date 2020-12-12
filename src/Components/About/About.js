@@ -39,9 +39,9 @@ function About() {
         setTimeout(function(){changeBrightness(newOpacity)}, after)
     }
     return (
-        <div className={"About-Wrapper"}>
+        <div className={"About-Wrapper"} >
          <div className={"Profile-Image"}/>
-        <div className={"About-Content"}>
+        <div className={"About-Content"} >
             <div className={"bio"}>{bio0}</div>
             <div className={"bio"}>{bio1}</div>
             <div className={"bio"}>{bio2}</div>

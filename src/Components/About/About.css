@@ -8,6 +8,7 @@
     position: absolute;
     top: 0px;
     z-index: 2;
+
 }
 
 .About-Wrapper{
@@ -21,25 +22,15 @@
     font-size: 2em;
     font-weight: lighter;
     text-align: left;
-    padding: 50px;
     position: relative;
+    padding: 0em !important;
 }
 
 .bio {
-    margin: 50px;
     position: relative;
+    margin: 2.5em !important;
 }
 
-#virtual-brain-bigtext{
-    font-size: 100px;
-    visibility: hidden;
-    position: absolute;
-}
-
-#adj1-bigtext {
-    font-size: 100px;
-    visibility: hidden;
-}
 
 #adj2-bigtext {
     font-size: 100px;

@@ -7,15 +7,10 @@ import record_sketch from './Record';
 import ReactAudioPlayer from 'react-audio-player';
 import {useMediaQuery} from "react-responsive";
 
-const record_style = {
+let record_style = {
     bottom:"50px",
     right: "50px",
     position: "absolute",
-}
-const record_close_button_style = {
-    right:'-8px',
-    top: '60px',
-    position: 'absolute',
 }
 
 function RecordWrapper() {
@@ -24,13 +19,16 @@ function RecordWrapper() {
     const active_song = useSelector(state=> state.active_song)
     const [stop, setStop] = useState(false);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    const isMobile = useMediaQuery({ maxWidth: 767 })
     const drag_disabled =  isTabletOrMobile;
+
+    if (isMobile) {
+        record_style.right = '0px';
+    }
 
     return (
         <Draggable disabled={drag_disabled}>
             <div id="record-wrapper" style={record_style}>
-                <div id="close-button" style={record_close_button_style}
-                     onClick={(e) => this.closeWindow(e, "record_player")}/>
                 <div>
                     <div>
                         <P5Wrapper song={active_song} stop={stop} sketch={record_sketch}/>

@@ -34,8 +34,8 @@ const terminal_style = {
 const about_style = {
     borderColor: '#00ffff',
     color:  '#00ffff',
-    width: 'calc(100% - 6px)',
-    height: 'calc(100% - 6px)',
+    width: '100%',
+    height: '100%',
     position: "absolute",
     left: "0%",
     padding: "0px",
@@ -167,7 +167,7 @@ export let WINDOW_CONFIGS = {
             bodyStyle: {overflow: "scroll", height: "100%", position: "relative"},
             header: false}
     ],
-    "AP": [video_window_template, picture_window_template],
+    "AP": [picture_window_template, {...video_window_template, style:{...video_window_template.style, top: '5%', left: '40%'}}],
     "AR": [video_window_template],
     "C": [video_window_template],
     "VV": [video_window_template],
@@ -194,9 +194,11 @@ export const WINDOW_CONTENT = {
     "terminal": [<TerminalT/>],
     "about": [<About/>],
     "personal_statement": [<PersonalStatement/>],
-    "AP": [<Video config={VIDEO_CONFIGS["AP"][0]} id={"AP+1"}/>,
+    "AP": [
         <div style={{...picture_content_template,
-            'backgroundImage':"url(/astropunk-mockup.png)"}} id={"AP+2"}/>],
+            'backgroundImage':"url(/astropunk-mockup.png)"}} id={"AP+2"}/>,
+        <Video config={VIDEO_CONFIGS["AP"][0]} id={"AP+1"}/>
+        ],
     "AR": [<Video config={VIDEO_CONFIGS["AR"][0]} id={"AR"}/>],
     "C": [<Video config={VIDEO_CONFIGS["C"][0]} id={"C"}/>],
     "VV": [<Video config={VIDEO_CONFIGS["VV"][0]} id={"VV"}/>],
