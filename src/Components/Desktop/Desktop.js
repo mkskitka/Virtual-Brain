@@ -7,6 +7,7 @@ import Monster from '../Monster/monster';
 import Window from '../Window/Window';
 import ActiveProject from '../ActiveProject/ActiveProject'
 import MentalXTech from "../MentalXTech/MentalXTech";
+import { useMediaQuery } from 'react-responsive';
 
 import {ADD_DIRECTORY_WINDOW, OPEN_CLOSE_RECORD} from "../../Redux/actions"
 import { WINDOW_CONFIGS, WINDOW_CONTENT } from '../../Config/constants'
