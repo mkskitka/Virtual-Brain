@@ -3,8 +3,8 @@ import Draggable from "react-draggable";
 import { REMOVE_DIRECTORY_WINDOW } from "../../Redux/actions";
 import './Window.css'
 import {useDispatch, useSelector} from "react-redux";
-
 import $ from 'jquery'
+import {useMediaQuery} from "react-responsive";
 
 const defaultConfigs = {
     "xH": 25, // x button height
@@ -16,15 +16,13 @@ function Window(props) {
     let { config, content, id } = props;
     const dispatch = useDispatch()
     const active_windows = useSelector(state => state.active_windows)
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    const drag_disabled =  isTabletOrMobile;
 
     function closeWindow(e) {
         console.log("closing window!")
         dispatch({type: REMOVE_DIRECTORY_WINDOW, id: id});
     }
-
-    useEffect(function() {
-    }, [])
-
 
     let xH = getV(config, "xH")
     let xS = getV(config, "xS")
@@ -40,7 +38,7 @@ function Window(props) {
 
     return (
 
-        <Draggable disabled={config.drag_disabled}>
+        <Draggable disabled={config.drag_disabled || drag_disabled}>
             <div className={"Window Window-"+id} key={"Window"+id} style={{...config.style, width: width, height: height}}>
                     <div className={"Window-Header"} id={"Window-Header-"+id} style={(config.header) ? null : {height: '0px'} }>
                         <div onClick={closeWindow} className={"Close-Button"} style={{width: xH, height: xH, zIndex: 1}}></div>

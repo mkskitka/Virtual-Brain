@@ -5,6 +5,7 @@ import {useSelector} from "react-redux";
 import P5Wrapper from 'react-p5-wrapper';
 import record_sketch from './Record';
 import ReactAudioPlayer from 'react-audio-player';
+import {useMediaQuery} from "react-responsive";
 
 const record_style = {
     bottom:"50px",
@@ -17,22 +18,16 @@ const record_close_button_style = {
     position: 'absolute',
 }
 
-
-
 function RecordWrapper() {
 
 
     const active_song = useSelector(state=> state.active_song)
     const [stop, setStop] = useState(false);
-
-    useEffect(function() {
-        console.log("record mounting")
-    }, [])
-
-
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    const drag_disabled =  isTabletOrMobile;
 
     return (
-        <Draggable>
+        <Draggable disabled={drag_disabled}>
             <div id="record-wrapper" style={record_style}>
                 <div id="close-button" style={record_close_button_style}
                      onClick={(e) => this.closeWindow(e, "record_player")}/>

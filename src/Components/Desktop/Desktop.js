@@ -23,15 +23,17 @@ function Desktop() {
     const active_windows = useSelector(state => state.active_windows);
     const active_project = useSelector(state => state.active_project)
     const record_open = useSelector(state=> state.record_open);
+    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    const icon_drag_disabled =  isTabletOrMobile;
 
 
     useEffect(() => {
-        openFolder()
-
+        onClickCallbacks()
+        responsiveCallbacks()
     }, [])
 
     useEffect(() => {
-        if(FIRST_ENGAGEMENT && !FIRST_ENGAGEMENT_ANIMATION) {
+        if(FIRST_ENGAGEMENT && !FIRST_ENGAGEMENT_ANIMATION && !isTabletOrMobile) {
             FIRST_ENGAGEMENT_ANIMATION= true
             $("#record-player").animate(
                 {
@@ -103,23 +105,23 @@ function Desktop() {
 
             {/* Folders */}
 
-            <Draggable>
+            <Draggable disabled={icon_drag_disabled}>
                 <div id="record-player" className={"Desktop-Icon"}/>
             </Draggable>
-            <Draggable>
+            <Draggable disabled={icon_drag_disabled}>
                 <div id="terminal" className={"Desktop-Icon"}/>
             </Draggable>
-            <Draggable>
+            <Draggable disabled={icon_drag_disabled}>
                 <div id="projects" className={"Desktop-Icon"}>
                     <div style={{top: '100%', position: 'absolute'}}>PROJECTS</div>
                 </div>
             </Draggable>
-            <Draggable>
+            <Draggable disabled={icon_drag_disabled}>
                 <div id="about" className="Desktop-Icon">
                     <div style={{top: '100%', position: 'absolute'}}>ABOUT</div>
                 </div>
             </Draggable>
-            <Draggable>
+            <Draggable disabled={icon_drag_disabled}>
                 <div id="personal_statement" className="Desktop-Icon">
                     <div style={{top: '100%', position: 'absolute'}}>MIT MEDIA LAB PERSONAL STATEMENT</div>
                 </div>
@@ -173,28 +175,37 @@ function Desktop() {
         dispatch({type: ADD_DIRECTORY_WINDOW, id: id})
     }
 
-    function openFolder() {
+    function responsiveCallbacks() {
+        if (isTabletOrMobile) {
+            $("#record-player").css("left", "75%").css("top", "5%")
+            $("#about").css("left", "80%").css("top", "50%")
+            $("#terminal").css("left", "15%").css("top", "70%")
+            $("#projects").css("left", "30%").css("top", "30%")
+        }
+    }
+
+    function onClickCallbacks() {
         var isDragging = false;
-            $(".Desktop-Icon")
-                .mousedown(function (e) {
-                    isDragging = false
-                    setTimeout(function () {
-                        isDragging = true;
-                    }, 500)
-                })
         $(".Desktop-Icon")
-            .mouseup(function (e) {
-                if (!isDragging) {
-                    let id = e.target.id;
-                    FIRST_ENGAGEMENT = true;
-                    if(id === "projects" || id === "terminal" || id == "about" || id=="personal_statement") {
-                        openWindow(id)
-                    }
-                    if(id === "record-player") {
-                        dispatch({type: OPEN_CLOSE_RECORD})
-                    }
+            .mousedown(function (e) {
+                isDragging = false
+                setTimeout(function () {
+                    isDragging = true;
+                }, 500)
+            })
+    $(".Desktop-Icon")
+        .mouseup(function (e) {
+            if (!isDragging) {
+                let id = e.target.id;
+                FIRST_ENGAGEMENT = true;
+                if(id === "projects" || id === "terminal" || id == "about" || id=="personal_statement") {
+                    openWindow(id)
                 }
-            });
+                if(id === "record-player") {
+                    dispatch({type: OPEN_CLOSE_RECORD})
+                }
+            }
+        });
     }
 }
 
