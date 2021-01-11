@@ -9,9 +9,15 @@ import ActiveProject from '../ActiveProject/ActiveProject'
 import MentalXTech from "../MentalXTech/MentalXTech";
 import { useMediaQuery } from 'react-responsive';
 
-import {ADD_DIRECTORY_WINDOW, OPEN_CLOSE_RECORD} from "../../Redux/actions"
+import {ADD_DIRECTORY_WINDOW, CHANGE_ACTIVE_PROJECT, OPEN_CLOSE_RECORD, ROUTE_TO_PROJECT} from "../../Redux/actions"
 import { WINDOW_CONFIGS, WINDOW_CONTENT } from '../../Config/constants'
 import RecordWrapper from "../Record/RecordWrapper";
+
+import ReactDOM from "react-dom";
+import {
+    useLocation
+} from "react-router-dom";
+
 
 let FIRST_ENGAGEMENT = false
 let FIRST_ENGAGEMENT_ANIMATION = false
@@ -26,6 +32,47 @@ function Desktop() {
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const icon_drag_disabled =  isTabletOrMobile;
 
+    let location = useLocation();
+
+    useEffect(() => {
+        console.log("location! ", location)
+        if(location.pathname == "/astropunk") {
+            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
+            dispatch({type: ROUTE_TO_PROJECT, project: "AP"})
+        }
+        if(location.pathname == "/sheldon") {
+            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
+            dispatch({type: ROUTE_TO_PROJECT, project: "SH"})
+        }
+        if(location.pathname == "/violinsvibrato") {
+            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
+            dispatch({type: ROUTE_TO_PROJECT, project: "VV"})
+        }
+        if(location.pathname == "/andyandthecars") {
+            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
+            dispatch({type: ROUTE_TO_PROJECT, project: "AC"})
+        }
+        if(location.pathname == "/thecreature") {
+            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
+            dispatch({type: ROUTE_TO_PROJECT, project: "C"})
+        }
+        if(location.pathname == "/sketches") {
+            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
+            dispatch({type: ROUTE_TO_PROJECT, project: "GD"})
+        }
+        if(location.pathname == "/virtualbrain") {
+            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
+            dispatch({type: ROUTE_TO_PROJECT, project: "VB"})
+        }
+        if(location.pathname == "/mentalhealthxtech") {
+            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
+            dispatch({type: ROUTE_TO_PROJECT, project: "MXT"})
+        }
+        if(location.pathname == "/animationreel") {
+            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
+            dispatch({type: ROUTE_TO_PROJECT, project: "AR"})
+        }
+    }, [location]);
 
     useEffect(() => {
         onClickCallbacks()
@@ -172,11 +219,6 @@ function Desktop() {
 
     }
 
-    function openWindow(id) {
-        console.log("opening directory: ", id)
-        dispatch({type: ADD_DIRECTORY_WINDOW, id: id})
-    }
-
     function responsiveCallbacks() {
         if (isTabletOrMobile) {
             $("#record-player").css("left", "75%").css("top", "5%")
@@ -201,7 +243,7 @@ function Desktop() {
                 let id = e.target.id;
                 FIRST_ENGAGEMENT = true;
                 if(id === "projects" || id === "terminal" || id == "about" || id=="personal_statement") {
-                    openWindow(id)
+                    dispatch({type: ADD_DIRECTORY_WINDOW, id: id})
                 }
                 if(id === "record-player") {
                     dispatch({type: OPEN_CLOSE_RECORD})

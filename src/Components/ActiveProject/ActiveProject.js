@@ -20,6 +20,8 @@ function ActiveProject(props) {
 
 
     useEffect(() => {
+        setTimeout(() => {
+
 
         if(active_project !== null) {
             let videos = VIDEO_CONFIGS[active_project];
@@ -94,7 +96,9 @@ function ActiveProject(props) {
                 opacity: "1"
             }, 100);
         }
-    }, [active_project])
+        }, 1000);
+    }, [active_project]);
+
 
 
     return (

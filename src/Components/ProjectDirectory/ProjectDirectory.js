@@ -17,15 +17,21 @@ function ProjectDirectory(props) {
     const dispatch = useDispatch()
     const config = props.config;
     const active_project = useSelector(state => state.active_project);
+    const route_to_project = useSelector(state => state.route_to_project);
     const [projectCategory, setProjectCategory] = useState('ALL');
     const isMobile = useMediaQuery({ maxWidth: 767 })
 
+    useEffect( () => {
+        if(route_to_project !== null) {
+            projectSelectAnimation(route_to_project)
+        }
+        }, [route_to_project]
+    )
 
     useEffect(() => {
         $(".Project-Wrapper").fadeTo(1000, 1);
         if(isMobile) {
             $(".Window-projects").css("width", "96%").css("height", '98%').css("top", "1%").css("overflowY", "hidden").css("zIndex", "2")
-
         }
         return function cleanup() { dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])

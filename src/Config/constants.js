@@ -7,6 +7,10 @@ import About from "../Components/About/About";
 import PersonalStatement from "../Components/PersonalStatement/About";
 
 
+/*
+    Directions to add new project to project menu
+ */
+
 // TEAL #00ffff
 
 const project_style = {
@@ -16,7 +20,7 @@ const project_style = {
     minWidth: "350px",
     height: "90%",
     position: "absolute",
-    left: "2%",
+    left: "4%",
     top: "4%",
 }
 
@@ -81,8 +85,6 @@ const picture_window_template = {
 };
 
 const video_content_template = {
-    width: 600,
-    height: 400,
     percent_of_screen_width: .55,
     header: true,
 }
@@ -95,6 +97,30 @@ const picture_content_template = {
 }
 
 export const VIDEO_CONFIGS = {
+    "AC": [{
+            ...video_content_template,
+            percent_of_screen_width: ".2",
+            src_path: './videos/girl.mp4',
+            title: "",
+        },
+        {
+            ...video_content_template,
+            percent_of_screen_width: ".2",
+            src_path: './videos/piano.mp4',
+            title: "",
+        },
+        {
+            ...video_content_template,
+            percent_of_screen_width: ".2",
+            src_path: './videos/cars.mp4',
+            title: "",
+        },
+        {
+            ...video_content_template,
+            percent_of_screen_width: ".55",
+            src_path: './videos/Andy.mp4',
+            title: "",
+        }],
     "AP": [{
         ...video_content_template,
         src_path: './videos/AstropunkReel.mov',
@@ -171,6 +197,10 @@ export let WINDOW_CONFIGS = {
     "AR": [video_window_template],
     "C": [video_window_template],
     "VV": [video_window_template],
+    "AC": [{...video_window_template, style:{...video_window_template.style, top: '10%', left: '35%', width: ".15" }},
+        {...video_window_template, style:{...video_window_template.style, top: '10%', left: '54%', width: ".15"}},
+        {...video_window_template, style:{...video_window_template.style, top: '10%', left: '73%', width: ".15"}},
+        {...video_window_template, style:{...video_window_template.style, top: '30%', left: '35%', width: ".5"}}],
     "PersonalStatement": [{ ...picture_window_template,
                             style: {
                                 ...picture_window_template.style,
@@ -194,6 +224,10 @@ export const WINDOW_CONTENT = {
     "terminal": [<TerminalT/>],
     "about": [<About/>],
     "personal_statement": [<PersonalStatement/>],
+    "AC": [
+        <Video config={VIDEO_CONFIGS["AC"][0]} id={"AC+1"}/>, <Video config={VIDEO_CONFIGS["AC"][1]} id={"AC+2"}/>,
+        <Video config={VIDEO_CONFIGS["AC"][2]} id={"AC+3"}/>, <Video config={VIDEO_CONFIGS["AC"][3]} id={"AC+4"}/>
+    ],
     "AP": [
         <div style={{...picture_content_template,
             'backgroundImage':"url(/astropunk-mockup.png)"}} id={"AP+2"}/>,
@@ -213,12 +247,19 @@ export const WINDOW_CONTENT = {
 
 export const projects = [
     {
-        id: "IE",
-        title: "Isolation Experiments",
-        description: "Created in Quarentine",
-        writeup: "coming soon",
-        tags: ["NEW MEDIA", "HCI"]
+            id: "AC",
+            title: "Andy and the Cars",
+            description: "Andy Warhol Inspired Generative Graphics",
+            writeup: "testing",
+            tags: ["NEW MEDIA"]
     },
+    // {
+    //     id: "IE",
+    //     title: "Isolation Experiments",
+    //     description: "Created in Quarentine",
+    //     writeup: "coming soon",
+    //     tags: ["NEW MEDIA", "HCI"]
+    // },
     {
         id: "AP",
         title: "Astropunk",
@@ -277,20 +318,20 @@ export const projects = [
         writeup: generative_design_bio,
         tags: ["NEW MEDIA", "HCI"]
     },
-    {
-        id: "MD",
-        title: "ML Doodles",
-        description: "Finding Trends in the Subconcious",
-        writeup: generative_design_bio,
-        tags: ["NEW MEDIA", "AI"]
-    },
-    {
-        id: "CR",
-        title: "Canopy Room on The Run",
-        description: "Reimagining a physical favorite,virtually",
-        writeup: generative_design_bio,
-        tags: ["NEW MEDIA", "HCI"]
-    },
+    // {
+    //     id: "MD",
+    //     title: "ML Doodles",
+    //     description: "Finding Trends in the Subconcious",
+    //     writeup: generative_design_bio,
+    //     tags: ["NEW MEDIA", "AI"]
+    // },
+    // {
+    //     id: "CR",
+    //     title: "Canopy Room on The Run",
+    //     description: "Reimagining a physical favorite,virtually",
+    //     writeup: generative_design_bio,
+    //     tags: ["NEW MEDIA", "HCI"]
+    // },
     // {
     //     id: "WB",
     //     title: "Web Design and Development",

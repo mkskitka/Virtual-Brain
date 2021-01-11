@@ -1,6 +1,6 @@
 import * as _ from "lodash";
 import { ADD_DIRECTORY_WINDOW, REMOVE_DIRECTORY_WINDOW, OPEN_CLOSE_TERMINAL, CHANGE_ACTIVE_PROJECT,
-    CHANGE_ACTIVE_SONG, OPEN_CLOSE_RECORD } from "./actions"
+    CHANGE_ACTIVE_SONG, OPEN_CLOSE_RECORD, ROUTE_TO_PROJECT } from "./actions"
 
 const initialState = {
     active_windows:[],
@@ -8,6 +8,7 @@ const initialState = {
     record_open: false,
     active_project: null,
     active_song:"heart.m4a",
+    route_to_project: null,
 }
 
 function brainReducer(state = initialState, action) {
@@ -43,6 +44,10 @@ function brainReducer(state = initialState, action) {
         case CHANGE_ACTIVE_PROJECT:
             return Object.assign({}, state, {
                 active_project: action.project,
+            })
+        case ROUTE_TO_PROJECT:
+            return Object.assign({}, state, {
+                route_to_project: action.project,
             })
         default:
             return state
