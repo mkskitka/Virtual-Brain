@@ -145,9 +145,12 @@ function Desktop() {
             <div id={"contact-bar"}>
                 <a href="https://github.com/mkskitka"><img alt='github icon' className={"Icon Git"} src={"git.png"}/></a>
                 {/*<img alt='mail icon' className={"Icon Mail"} src={"mail.png"}/>*/}
-                <img alt='instagram icon' className={"Icon"} src={"instagram2.png"}/>
-                <a href='https://www.linkedin.com/in/mary-kate-skitka-6b6051135/'><img alt='Linked In Icon' className={"Icon Li"}
-                                                                                       src={"linkedin.png"}/></a>
+                <a href='https://www.instagram.com/the_dirty_doodle/'>
+                    <img alt='instagram icon' className={"Icon"} src={"instagram2.png"}/>
+                </a>
+                <a href='https://www.linkedin.com/in/mary-kate-skitka-6b6051135/'>
+                    <img alt='Linked In Icon' className={"Icon Li"} src={"linkedin.png"}/>
+                </a>
             </div>
 
             {/* Folders */}
@@ -155,11 +158,11 @@ function Desktop() {
             <Draggable disabled={icon_drag_disabled}>
                 <div id="record-player" className={"Desktop-Icon"}/>
             </Draggable>
-            { !isTabletOrMobile &&
-                <Draggable disabled={icon_drag_disabled}>
-                    <div id="terminal" className={"Desktop-Icon"}/>
-                </Draggable>
-            }
+            {/*{ !isTabletOrMobile &&*/}
+            {/*    <Draggable disabled={icon_drag_disabled}>*/}
+            {/*        <div id="terminal" className={"Desktop-Icon"}/>*/}
+            {/*    </Draggable>*/}
+            {/*}*/}
             <Draggable disabled={icon_drag_disabled}>
                 <div id="projects" className={"Desktop-Icon"}>
                     <div style={{top: '100%', position: 'absolute'}}>PROJECTS</div>
@@ -168,11 +171,6 @@ function Desktop() {
             <Draggable disabled={icon_drag_disabled}>
                 <div id="about" className="Desktop-Icon">
                     <div style={{top: '100%', position: 'absolute'}}>ABOUT</div>
-                </div>
-            </Draggable>
-            <Draggable disabled={icon_drag_disabled}>
-                <div id="personal_statement" className="Desktop-Icon">
-                    <div style={{top: '100%', position: 'absolute'}}>MIT MEDIA LAB PERSONAL STATEMENT</div>
                 </div>
             </Draggable>
 

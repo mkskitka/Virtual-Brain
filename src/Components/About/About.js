@@ -61,15 +61,11 @@ export const bio1= "Hi, I'm MK :)";
 export const bio2 =  "Welcome to my " +
 "   ~ VIRTUAL BRAIN ~"
 export const bio25=" " +
-    " I like to investigate Phenomenology through the Making of Things. Often I use software but I also love mixed mediums. " +
-    " I'm currently looking for opportunities to study paradigms of producing affect at the intersections and fringes of new" +
-    " media interfaces. Working in AI research for over two years, I have an appreciation and understanding of" +
-    " the capabilities of advancing computation" +
-    ". I am excited to expand beyond a formal experimental process to study the uncharted landscape of new media interaction through an applied approach." +
-    " My goal is to democratize " +
-    "technology to empower suppressed voices, normalize vulnerability in communication and broaden the space of human expressiveness to create a more unified world.";
+    " I like to investigate Phenomenology through the Making of Things. Often I use software but I am also exploring other mediums. " +
+    " I'm currently looking for opportunities to study paradigms of producing affect at the intersections of new" +
+    " media. ";
 export const bio3=    "  ";
-export const bio4= " Please reach out if you are interesting in collaborating. Wishing you a sound mind during these unprecedented times.";
+export const bio4= " Please reach out if you are interesting in collaborating. ";
 export const bio5= " - MK Skitka";
 
 

@@ -4,7 +4,7 @@ import TerminalT from "../Components/Terminal/Terminal";
 import {astropunk_bio, sheldon_bio, music64_bio, creature_bio, mental_health_tech_bio, animation_bio, generative_design_bio} from "./writeups";
 import Video from "../Components/Video/Video";
 import About from "../Components/About/About";
-import PersonalStatement from "../Components/PersonalStatement/About";
+import PersonalStatement from "../Components/PersonalStatement(Unused)/About";
 
 
 /*
@@ -246,13 +246,13 @@ export const WINDOW_CONTENT = {
 
 
 export const projects = [
-    {
-            id: "AC",
-            title: "Andy and the Cars",
-            description: "Andy Warhol Inspired Generative Graphics",
-            writeup: "testing",
-            tags: ["NEW MEDIA"]
-    },
+    // {
+    //         id: "AC",
+    //         title: "Andy and the Cars",
+    //         description: "Andy Warhol Inspired Generative Graphics",
+    //         writeup: "testing",
+    //         tags: ["NEW MEDIA"]
+    // },
     // {
     //     id: "IE",
     //     title: "Isolation Experiments",
@@ -275,14 +275,14 @@ export const projects = [
         tags: []
 
     },
-    {
-        id: "MXT",
-        title: "Mental Health X Tech",
-        description: "Reusable Human Data Visualization",
-        writeup: mental_health_tech_bio,
-        tags: ["HCI"]
-
-    },
+    // {
+    //     id: "MXT",
+    //     title: "Mental Health X Tech",
+    //     description: "Reusable Human Data Visualization",
+    //     writeup: mental_health_tech_bio,
+    //     tags: ["HCI"]
+    //
+    // },
     {
         id: "C",
         title: "The Creature",
@@ -304,20 +304,20 @@ export const projects = [
         writeup: music64_bio,
         tags: ["NEW MEDIA"]
     },
-    {
-        id: "GD",
-        title: "Generative Design",
-        description: "Code Art!",
-        writeup: generative_design_bio,
-        tags: ["NEW MEDIA"]
-    },
-    {
-        id: "VB",
-        title: "Virtual Brain",
-        description: "This Website",
-        writeup: generative_design_bio,
-        tags: ["NEW MEDIA", "HCI"]
-    },
+    // {
+    //     id: "GD",
+    //     title: "Generative Design",
+    //     description: "Code Art!",
+    //     writeup: generative_design_bio,
+    //     tags: ["NEW MEDIA"]
+    // },
+    // {
+    //     id: "VB",
+    //     title: "Virtual Brain",
+    //     description: "This Website",
+    //     writeup: generative_design_bio,
+    //     tags: ["NEW MEDIA", "HCI"]
+    // },
     // {
     //     id: "MD",
     //     title: "ML Doodles",

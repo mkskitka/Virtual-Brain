@@ -33,8 +33,10 @@
 }
 
 #projects{
-    right: 60%;
-    top: 40%;
+    /*right: 60%;*/
+    /*top: 40%;*/
+    top: 41%;
+    right: 52%;
     background-image: url("../../../public/folder.png");
 }
 
