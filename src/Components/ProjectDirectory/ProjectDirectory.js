@@ -31,7 +31,7 @@ function ProjectDirectory(props) {
     useEffect(() => {
         $(".Project-Wrapper").fadeTo(1000, 1);
         if(isMobile) {
-            $(".Window-projects").css("width", "96%").css("height", '98%').css("top", "1%").css("overflowY", "hidden").css("zIndex", "2")
+            $(".Window-projects").css("width", "100%");
         }
         return function cleanup() { dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])
@@ -93,7 +93,7 @@ function ProjectDirectory(props) {
                 <div className={"Project-Menu"}>
                     <div id={'ALL'} onClick={() => setProjectCategory("ALL")}className={"Selected"}>ALL</div>
                     <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>HCI</div>
-                    <div id={'NEW'}  onClick={() => setProjectCategory("NEW MEDIA")}>NEW MEDIA</div>
+                    <div id={'NEW'}  onClick={() => setProjectCategory("MOVING_IMG")}>VISUALS</div>
                     <div id={'AI'}  onClick={() => setProjectCategory("AI")}>AI</div>
                 </div>
 

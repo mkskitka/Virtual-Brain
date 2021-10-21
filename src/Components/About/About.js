@@ -11,7 +11,8 @@ function About() {
 
 
     useEffect(function() {
-        $(".Profile-Image").css("backgroundImage", "url(/color-static.gif)")
+        $(".About-Background").css("backgroundImage", "url(/color-static.gif)");
+        $(".About-Background").height($(".About-Content").height()+50);
         $(".About-Content").fadeOut(0);
         if(record_open) {
             let left =  $("#record-wrapper").offset().left
@@ -27,7 +28,6 @@ function About() {
         setTimeout(function () {
 
             $(".About-Content").fadeIn(500);
-            $(".Profile-Image").fadeOut(0)
             changeBrightness(.8);
         }, 1000)
     }, []);
@@ -40,33 +40,42 @@ function About() {
     }
     return (
         <div className={"About-Wrapper"} >
-         <div className={"Profile-Image"}/>
-        <div className={"About-Content"} >
-            <div className={"bio"}>{bio0}</div>
-            <div className={"bio"}>{bio1}</div>
-            <div className={"bio"}>{bio2}</div>
-            <div className={"bio"}>{bio25}</div>
-            <div className={"bio"}>{bio3}</div>
-            <div className={"bio"}>{bio4}</div>
-            <div className={"bio"}>{bio5}</div>
-        </div>
+            <div className={"About-Background"} />
+            <div className={"About-Content"} >
+                {Bio()}
+            </div>
         </div>
     );
 }
 
+function Bio() {
+    let content = [];
+    for(let i=0; i< bios.length; i++) {
+        content.push(<div className={"bio"}>{bios[i]}</div>)
+    }
+    return content;
+}
+
 export default About;
 
-export const bio0= "";
-export const bio1= "Hi, I'm MK :)";
-export const bio2 =  "Welcome to my " +
-"   ~ VIRTUAL BRAIN ~"
-export const bio25=" " +
-    " I like to investigate Phenomenology through the Making of Things. Often I use software but I am also exploring other mediums. " +
-    " I'm currently looking for opportunities to study paradigms of producing affect at the intersections of new" +
-    " media. ";
-export const bio3=    "  ";
-export const bio4= " Please reach out if you are interesting in collaborating. ";
-export const bio5= " - MK Skitka";
+const bios= [
+    "",
+    "Hi, I'm MK!",
+    "Welcome to my ~ VIRTUAL BRAIN ~ ",
+    "",
+    " I like to investigate phenomenology through the Making of Things. Often I am coding however " +
+    "you may also find me prototyping physical interfaces on 'the floor' at 370 Jay St. Brooklyn," +
+    " my current creative abode. " +
+    "I am pursuing my masters degree researching interactive communication technology with ITP NYU," +
+    " a department within the Tisch School of the Arts.",
+    "In my free time I enjoy teaching at the freshly minted ITP coding lab, " +
+    "rock climbing, and exploring my new living locale, Brooklyn." +
+    " Reach out if you want to chat cool project ideas or just have a good coffee shop rec for a gal" +
+    " who cherishes her daily cup of joe.",
+    "",
+    " - MK Skitka"
+];
+
 
 
 

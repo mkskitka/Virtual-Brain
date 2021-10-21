@@ -1,4 +1,4 @@
-.Profile-Image {
+.About-Background {
     /*background-image: url("/me.jpg");*/
     width: 100%;
     height: 100%;
@@ -8,13 +8,14 @@
     position: absolute;
     top: 0px;
     z-index: 2;
+    min-height: 100%;
 
 }
 
 .About-Wrapper{
    position: relative;
     width: 100%;
-    height: 100%;
+    height: 100% !important;
     z-index: 2;
     position: relative;
 }
@@ -23,12 +24,14 @@
     font-weight: lighter;
     text-align: left;
     position: relative;
-    padding: 0em !important;
+    padding-left: 6vw !important;
+    padding-right: 6vw !important;
+
+    /*margin: 6vw;*/
 }
 
 .bio {
     position: relative;
-    margin: 2.5em !important;
 }
 
 

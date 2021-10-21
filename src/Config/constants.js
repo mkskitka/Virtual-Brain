@@ -18,10 +18,10 @@ const project_style = {
     color:  "#0055ff",
     width: '27%',
     minWidth: "350px",
-    height: "90%",
+    height: "100%",
     position: "absolute",
-    left: "4%",
-    top: "4%",
+    left: "0px",
+    top: "0px",
 }
 
 const terminal_style = {
@@ -181,7 +181,7 @@ export let WINDOW_CONFIGS = {
             style: about_style,
             xH: 50,
             xS: 5,
-            bodyStyle: {overflow: "scroll", height: "100%", position: "relative"},
+            bodyStyle: {overflow: "auto", height: "100%", position: "relative"},
             header: false}
         ],
     "personal_statement" : [
@@ -251,21 +251,21 @@ export const projects = [
     //         title: "Andy and the Cars",
     //         description: "Andy Warhol Inspired Generative Graphics",
     //         writeup: "testing",
-    //         tags: ["NEW MEDIA"]
+    //         tags: ["MOVING_IMG"]
     // },
     // {
     //     id: "IE",
     //     title: "Isolation Experiments",
     //     description: "Created in Quarentine",
     //     writeup: "coming soon",
-    //     tags: ["NEW MEDIA", "HCI"]
+    //     tags: ["MOVING_IMG", "HCI"]
     // },
     {
         id: "AP",
         title: "Astropunk",
         description: "Generative Music Video Game",
         writeup: astropunk_bio,
-        tags: ["NEW MEDIA", "HCI", "AI"]
+        tags: ["MOVING_IMG", "HCI", "AI"]
     },
     {
         id: "AR",
@@ -288,49 +288,49 @@ export const projects = [
         title: "The Creature",
         description: "Interactive Web Children's Picture Book",
         writeup: creature_bio,
-        tags: ["NEW MEDIA", "HCI"]
+        tags: ["MOVING_IMG", "HCI"]
     },
     {
         id: "SH",
         title: "Sheldon",
         description: "Experimental Sound Project",
         writeup: sheldon_bio,
-        tags: ["NEW MEDIA"]
+        tags: [""]
     },
     {
         id: 'VV',
         title: "Violins Vibrato",
         description: "Experimental Video and Sound Project",
         writeup: music64_bio,
-        tags: ["NEW MEDIA"]
+        tags: ["MOVING_IMG"]
     },
     // {
     //     id: "GD",
     //     title: "Generative Design",
     //     description: "Code Art!",
     //     writeup: generative_design_bio,
-    //     tags: ["NEW MEDIA"]
+    //     tags: ["MOVING_IMG"]
     // },
     // {
     //     id: "VB",
     //     title: "Virtual Brain",
     //     description: "This Website",
     //     writeup: generative_design_bio,
-    //     tags: ["NEW MEDIA", "HCI"]
+    //     tags: ["MOVING_IMG", "HCI"]
     // },
     // {
     //     id: "MD",
     //     title: "ML Doodles",
     //     description: "Finding Trends in the Subconcious",
     //     writeup: generative_design_bio,
-    //     tags: ["NEW MEDIA", "AI"]
+    //     tags: ["MOVING_IMG", "AI"]
     // },
     // {
     //     id: "CR",
     //     title: "Canopy Room on The Run",
     //     description: "Reimagining a physical favorite,virtually",
     //     writeup: generative_design_bio,
-    //     tags: ["NEW MEDIA", "HCI"]
+    //     tags: ["MOVING_IMG", "HCI"]
     // },
     // {
     //     id: "WB",

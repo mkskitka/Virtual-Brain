@@ -3,17 +3,15 @@ export const astropunk_bio =
     "I organized a group consisting of an AI resercher, animator, HCI specialist, 3D modeler and web engineer. " +
     "The idea: Create a intuitive way for lay musicians to be able to iteratively generate electronic beats by playing the " +
     "character Astro Punk, who must navigate through the intro, melody, bridge, and outro levels to make it back home. " +
-    "By the end of the game you have developed your own song without needing to learn all that confusing audio software " +
-    "having a blast along the way. The project is still in development and is expected out late 2020.";
+    "By the end of the game you have developed your own song without needing to learn all that confusing audio software" +
+    ". Project development is currently on hold.";
 
 export const music64_bio = "A video collaboration with Bailey Warner. Together we compiled a list of intimate videos, " +
     "that capture the chaotic nature of college and the humbling emotions that come with 'figuring it all out'. "+
     'I composed the music and some of the collage film in this piece. ';
 
 export const sheldon_bio = "An experimental sound project that involved me carrying my phone with me everywhere I went for a " +
-    "day recording the audio of my life. Listen to the progression of my day unfold. The project showcases my incessant need " +
-    "to document personal histories in new ways. This song reminds me of an entire year in college. I was surprised by intrigued to " +
-    "find that samples of audio from one day could capture an entire year of life. "
+    "day recording the audio of my life. Listen to the progression of my day unfold. This song reminds me of my sophomore year of college.";
 
 export const animation_bio = "(in order as they appear) "+
     "1. NOT NAMED using 35MM film projection, 2. Adults Only using Found Objects \" 3. A Puma Dance using mixed media" +
