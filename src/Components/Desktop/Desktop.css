@@ -31,6 +31,26 @@
     border-style: solid;
     border-color: magenta;
 }
+.computer-gif {
+    top: calc(50% - 200px);
+    right: calc(50% - 150px);
+    background-image: url("../../../public/cp1.gif");
+    width: 300px;
+    height: 400px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
+.loading-bar-gif {
+    top: calc(50% + 100px);
+    right: calc(50% - 110px);
+    background-image: url("../../../public/loading-bar.gif");
+    width: 220px;
+    height: 160px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+}
 
 #projects{
     /*right: 60%;*/
@@ -46,6 +66,11 @@
     background-image: url("../../../public/file.png");
 }
 
+#blog {
+    right: 80%;
+    top: 80%;
+    background-image: url("../../../public/file.png");
+}
 #personal_statement {
     right: 23%;
     top: 20%;

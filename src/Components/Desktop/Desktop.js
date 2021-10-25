@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './Desktop.css';
 import Draggable from "react-draggable";
@@ -22,6 +22,7 @@ import {
 let FIRST_ENGAGEMENT = false
 let FIRST_ENGAGEMENT_ANIMATION = false
 const animate_right = -50
+const timeToLoadDesktop = 3000;
 
 function Desktop() {
 
@@ -30,53 +31,22 @@ function Desktop() {
     const active_project = useSelector(state => state.active_project)
     const record_open = useSelector(state=> state.record_open);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
+    const [isLoadingVirtualBrain, setIsLoadingVirtualBrain] = useState(true);
     const icon_drag_disabled =  isTabletOrMobile;
 
     let location = useLocation();
 
     useEffect(() => {
-        console.log("location! ", location)
-        if(location.pathname == "/astropunk") {
-            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
-            dispatch({type: ROUTE_TO_PROJECT, project: "AP"})
-        }
-        if(location.pathname == "/sheldon") {
-            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
-            dispatch({type: ROUTE_TO_PROJECT, project: "SH"})
-        }
-        if(location.pathname == "/violinsvibrato") {
-            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
-            dispatch({type: ROUTE_TO_PROJECT, project: "VV"})
-        }
-        if(location.pathname == "/andyandthecars") {
-            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
-            dispatch({type: ROUTE_TO_PROJECT, project: "AC"})
-        }
-        if(location.pathname == "/thecreature") {
-            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
-            dispatch({type: ROUTE_TO_PROJECT, project: "C"})
-        }
-        if(location.pathname == "/sketches") {
-            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
-            dispatch({type: ROUTE_TO_PROJECT, project: "GD"})
-        }
-        if(location.pathname == "/virtualbrain") {
-            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
-            dispatch({type: ROUTE_TO_PROJECT, project: "VB"})
-        }
-        if(location.pathname == "/mentalhealthxtech") {
-            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
-            dispatch({type: ROUTE_TO_PROJECT, project: "MXT"})
-        }
-        if(location.pathname == "/animationreel") {
-            dispatch({type: ADD_DIRECTORY_WINDOW, id: "projects"});
-            dispatch({type: ROUTE_TO_PROJECT, project: "AR"})
-        }
-    }, [location]);
-
-    useEffect(() => {
-        onClickCallbacks()
-        responsiveCallbacks()
+        setTimeout(function (){
+            setIsLoadingVirtualBrain(false);
+            $(".Desktop-Content").fadeOut(0);
+            $(".loadingScreen").fadeOut(200);
+            setTimeout(function () {
+                onClickCallbacks()
+                responsiveCallbacks()
+                $(".Desktop-Content").fadeIn(1000);
+            }, 500)
+        }, timeToLoadDesktop);
     }, [])
 
     useEffect(() => {
@@ -129,76 +99,83 @@ function Desktop() {
         }
     }, [active_windows])
 
-    useEffect(() => {
-
-    }, [record_open])
 
 
     return (
         <div className={"Desktop"}>
-
-
             <div className={"Desktop-Background"}></div>
 
-            {/* Contact Bar */}
+            <div className={"loadingScreen"}>
+                <div className={"computer-gif"}/>
+                <div className={"loading-bar-gif"} />
+            </div>
 
-            <div id={"contact-bar"}>
+            {!isLoadingVirtualBrain &&
+                <div className={"Desktop-Content"}>
+                {/* Contact Bar */}
+
+                <div id={"contact-bar"}>
                 <a href="https://github.com/mkskitka">
-                    <img alt='github icon' className={"Icon Git"} src={"github.png"}/>
+                <img alt='github icon' className={"Icon Git"} src={"github.png"}/>
                 </a>
                 {/*<img alt='mail icon' className={"Icon Mail"} src={"mail.png"}/>*/}
                 <a href='https://www.instagram.com/the_dirty_doodle/'>
-                    <img alt='instagram icon' className={"Icon"} src={"insta.png"}/>
+                <img alt='instagram icon' className={"Icon"} src={"insta.png"}/>
                 </a>
                 <a href='https://www.linkedin.com/in/mary-kate-skitka-6b6051135/'>
-                    <img alt='Linked In Icon' className={"Icon Li"} src={"linked_in.png"}/>
+                <img alt='Linked In Icon' className={"Icon Li"} src={"linked_in.png"}/>
                 </a>
-            </div>
+                </div>
 
-            {/* Folders */}
+                {/* Folders */}
 
-            <Draggable disabled={icon_drag_disabled}>
+                <Draggable disabled={icon_drag_disabled}>
                 <div id="record-player" className={"Desktop-Icon"}/>
-            </Draggable>
-            {/*{ !isTabletOrMobile &&*/}
-            {/*    <Draggable disabled={icon_drag_disabled}>*/}
-            {/*        <div id="terminal" className={"Desktop-Icon"}/>*/}
-            {/*    </Draggable>*/}
-            {/*}*/}
-            <Draggable disabled={icon_drag_disabled}>
-                <div id="projects" className={"Desktop-Icon"}>
-                    <div style={{top: '100%', position: 'absolute'}}>PROJECTS</div>
-                </div>
-            </Draggable>
-            <Draggable disabled={icon_drag_disabled}>
-                <div id="about" className="Desktop-Icon">
-                    <div style={{top: '100%', position: 'absolute'}}>ABOUT</div>
-                </div>
-            </Draggable>
+                </Draggable>
+                {/*{ !isTabletOrMobile &&*/}
+                {/*    <Draggable disabled={icon_drag_disabled}>*/}
+                {/*        <div id="terminal" className={"Desktop-Icon"}/>*/}
+                {/*    </Draggable>*/}
+                {/*}*/}
+                <Draggable disabled={icon_drag_disabled}>
+                    <div id="projects" className={"Desktop-Icon"}>
+                        <div style={{top: '100%', position: 'absolute'}}>PROJECTS</div>
+                    </div>
+                </Draggable>
+                <Draggable disabled={icon_drag_disabled}>
+                    <div id="about" className="Desktop-Icon">
+                        <div style={{top: '100%', position: 'absolute'}}>ABOUT</div>
+                    </div>
+                </Draggable>
+                <Draggable disabled={icon_drag_disabled}>
+                    <a href='https://www.notion.so/mkskitka/MK-s-ITP-Blog-19a39e6f66bb46fd98ed022f7ff62452'>
+                        <div id="blog" className="Desktop-Icon">
+                            <div style={{top: '100%', position: 'absolute'}}>BLOG</div>
+                        </div>
+                    </a>
+                </Draggable>
                 <div className={"monogram"}/>
-            <div className={"watermark"}></div>
-            <Monster/>
+                <div className={"watermark"}></div>
+                <Monster/>
 
-            {/* Multi Media Display Windows */}
+                {/* Multi Media Display Windows */}
 
-            {/* Directory Windows */}{
-                Windows()
+                {/* Directory Windows */}{
+                    Windows()
+                }
+
+                {/* Active Project */}
+                    <div>
+                    <ActiveProject/>
+                    </div>
+                {/* Record Player */}
+                    <div>{(record_open) ?
+                    <RecordWrapper/> : ""}
+                    </div>
+                </div>
             }
-
-            {/* Active Project */}
-            <div>
-               <ActiveProject/>
-            </div>
-            {/* Record Player */}
-            <div>{(record_open) ?
-                <RecordWrapper/> : ""}
-            </div>
-
-            {active_project === "MXT" &&
-            <MentalXTech/>
-            }
-
         </div>
+
 
     );
 

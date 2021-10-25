@@ -10,7 +10,7 @@ let dir_height;
 let dir_width;
 let range
 
-const projectCategories = ["ALL", "HCI", "NEW", "AI"]
+const projectCategories = ["ALL", "HCI", "MOVING_IMG", "AI"]
 
 function ProjectDirectory(props) {
 
@@ -93,7 +93,7 @@ function ProjectDirectory(props) {
                 <div className={"Project-Menu"}>
                     <div id={'ALL'} onClick={() => setProjectCategory("ALL")}className={"Selected"}>ALL</div>
                     <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>HCI</div>
-                    <div id={'NEW'}  onClick={() => setProjectCategory("MOVING_IMG")}>VISUALS</div>
+                    <div id={'MOVING_IMG'}  onClick={() => setProjectCategory("MOVING_IMG")}>VISUALS</div>
                     <div id={'AI'}  onClick={() => setProjectCategory("AI")}>AI</div>
                 </div>
 
@@ -144,7 +144,7 @@ function ProjectDirectory(props) {
                     $("#" + active_project).animate({
                         top: "+=" + String(range),
                     }, 1000, function () {
-                        $("#Window-Body-projects").css("overflowY", "scroll");
+                        // $("#Window-Body-projects").css("overflowY", "scroll");
                         $(".Project-Menu").css("opacity", "1")
                     });
 
@@ -155,11 +155,11 @@ function ProjectDirectory(props) {
         *                      MOBILE RESPONSIVENESS                           *
         *                                                                      *
         ********************************************************************* */
-        if (isMobile) {
-            $(".Window-projects").animate({
-                height: dir_height,
-            }, 3000);
-        }
+        // if (isMobile) {
+        //     $(".Window-projects").animate({
+        //         height: dir_height,
+        //     }, 3000);
+        // }
     }
 
     function projectSelectAnimation(active_project) {
@@ -171,7 +171,7 @@ function ProjectDirectory(props) {
         $(".Project-Link").finish()
         $(".Project-Menu").css("zIndex", "-1")
         $(".Writeup").fadeTo(0, 0);
-        $(".Window-Body").css("overflow", "hidden")
+        // $(".Window-Body").css("overflow", "hidden")
         $(".Project-Menu").css("opacity", "0")
 
         let project = _.find(projects, {id:active_project})
@@ -194,7 +194,7 @@ function ProjectDirectory(props) {
                     }, 1000, function () {
                         $("#Project-Title"+active_project).animate({fontSize: "2.5em"}, 1000)
 
-                        $("#Window-Body-projects").css("overflow", "hidden");
+                        // $("#Window-Body-projects").css("overflow", "hidden");
                         $("#" + active_project).animate({
                             left: 30,
                         }, 800, function () {
@@ -219,18 +219,18 @@ function ProjectDirectory(props) {
 
             }
         }
-        dir_height = $(".Window-projects").height()
-        dir_width = $(".Window-projects").width()
+        dir_height = $(".Window-projects").height();
+        dir_width = $(".Window-projects").width();
         /* *********************************************************************
         *                                                                      *
         *                      MOBILE RESPONSIVENESS                           *
         *                                                                      *
         ********************************************************************* */
-        if (isMobile) {
-            $(".Window-projects").animate({
-                height: dir_height/1.55,
-            }, 3000);
-        }
+        // if (isMobile) {
+        //     $(".Window-projects").animate({
+        //         height: dir_height/1.55,
+        //     }, 3000);
+        // }
      }
 }
 
