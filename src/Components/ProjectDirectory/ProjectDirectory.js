@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import ProjectSummary from './ProjectSummary';
 import { projects } from '../../Config/constants'
 import { useSelector, useDispatch } from 'react-redux';
 import { CHANGE_ACTIVE_PROJECT } from "../../Redux/actions";
@@ -6,20 +7,19 @@ import "./ProjectDirectory.css"
 import $ from "jquery"
 import _ from "lodash"
 import {useMediaQuery} from "react-responsive";
-let dir_height;
-let dir_width;
-let range
 
 const projectCategories = ["ALL", "HCI", "MOVING_IMG", "AI"]
 
 function ProjectDirectory(props) {
 
     const dispatch = useDispatch()
-    const config = props.config;
-    const active_project = useSelector(state => state.active_project);
+    const {config} = props;
+    const active_project_id = useSelector(state => state.active_project);
     const route_to_project = useSelector(state => state.route_to_project);
     const [projectCategory, setProjectCategory] = useState('ALL');
     const isMobile = useMediaQuery({ maxWidth: 767 })
+    const videoHeight = $(window).width() * .55;
+    const pwh =  $(window).height() - videoHeight;
 
     useEffect( () => {
         if(route_to_project !== null) {
@@ -29,7 +29,7 @@ function ProjectDirectory(props) {
     )
 
     useEffect(() => {
-        $(".Project-Wrapper").fadeTo(1000, 1);
+        $(".Project-Directory-Wrapper").fadeTo(1000, 1);
         if(isMobile) {
             $(".Window-projects").css("width", "100%");
         }
@@ -48,14 +48,6 @@ function ProjectDirectory(props) {
         }, [projectCategory]
     )
 
-    let writeup = ""
-
-    if(active_project !== null) {
-        let project = _.find(projects, {id:active_project})
-        if (typeof(project) !== "undefined") {
-            writeup = project.writeup
-        }
-    }
 
     const project_list = projects.map(function(p) {
         if(projectCategory === "ALL" || p.tags.includes(projectCategory)) {
@@ -75,163 +67,59 @@ function ProjectDirectory(props) {
         });
 
     return (
-        <div>
-        <div>
-            {active_project !== null &&
-            <div className={"Back-Button-Container"} style={{position: "fixed"}}>
-                <div className={"Back-Button-Click"} style={{top: "0px", position: 'absolute', zIndex: '10'}} onClick={animateBackToMenu} />
-                <div className={"Back-Button"} style={{top: "0px", position: "absolute"}}>
-                    <svg width="25px" height="25px" >
-                        <line x1="0" y1="12.5" x2="25" y2="0" style={{stroke:config.style.borderColor, strokeWidth:'3'}} />
-                        <line x1="0" y1="12.5" x2="25" y2="25" style={{stroke:config.style.borderColor, strokeWidth:'3'}} />
-                    </svg>
-                </div>
+        <div style={{position: "relative", height: "100%"}}>
+            <div className={"Project-Directory-Wrapper"}>
+                <ProjectDir/>
             </div>
-            }
-        </div>
-        <div className={"Project-Wrapper"} style={{position: "relative"}}>
-                <div className={"Project-Menu"}>
-                    <div id={'ALL'} onClick={() => setProjectCategory("ALL")}className={"Selected"}>ALL</div>
-                    <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>HCI</div>
-                    <div id={'MOVING_IMG'}  onClick={() => setProjectCategory("MOVING_IMG")}>VISUALS</div>
-                    <div id={'AI'}  onClick={() => setProjectCategory("AI")}>AI</div>
-                </div>
-
-        <div className={"Project-Directory-Content"}>{
-             project_list}
-            <div style={{top: "60px", width: "100%"}}> {
-             ((active_project === null) ? "" :
-                 <div style={{width: "100%"}}>
-                     <div className={"Writeup"}> {
-                         writeup
-                     }</div>
-                 </div>)
-            }
-             </div>
-
-        </div>
-        </div>
+            <div className={"Project-Summary-Wrapper"}>
+                <ProjectSummary
+                    animateBackToMenu={animateBackToMenu}
+                    config={config}
+                />
+            </div>
         </div>
     );
 
+    function ProjectDir() {
+        return(
+            <div className={"Project-Wrapper"} style={{position: "relative"}}>
+                <div className={"Project-Header"}>
+                    <div className={"Project-Menu"}>
+                        <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={"Selected"}>ALL</div>
+                        <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>HCI</div>
+                        <div id={'MOVING_IMG'}  onClick={() => setProjectCategory("MOVING_IMG")}>VISUALS</div>
+                        <div id={'AI'}  onClick={() => setProjectCategory("AI")}>AI</div>
+                    </div>
+                </div>
+                <div className={"Project-Directory-Content"}>{
+                    project_list}
+                </div>
+            </div>
+        );
+    }
+
 
     function onFileClick(id) {
-        if(active_project === null) {
+        if(active_project_id === null) {
             projectSelectAnimation(id)
         }
     }
 
+    // Move to Project Summary
     function animateBackToMenu() {
-        let project = _.find(projects, function(p) { return p.id === active_project; });
+        // let project = _.find(projects, function(p) { return p.id === active_project_id; });
         dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})
-
-        $("#Project-Title"+active_project).css("color", '#0091ff');
-        $(".Project-Menu").css("zIndex", "1")
-
-        $("#Project-Title"+active_project).animate({fontSize: "1.8em"}, 1000)
-        $("#" + active_project).animate({
-            left: 0,
-        }, 800)
-
-        for(let i=0; i<projects.length; i++) {
-            let p = projects[i];
-            if(p.id !== active_project) {
-                $("#" + p.id).animate({
-                    opacity: '1',
-                }, 3000);
-            }
-            else {
-                    $("#" + active_project).animate({
-                        top: "+=" + String(range),
-                    }, 1000, function () {
-                        // $("#Window-Body-projects").css("overflowY", "scroll");
-                        $(".Project-Menu").css("opacity", "1")
-                    });
-
-            }
-        }
-        /* *********************************************************************
-        *                                                                      *
-        *                      MOBILE RESPONSIVENESS                           *
-        *                                                                      *
-        ********************************************************************* */
-        // if (isMobile) {
-        //     $(".Window-projects").animate({
-        //         height: dir_height,
-        //     }, 3000);
-        // }
+        $(".Project-Summary-Wrapper").hide(100);
+        $(".Project-Directory-Wrapper").show(1000);
+        $(".Window-projects").css("height", "100%");
     }
 
-    function projectSelectAnimation(active_project) {
-
-        $(".Window-projects").finish()
-        $(".Project-Menu").finish()
-        $(".Window-Body").finish()
-        $(".Project-Title").finish()
-        $(".Project-Link").finish()
-        $(".Project-Menu").css("zIndex", "-1")
-        $(".Writeup").fadeTo(0, 0);
-        // $(".Window-Body").css("overflow", "hidden")
-        $(".Project-Menu").css("opacity", "0")
-
-        let project = _.find(projects, {id:active_project})
-
-        for(let i=0; i<projects.length; i++) {
-            let p = projects[i];
-            $("#" + p.id).finish()
-            if(p.id !== active_project) {
-                $("#" + p.id).animate({
-                    opacity: '0',
-                }, 1000)
-            }
-            else {
-                    let top1 = $(".Window-projects").offset().top;
-                    let top2 = $("#" + active_project).offset().top;
-                    range = top2- top1-40;
-                    $("#" + active_project).finish()
-                    $("#" + active_project).animate({
-                        top: "-=" + String(Math.round(range)),
-                    }, 1000, function () {
-                        $("#Project-Title"+active_project).animate({fontSize: "2.5em"}, 1000)
-
-                        // $("#Window-Body-projects").css("overflow", "hidden");
-                        $("#" + active_project).animate({
-                            left: 30,
-                        }, 800, function () {
-                            dispatch({type: CHANGE_ACTIVE_PROJECT, project: active_project})
-                            $(".Back-Button-Container").css("top", top1)
-
-                            $(".Writeup").finish()
-                            let project = _.find(projects, function(p) { return p.id === active_project; });
-                            console.log("proj",project)
-                            if(project.title.length > 15) {
-                                $(".Writeup").css("top", '12em');
-                            }
-                            else {
-                                $(".Writeup").css("top", '9em');
-                            }
-                            $(".Writeup").fadeTo(700, 1)
-                            $("#Project-Title"+active_project).finish()
-                            $("#Project-Title"+active_project).css("color", "#00ffff");
-
-                        })
-                    });
-
-            }
+    function projectSelectAnimation(p) {
+        $(".Window-projects").css("height", pwh);
+        $(".Project-Directory-Wrapper").hide(1000);
+        $(".Project-Summary-Wrapper").show(1000);
+        dispatch({type: CHANGE_ACTIVE_PROJECT, project: p})
         }
-        dir_height = $(".Window-projects").height();
-        dir_width = $(".Window-projects").width();
-        /* *********************************************************************
-        *                                                                      *
-        *                      MOBILE RESPONSIVENESS                           *
-        *                                                                      *
-        ********************************************************************* */
-        // if (isMobile) {
-        //     $(".Window-projects").animate({
-        //         height: dir_height/1.55,
-        //     }, 3000);
-        // }
-     }
 }
 
 export default ProjectDirectory;

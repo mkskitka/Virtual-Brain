@@ -7,6 +7,24 @@
     margin: 2px;
 }
 
+.Project-Title-Selected {
+    opacity: 1;
+    color: #0091ff;
+    font-size: 2em;
+    color: #00ffff !important;
+}
+
+.Project-Summary-Wrapper {
+    display: none;
+    height: 100%;
+    position: relative;
+}
+.Project-Directory-Wrapper {
+    opacity: 0;
+    height: 100%;
+    position: relative;
+}
+
 .Project-Wrapper::-webkit-scrollbar {
     display: none;
 }
@@ -15,22 +33,22 @@
 
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
-    opacity: 0;
 }
-
-.Project-Menu {
+.Project-Header {
     width: 100%;
     position: fixed;
-    background-color: #000;
+    background-color: transparent;
     top: 30px;
     height: 8%;
     z-index: 1;
+    backdrop-filter: blur(4px);
+}
+.Project-Menu {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    background-color: rgba(0, 0, 0, .7)    /*  10% opaque green */ ;
-    backdrop-filter: blur(4px);
-
+    background-color: transparent ;
+    backdrop-filter: blur(20px);
 }
 
 .Project-Menu > div {
@@ -64,12 +82,6 @@
 .Project-Title {
     font-size: 1.7em;
     position: relative;
-}
-
-.Writeup {
-    opacity: 0;
-    position: fixed;
-    width: calc(100% - 50px);
 }
 
 .Project-Description {

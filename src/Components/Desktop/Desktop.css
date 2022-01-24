@@ -76,7 +76,11 @@
     top: 20%;
     background-image: url("../../../public/file.png");
 }
-
+.Desktop-Content {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
 #record-player {
     top: 40%;
     right: 39%;

@@ -29,16 +29,18 @@ function Window(props) {
 
     let width = config.style.width;
     let height = config.style.height;
+    let position = config.style.position;
 
     useEffect(() => {
     }, [])
 
     if(config.video_aspect_ratio) {
       if (isMobile) {
-          width = "96%";
+          width = "100%";
           height = $(window).width() * .55;
-          config.style.left = "2%";
-          config.style.top = "65%";
+          config.style.left = "0%";
+          config.style.top = "0%";
+          position = "relative";
       }
       else {
           width = $(window).width() * width * 1.1;
@@ -49,7 +51,7 @@ function Window(props) {
     return (
 
         <Draggable disabled={config.drag_disabled || drag_disabled}>
-            <div className={"Window Window-"+id} key={"Window"+id} style={{...config.style, width: width, height: height}}>
+            <div className={"Window Window-"+id} key={"Window"+id} style={{...config.style, width: width, height: height, position: position}}>
                     <div className={"Window-Header"} id={"Window-Header-"+id} style={(config.header) ? null : {height: '0px'} }>
                         <div onClick={closeWindow} className={"Close-Button"} style={{width: xH, height: xH, zIndex: 1}}></div>
                         <div  className="Close-Button" style={{width: xH, height: xH}} >

@@ -22,19 +22,18 @@ import {
 let FIRST_ENGAGEMENT = false
 let FIRST_ENGAGEMENT_ANIMATION = false
 const animate_right = -50
-const timeToLoadDesktop = 3000;
+const timeToLoadDesktop = 0;
 
 function Desktop() {
 
     const dispatch = useDispatch()
     const active_windows = useSelector(state => state.active_windows);
-    const active_project = useSelector(state => state.active_project)
     const record_open = useSelector(state=> state.record_open);
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const [isLoadingVirtualBrain, setIsLoadingVirtualBrain] = useState(true);
     const icon_drag_disabled =  isTabletOrMobile;
+    const isMobile = useMediaQuery({ maxWidth: 767 })
 
-    let location = useLocation();
 
     useEffect(() => {
         setTimeout(function (){
@@ -99,7 +98,9 @@ function Desktop() {
         }
     }, [active_windows])
 
-
+    // if(isMobile) {
+    //     $("body").css("overflowY", "scroll");
+    // }
 
     return (
         <div className={"Desktop"}>
@@ -114,64 +115,64 @@ function Desktop() {
                 <div className={"Desktop-Content"}>
                 {/* Contact Bar */}
 
-                <div id={"contact-bar"}>
-                <a href="https://github.com/mkskitka">
-                <img alt='github icon' className={"Icon Git"} src={"github.png"}/>
-                </a>
-                {/*<img alt='mail icon' className={"Icon Mail"} src={"mail.png"}/>*/}
-                <a href='https://www.instagram.com/the_dirty_doodle/'>
-                <img alt='instagram icon' className={"Icon"} src={"insta.png"}/>
-                </a>
-                <a href='https://www.linkedin.com/in/mary-kate-skitka-6b6051135/'>
-                <img alt='Linked In Icon' className={"Icon Li"} src={"linked_in.png"}/>
-                </a>
-                </div>
-
-                {/* Folders */}
-
-                <Draggable disabled={icon_drag_disabled}>
-                <div id="record-player" className={"Desktop-Icon"}/>
-                </Draggable>
-                {/*{ !isTabletOrMobile &&*/}
-                {/*    <Draggable disabled={icon_drag_disabled}>*/}
-                {/*        <div id="terminal" className={"Desktop-Icon"}/>*/}
-                {/*    </Draggable>*/}
-                {/*}*/}
-                <Draggable disabled={icon_drag_disabled}>
-                    <div id="projects" className={"Desktop-Icon"}>
-                        <div style={{top: '100%', position: 'absolute'}}>PROJECTS</div>
+                    <div id={"contact-bar"}>
+                        <a href="https://github.com/mkskitka">
+                        <img alt='github icon' className={"Icon Git"} src={"github.png"}/>
+                        </a>
+                        {/*<img alt='mail icon' className={"Icon Mail"} src={"mail.png"}/>*/}
+                        <a href='https://www.instagram.com/the_dirty_doodle/'>
+                        <img alt='instagram icon' className={"Icon"} src={"insta.png"}/>
+                        </a>
+                        <a href='https://www.linkedin.com/in/mary-kate-skitka-6b6051135/'>
+                        <img alt='Linked In Icon' className={"Icon Li"} src={"linked_in.png"}/>
+                        </a>
                     </div>
-                </Draggable>
-                <Draggable disabled={icon_drag_disabled}>
-                    <div id="about" className="Desktop-Icon">
-                        <div style={{top: '100%', position: 'absolute'}}>ABOUT</div>
-                    </div>
-                </Draggable>
-                <Draggable disabled={icon_drag_disabled}>
-                    <a href='https://www.notion.so/mkskitka/MK-s-ITP-Blog-19a39e6f66bb46fd98ed022f7ff62452'>
-                        <div id="blog" className="Desktop-Icon">
-                            <div style={{top: '100%', position: 'absolute'}}>BLOG</div>
+
+                    {/* Folders */}
+
+                    <Draggable disabled={icon_drag_disabled}>
+                    <div id="record-player" className={"Desktop-Icon"}/>
+                    </Draggable>
+                    {/*{ !isTabletOrMobile &&*/}
+                    {/*    <Draggable disabled={icon_drag_disabled}>*/}
+                    {/*        <div id="terminal" className={"Desktop-Icon"}/>*/}
+                    {/*    </Draggable>*/}
+                    {/*}*/}
+                    <Draggable disabled={icon_drag_disabled}>
+                        <div id="projects" className={"Desktop-Icon"}>
+                            <div style={{top: '100%', position: 'absolute'}}>PROJECTS</div>
                         </div>
-                    </a>
-                </Draggable>
-                <div className={"monogram"}/>
-                <div className={"watermark"}></div>
-                <Monster/>
+                    </Draggable>
+                    <Draggable disabled={icon_drag_disabled}>
+                        <div id="about" className="Desktop-Icon">
+                            <div style={{top: '100%', position: 'absolute'}}>ABOUT</div>
+                        </div>
+                    </Draggable>
+                    <Draggable disabled={icon_drag_disabled}>
+                        <a href='https://www.notion.so/mkskitka/MK-s-ITP-Blog-19a39e6f66bb46fd98ed022f7ff62452'>
+                            <div id="blog" className="Desktop-Icon">
+                                <div style={{top: '100%', position: 'absolute'}}>BLOG</div>
+                            </div>
+                        </a>
+                    </Draggable>
+                    <div className={"monogram"}/>
+                    <div className={"watermark"}></div>
+                    <Monster/>
 
-                {/* Multi Media Display Windows */}
+                    {/* Multi Media Display Windows */}
 
-                {/* Directory Windows */}{
-                    Windows()
-                }
+                    {/* Directory Windows */}{
+                        Windows()
+                    }
 
-                {/* Active Project */}
-                    <div>
-                    <ActiveProject/>
-                    </div>
-                {/* Record Player */}
-                    <div>{(record_open) ?
-                    <RecordWrapper/> : ""}
-                    </div>
+                    {/* Active Project */}
+                        <div>
+                        <ActiveProject/>
+                        </div>
+                    {/* Record Player */}
+                        <div>{(record_open) ?
+                        <RecordWrapper/> : ""}
+                        </div>
                 </div>
             }
         </div>

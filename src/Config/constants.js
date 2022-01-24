@@ -5,6 +5,7 @@ import {astropunk_bio, sheldon_bio, music64_bio, creature_bio, mental_health_tec
 import Video from "../Components/Video/Video";
 import About from "../Components/About/About";
 import PersonalStatement from "../Components/PersonalStatement(Unused)/About";
+import {useMediaQuery} from "react-responsive";
 
 
 /*
@@ -13,15 +14,20 @@ import PersonalStatement from "../Components/PersonalStatement(Unused)/About";
 
 // TEAL #00ffff
 
+//const isMobile = useMediaQuery({ maxWidth: 767 })
+//const proj_h = (isMobile) ? '50%' : '100%';
+
 const project_style = {
     borderColor: "#0055ff",
     color:  "#0055ff",
     width: '27%',
     minWidth: "350px",
     height: "100%",
-    position: "absolute",
+    position: "relative",
     left: "0px",
     top: "0px",
+    backgroundColor: "transparent",
+    //display: "inline-block"
 }
 
 const terminal_style = {
@@ -146,7 +152,7 @@ export const VIDEO_CONFIGS = {
     }],
     "GD": [],
     "VB": [],
-    "MD": [],
+    "CD": [],
     "CR": [],
     "WB": [],
 }
@@ -193,9 +199,10 @@ export let WINDOW_CONFIGS = {
             bodyStyle: {overflow: "scroll", height: "100%", position: "relative"},
             header: false}
     ],
-    "AP": [picture_window_template, {...video_window_template, style:{...video_window_template.style, top: '5%', left: '40%'}}],
+    "AP": [{...video_window_template, style:{...video_window_template.style, top: '5%', left: '40%'}}, picture_window_template ],
     "AR": [video_window_template],
     "C": [video_window_template],
+    "CD": [],
     "VV": [video_window_template],
     "AC": [{...video_window_template, style:{...video_window_template.style, top: '10%', left: '35%', width: ".15" }},
         {...video_window_template, style:{...video_window_template.style, top: '10%', left: '54%', width: ".15"}},
@@ -229,9 +236,9 @@ export const WINDOW_CONTENT = {
         <Video config={VIDEO_CONFIGS["AC"][2]} id={"AC+3"}/>, <Video config={VIDEO_CONFIGS["AC"][3]} id={"AC+4"}/>
     ],
     "AP": [
+        <Video config={VIDEO_CONFIGS["AP"][0]} id={"AP+1"}/>,
         <div style={{...picture_content_template,
-            'backgroundImage':"url(/astropunk-mockup.png)"}} id={"AP+2"}/>,
-        <Video config={VIDEO_CONFIGS["AP"][0]} id={"AP+1"}/>
+            'backgroundImage':"url(/astropunk-mockup.png)"}} id={"AP+2"}/>
         ],
     "AR": [<Video config={VIDEO_CONFIGS["AR"][0]} id={"AR"}/>],
     "C": [<Video config={VIDEO_CONFIGS["C"][0]} id={"C"}/>],
@@ -253,13 +260,13 @@ export const projects = [
     //         writeup: "testing",
     //         tags: ["MOVING_IMG"]
     // },
-    // {
-    //     id: "IE",
-    //     title: "Isolation Experiments",
-    //     description: "Created in Quarentine",
-    //     writeup: "coming soon",
-    //     tags: ["MOVING_IMG", "HCI"]
-    // },
+    {
+        id: "CD",
+        title: "Cantaloupe Dadaism",
+        description: "AI Fashion Look Book",
+        writeup: generative_design_bio,
+        tags: ["MOVING_IMG", "AI"]
+    },
     {
         id: "AP",
         title: "Astropunk",
@@ -304,40 +311,7 @@ export const projects = [
         writeup: music64_bio,
         tags: ["MOVING_IMG"]
     },
-    // {
-    //     id: "GD",
-    //     title: "Generative Design",
-    //     description: "Code Art!",
-    //     writeup: generative_design_bio,
-    //     tags: ["MOVING_IMG"]
-    // },
-    // {
-    //     id: "VB",
-    //     title: "Virtual Brain",
-    //     description: "This Website",
-    //     writeup: generative_design_bio,
-    //     tags: ["MOVING_IMG", "HCI"]
-    // },
-    // {
-    //     id: "MD",
-    //     title: "ML Doodles",
-    //     description: "Finding Trends in the Subconcious",
-    //     writeup: generative_design_bio,
-    //     tags: ["MOVING_IMG", "AI"]
-    // },
-    // {
-    //     id: "CR",
-    //     title: "Canopy Room on The Run",
-    //     description: "Reimagining a physical favorite,virtually",
-    //     writeup: generative_design_bio,
-    //     tags: ["MOVING_IMG", "HCI"]
-    // },
-    // {
-    //     id: "WB",
-    //     title: "Web Design and Development",
-    //     description: "From Vis to Database",
-    //     writeup_y: 450,
-    // }
+
 ]
 
 
