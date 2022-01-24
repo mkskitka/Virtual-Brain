@@ -115,7 +115,9 @@ function ProjectDirectory(props) {
     }
 
     function projectSelectAnimation(p) {
-        $(".Window-projects").css("height", pwh);
+        if(isMobile) {
+            $(".Window-projects").css("height", pwh);
+        }
         $(".Project-Directory-Wrapper").hide(1000);
         $(".Project-Summary-Wrapper").show(1000);
         dispatch({type: CHANGE_ACTIVE_PROJECT, project: p})
