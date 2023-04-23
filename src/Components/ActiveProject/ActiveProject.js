@@ -32,6 +32,8 @@ function ActiveProject(props) {
             })
         }
         if(active_project === null) {
+            console.log("testtestset")
+            $(".Desktop-Background").querySelector().css("background-image", "url(/background.mov)");
             if(active_song === "sheldon.m4a" && record_open) {
                 document.getElementById("audio-player").pause();
             }

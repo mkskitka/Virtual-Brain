@@ -9,7 +9,7 @@ Example:
         title: "Astropunk",\
         description: "Generative Music Video Game",\
         writeup: astropunk_bio,\
-        tags: ["MOVING_IMG", "HCI", "AI"]\
+        tags: ["A_V", "HCI", "AI"]\
       },
 
 

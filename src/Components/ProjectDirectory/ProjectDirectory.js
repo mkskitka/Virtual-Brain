@@ -8,7 +8,7 @@ import $ from "jquery"
 import _ from "lodash"
 import {useMediaQuery} from "react-responsive";
 
-const projectCategories = ["ALL", "HCI", "MOVING_IMG", "AI"]
+const projectCategories = ["ALL", "HCI", "A_V", "AI"]
 
 function ProjectDirectory(props) {
 
@@ -87,7 +87,7 @@ function ProjectDirectory(props) {
                     <div className={"Project-Menu"}>
                         <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={"Selected"}>ALL</div>
                         <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>HCI</div>
-                        <div id={'MOVING_IMG'}  onClick={() => setProjectCategory("MOVING_IMG")}>VISUALS</div>
+                        <div id={'A_V'}  onClick={() => setProjectCategory("A_V")}>A/V</div>
                         <div id={'AI'}  onClick={() => setProjectCategory("AI")}>AI</div>
                     </div>
                 </div>

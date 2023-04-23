@@ -104,7 +104,10 @@ function Desktop() {
 
     return (
         <div className={"Desktop"}>
-            <div className={"Desktop-Background"}></div>
+            <div className={"Desktop-Background"}>
+            <video style={{width: '100vw', height: '100vh', position: 'absolute'}} src="/background.mov" muted autoPlay loop></video>
+
+            </div>
 
             <div className={"loadingScreen"}>
                 <div className={"computer-gif"}/>
@@ -114,7 +117,6 @@ function Desktop() {
             {!isLoadingVirtualBrain &&
                 <div className={"Desktop-Content"}>
                 {/* Contact Bar */}
-
                     <div id={"contact-bar"}>
                         <a href="https://github.com/mkskitka">
                         <img alt='github icon' className={"Icon Git"} src={"github.png"}/>

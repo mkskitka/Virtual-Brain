@@ -258,21 +258,21 @@ export const projects = [
     //         title: "Andy and the Cars",
     //         description: "Andy Warhol Inspired Generative Graphics",
     //         writeup: "testing",
-    //         tags: ["MOVING_IMG"]
+    //         tags: ["A_V"]
     // },
     {
         id: "CD",
         title: "Cantaloupe Dadaism",
         description: "AI Fashion Look Book",
         writeup: generative_design_bio,
-        tags: ["MOVING_IMG", "AI"]
+        tags: ["A_V", "AI"]
     },
     {
         id: "AP",
         title: "Astropunk",
         description: "Generative Music Video Game",
         writeup: astropunk_bio,
-        tags: ["MOVING_IMG", "HCI", "AI"]
+        tags: ["A_V", "HCI", "AI"]
     },
     {
         id: "AR",
@@ -295,7 +295,7 @@ export const projects = [
         title: "The Creature",
         description: "Interactive Web Children's Picture Book",
         writeup: creature_bio,
-        tags: ["MOVING_IMG", "HCI"]
+        tags: ["A_V", "HCI"]
     },
     {
         id: "SH",
@@ -309,7 +309,7 @@ export const projects = [
         title: "Violins Vibrato",
         description: "Experimental Video and Sound Project",
         writeup: music64_bio,
-        tags: ["MOVING_IMG"]
+        tags: ["A_V"]
     },
 
 ]
