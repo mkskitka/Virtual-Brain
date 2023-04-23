@@ -110,18 +110,29 @@ export const VIDEO_CONFIGS = {
         src_path: './videos/AnimationReel.mov',
         title: "",
     }],
-    "MXT": [],
     "C": [{
         ...video_content_template,
         src_path: './videos/Creature.mov',
         title: "",
     }],
     "SH": [],
-    'VV': [{
-        ...video_content_template,
-        src_path: './videos/ViolinsVibrato.mov',
-        title: "",
-    }]
+    // 'VV': [{
+    //     ...video_content_template,
+    //     src_path: './videos/ViolinsVibrato.mov',
+    //     title: "",
+    // }],
+    'CRT': [
+        {
+            ...video_content_template,
+            src_path: './tv/1.mp4',
+            title: "",
+        },
+        {
+            ...video_content_template,
+            src_path: './tv/3.mp4',
+            title: "",
+        }
+    ]
 }
 
 export let WINDOW_CONFIGS = {
@@ -162,6 +173,7 @@ export let WINDOW_CONFIGS = {
     "C": [video_window_template],
     "CD": [],
     "VV": [video_window_template],
+    "CRT": [video_window_template, video_window_template],
     "SH": [], // NO extra windows
 }
 
@@ -176,7 +188,10 @@ export const WINDOW_CONTENT = {
         ],
     "AR": [<Video config={VIDEO_CONFIGS["AR"][0]} id={"AR"}/>],
     "C": [<Video config={VIDEO_CONFIGS["C"][0]} id={"C"}/>],
-    "VV": [<Video config={VIDEO_CONFIGS["VV"][0]} id={"VV"}/>],
+    // "VV": [<Video config={VIDEO_CONFIGS["VV"][0]} id={"VV"}/>],
+    "CRT": [<Video config={VIDEO_CONFIGS["CRT"][0]} id={"crt"}/>,
+        <Video config={VIDEO_CONFIGS["CRT"][1]} id={"crt2"}/>
+]
 }
 
 
@@ -185,6 +200,13 @@ export const WINDOW_CONTENT = {
 
 
 export const projects = [
+    {
+        id: "CRT",
+        title: "Untitled (CRT)",
+        description: "interactive installation",
+        writeup: generative_design_bio,
+        tags: ["A_V", "AI"]
+    },
     {
         id: "CD",
         title: "Cantaloupe Dadaism",
@@ -220,14 +242,14 @@ export const projects = [
         description: "Experimental Sound Project",
         writeup: sheldon_bio,
         tags: [""]
-    },
-    {
-        id: 'VV',
-        title: "Violins Vibrato",
-        description: "Experimental Video and Sound Project",
-        writeup: music64_bio,
-        tags: ["A_V"]
-    },
+    }
+    // {
+    //     id: 'VV',
+    //     title: "Violins Vibrato",
+    //     description: "Experimental Video and Sound Project",
+    //     writeup: music64_bio,
+    //     tags: ["A_V"]
+    // },
 
 ]
 

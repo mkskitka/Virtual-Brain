@@ -85,7 +85,7 @@ function ProjectDirectory(props) {
             <div className={"Project-Wrapper"} style={{position: "relative"}}>
                 <div className={"Project-Header"}>
                     <div className={"Project-Menu"}>
-                        <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={"Selected"}>ALL</div>
+                        <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={"Selected"}>MK's Picks</div>
                         <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>Research</div>
                         <div id={'A_V'}  onClick={() => setProjectCategory("A_V")}>A/V</div>
                         <div id={'AI'}  onClick={() => setProjectCategory("AI")}>Web</div>
