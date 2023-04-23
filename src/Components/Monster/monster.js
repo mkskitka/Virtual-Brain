@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import "./monster.css"
 import $ from "jquery"
 
-let BLOCKING = false
 const TELEPORT_ROTATE = ['rotate(180deg)', 'rotate(90deg)', 'rotate(-90deg)', 'rotate(0deg)' ];
 const TELEPORT_LEFT = ["50%", "0px", "90%", "20%"];
 const TELEPORT_TOP = ["-20px", "20%", "70%", "77%"];
@@ -11,7 +10,6 @@ function Monster() {
 
     // Similar to componentDidMount and componentDidUpdate:
     useEffect(() => {
-        console.log("in effect on start up")
         setTimeout(function(){
             $( ".monster" ).animate({
                 bottom: "-=" + String($(window).height()),
@@ -56,18 +54,8 @@ function Monster() {
         }
     }
 
-    function lookleft(){
-        if($( ".monster" ).attr("src") === "standing.png") {
-            $( ".monster" ).attr("src", "turn_left.gif");
-            setTimeout(function(){ $( ".monster" ).attr("src", "standing.png");}, 500)
-        }
-        let after = Math.floor(Math.random() * 20000) + 10000
-        setTimeout(function(){lookleft()}, after);
-    }
-
     function teleport() {
         let transport_to = Math.floor(Math.random() * 4) + 1
-        BLOCKING = true;
         setTimeout(function () {
             $(".monster").css({'transform': TELEPORT_ROTATE[transport_to]});
             $(".monster").css("top", TELEPORT_TOP[transport_to]);

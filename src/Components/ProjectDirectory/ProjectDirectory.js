@@ -52,7 +52,7 @@ function ProjectDirectory(props) {
     const project_list = projects.map(function(p) {
         if(projectCategory === "ALL" || p.tags.includes(projectCategory)) {
             return (
-                <div key={p.id} id={p.id} className={"Project-Link" + " Project-Link" + p.id}
+                <div key={p.id} id={p.id} className={"Project-Link Project-Link" + p.id}
                      onClick={(e) => onFileClick(p.id)}>
                     <div key={p.title} id={"Project-Title" + p.id}
                          className={"Project-Title"}>{p.title.toUpperCase()}</div>
@@ -86,9 +86,9 @@ function ProjectDirectory(props) {
                 <div className={"Project-Header"}>
                     <div className={"Project-Menu"}>
                         <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={"Selected"}>ALL</div>
-                        <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>HCI</div>
+                        <div id={'HCI'} onClick={() => setProjectCategory("HCI")}>Research</div>
                         <div id={'A_V'}  onClick={() => setProjectCategory("A_V")}>A/V</div>
-                        <div id={'AI'}  onClick={() => setProjectCategory("AI")}>AI</div>
+                        <div id={'AI'}  onClick={() => setProjectCategory("AI")}>Web</div>
                     </div>
                 </div>
                 <div className={"Project-Directory-Content"}>{

@@ -1,5 +1,5 @@
 import Draggable from "react-draggable";
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import './Record.css'
 import {useSelector} from "react-redux";
 import P5Wrapper from 'react-p5-wrapper';

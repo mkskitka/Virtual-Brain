@@ -1,15 +1,13 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import { Player, ControlBar} from 'video-react';
 import "./Video.css"
 import $ from "jquery";
 
-import {useSelector} from "react-redux";
 import {useMediaQuery} from "react-responsive";
 
 function Video(props) {
 
     const {config} = props
-    const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const isMobile = useMediaQuery({ maxWidth: 767 })
     let width;
     let height;

@@ -1,11 +1,9 @@
 import React from 'react';
 import ProjectDirectory from "../Components/ProjectDirectory/ProjectDirectory";
 import TerminalT from "../Components/Terminal/Terminal";
-import {astropunk_bio, sheldon_bio, music64_bio, creature_bio, mental_health_tech_bio, animation_bio, generative_design_bio} from "./writeups";
+import {astropunk_bio, sheldon_bio, music64_bio, creature_bio, animation_bio, generative_design_bio} from "./writeups";
 import Video from "../Components/Video/Video";
 import About from "../Components/About/About";
-import PersonalStatement from "../Components/PersonalStatement(Unused)/About";
-import {useMediaQuery} from "react-responsive";
 
 
 /*
@@ -14,8 +12,6 @@ import {useMediaQuery} from "react-responsive";
 
 // TEAL #00ffff
 
-//const isMobile = useMediaQuery({ maxWidth: 767 })
-//const proj_h = (isMobile) ? '50%' : '100%';
 
 const project_style = {
     borderColor: "#0055ff",
@@ -103,30 +99,6 @@ const picture_content_template = {
 }
 
 export const VIDEO_CONFIGS = {
-    "AC": [{
-            ...video_content_template,
-            percent_of_screen_width: ".2",
-            src_path: './videos/girl.mp4',
-            title: "",
-        },
-        {
-            ...video_content_template,
-            percent_of_screen_width: ".2",
-            src_path: './videos/piano.mp4',
-            title: "",
-        },
-        {
-            ...video_content_template,
-            percent_of_screen_width: ".2",
-            src_path: './videos/cars.mp4',
-            title: "",
-        },
-        {
-            ...video_content_template,
-            percent_of_screen_width: ".55",
-            src_path: './videos/Andy.mp4',
-            title: "",
-        }],
     "AP": [{
         ...video_content_template,
         src_path: './videos/AstropunkReel.mov',
@@ -149,12 +121,7 @@ export const VIDEO_CONFIGS = {
         ...video_content_template,
         src_path: './videos/ViolinsVibrato.mov',
         title: "",
-    }],
-    "GD": [],
-    "VB": [],
-    "CD": [],
-    "CR": [],
-    "WB": [],
+    }]
 }
 
 export let WINDOW_CONFIGS = {
@@ -190,39 +157,11 @@ export let WINDOW_CONFIGS = {
             bodyStyle: {overflow: "auto", height: "100%", position: "relative"},
             header: false}
         ],
-    "personal_statement" : [
-        {   title: "",
-            drag_disabled: true,
-            style: about_style,
-            xH: 50,
-            xS: 5,
-            bodyStyle: {overflow: "scroll", height: "100%", position: "relative"},
-            header: false}
-    ],
     "AP": [{...video_window_template, style:{...video_window_template.style, top: '5%', left: '40%'}}, picture_window_template ],
     "AR": [video_window_template],
     "C": [video_window_template],
     "CD": [],
     "VV": [video_window_template],
-    "AC": [{...video_window_template, style:{...video_window_template.style, top: '10%', left: '35%', width: ".15" }},
-        {...video_window_template, style:{...video_window_template.style, top: '10%', left: '54%', width: ".15"}},
-        {...video_window_template, style:{...video_window_template.style, top: '10%', left: '73%', width: ".15"}},
-        {...video_window_template, style:{...video_window_template.style, top: '30%', left: '35%', width: ".5"}}],
-    "PersonalStatement": [{ ...picture_window_template,
-                            style: {
-                                ...picture_window_template.style,
-                                top: "20%",
-                                left: "10%",
-                                opacity: ".8",
-                                width: "400px",
-                                height: "400px",
-                            },
-                            titleStyle: {
-                                fontSize: "64px",
-                            },
-                            title: 'Personal Statement Coming......... TODAY!',
-                        }
-    ],
     "SH": [], // NO extra windows
 }
 
@@ -230,11 +169,6 @@ export const WINDOW_CONTENT = {
     "projects": [<ProjectDirectory config={WINDOW_CONFIGS["projects"][0]}/>],
     "terminal": [<TerminalT/>],
     "about": [<About/>],
-    "personal_statement": [<PersonalStatement/>],
-    "AC": [
-        <Video config={VIDEO_CONFIGS["AC"][0]} id={"AC+1"}/>, <Video config={VIDEO_CONFIGS["AC"][1]} id={"AC+2"}/>,
-        <Video config={VIDEO_CONFIGS["AC"][2]} id={"AC+3"}/>, <Video config={VIDEO_CONFIGS["AC"][3]} id={"AC+4"}/>
-    ],
     "AP": [
         <Video config={VIDEO_CONFIGS["AP"][0]} id={"AP+1"}/>,
         <div style={{...picture_content_template,
@@ -243,8 +177,6 @@ export const WINDOW_CONTENT = {
     "AR": [<Video config={VIDEO_CONFIGS["AR"][0]} id={"AR"}/>],
     "C": [<Video config={VIDEO_CONFIGS["C"][0]} id={"C"}/>],
     "VV": [<Video config={VIDEO_CONFIGS["VV"][0]} id={"VV"}/>],
-    "PersonalStatement":  [
-    <div style={{...picture_content_template}} id={"cs"}/>],
 }
 
 
@@ -253,13 +185,6 @@ export const WINDOW_CONTENT = {
 
 
 export const projects = [
-    // {
-    //         id: "AC",
-    //         title: "Andy and the Cars",
-    //         description: "Andy Warhol Inspired Generative Graphics",
-    //         writeup: "testing",
-    //         tags: ["A_V"]
-    // },
     {
         id: "CD",
         title: "Cantaloupe Dadaism",
@@ -282,14 +207,6 @@ export const projects = [
         tags: []
 
     },
-    // {
-    //     id: "MXT",
-    //     title: "Mental Health X Tech",
-    //     description: "Reusable Human Data Visualization",
-    //     writeup: mental_health_tech_bio,
-    //     tags: ["HCI"]
-    //
-    // },
     {
         id: "C",
         title: "The Creature",

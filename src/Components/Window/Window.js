@@ -1,8 +1,8 @@
 import React, {useEffect} from 'react';
 import Draggable from "react-draggable";
-import {CHANGE_ACTIVE_PROJECT, REMOVE_DIRECTORY_WINDOW} from "../../Redux/actions";
+import {REMOVE_DIRECTORY_WINDOW} from "../../Redux/actions";
 import './Window.css'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import $ from 'jquery'
 import {useMediaQuery} from "react-responsive";
 

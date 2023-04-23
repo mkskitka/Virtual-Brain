@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { projects } from '../../Config/constants'
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import "./ProjectSummary.css"
 import _ from "lodash"
-import {useMediaQuery} from "react-responsive";
 
 function ProjectSummary(props) {
 
@@ -11,7 +10,6 @@ function ProjectSummary(props) {
     const active_project_id = useSelector(state => state.active_project);
     const active_project = (active_project_id) ? _.find(projects, function(p) { return p.id === active_project_id; }) : null;
     const active_project_title = (active_project) ? active_project.title : null;
-    const isMobile = useMediaQuery({ maxWidth: 767 })
 
 
     useEffect(() => {
