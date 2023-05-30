@@ -104,7 +104,7 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
         .mouseup(function (e) {
             if (!isDragging) {
                 let id = e.target.id;
-                if(id === "projects" || id === "terminal" || id === "about" || id === "personal_statement") {
+                if(id === "projects" || id === "terminal" || id === "about"  || id === "resume" ) {
                     dispatch({type: ADD_DIRECTORY_WINDOW, id: id})
                 }
                 if(id === "record-player") {

@@ -1,4 +1,4 @@
-.About-Background {
+.Resume-Background {
     /*background-image: url("/me.jpg");*/
     width: 100%;
     height: 100%;
@@ -12,14 +12,14 @@
 
 }
 
-.About-Wrapper{
+.Resume-Wrapper{
    position: relative;
     width: 100%;
     height: 100% !important;
     z-index: 2;
     position: relative;
 }
-.About-Content {
+.Resume-Content {
     font-size: 2em;
     font-weight: lighter;
     text-align: left;
@@ -30,27 +30,39 @@
     padding-bottom: 6vw !important;
     /*margin: 6vw;*/
 }
+.group {
+    position: relative;
+}
+.space {
+    height: 2vh;
+    position: relative;
+    width: 100%;
+    float: left;
+}
+.resume-heading {
+    font-weight: bold;
+    width: 100%;
+    position: relative;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
 
-.bio {
+.mfont {
+    font-size: 24px;
     position: relative;
 }
 
-
-#adj2-bigtext {
-    font-size: 100px;
-    visibility: hidden;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
+.left-align {
+    float: left;
+    width: 75%;
 }
 
-#brain {
-    font-size: 3em;
-    visibility: hidden;
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    right: 0px;
-    bottom: 0px;
+.right-align {
+    float: right; 
+    width: 25%;
 }
 
+.full-line {
+    width: 100%;
+    position: relative;
+}

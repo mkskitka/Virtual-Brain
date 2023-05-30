@@ -3,7 +3,6 @@ import $ from "jquery"
 import './About.css';
 import {useSelector} from "react-redux";
 
-
 const bios= [
     "",
     "Hi, I'm MK!",
@@ -11,7 +10,7 @@ const bios= [
     "Here I plan to document my own inspirations, research, memories, fleeting thoughts, " +
     "deep contemplations, failures, successes, dreams and beyond. ",
     "",
-    " I am a software engineer and designer motivated to investigate and expand the human experience though new media applications." +
+    " I am a software engineer and artist motivated to investigate and expand the human experience though new media applications." +
     " On the day to day you may find me coding up web apps, visualizations, or arduino contraptions " +
     "on 'the floor' at 370 Jay St. Brooklyn," +
     " where I am" +
@@ -27,8 +26,7 @@ const bios= [
 function About() {
 
     const record_open = useSelector(state=> state.record_open);
-
-
+    
     useEffect(function() {
         $(".About-Background").css("backgroundImage", "url(/color-static.gif)");
         $(".About-Background").height($(".About-Content").height()+50);

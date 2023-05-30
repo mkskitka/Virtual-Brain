@@ -18,6 +18,8 @@ function ProjectSummary(props) {
 
     let writeup = ""
     let project = _.find(projects, {id:active_project_id})
+    let link = (typeof project !== "undefined" && typeof project.link !== "undefined") ? project.link :  null
+
     if(project) {
         writeup = project.writeup
     }
@@ -44,9 +46,14 @@ function ProjectSummary(props) {
                 <div className={"Project-Header-2"}>
                     <div className={"Project-Title-Selected"}>{(active_project_title) ? active_project_title.toUpperCase() : ""}</div>
                 </div>
+                <br></br>
                 <div className={"Writeup"} > {
                     writeup
                 }</div>
+                <br></br>
+                { link && 
+                <a target="_blank" rel="noopener noreferrer" href={link}>project info</a>
+                }
             </div>
         </div>
     );

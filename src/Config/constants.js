@@ -1,10 +1,11 @@
 import React from 'react';
 import ProjectDirectory from "../Components/ProjectDirectory/ProjectDirectory";
 import TerminalT from "../Components/Terminal/Terminal";
-import {astropunk_bio, sheldon_bio, music64_bio, creature_bio, animation_bio, generative_design_bio} from "./writeups";
+import {astropunk_bio, sheldon_bio, music64_bio,
+     creature_bio, animation_bio, generative_design_bio, cant_write_up} from "./writeups";
 import Video from "../Components/Video/Video";
 import About from "../Components/About/About";
-
+import Resume from "../Components/Resume/Resume";
 
 /*
     Directions to add new project to project menu
@@ -12,6 +13,27 @@ import About from "../Components/About/About";
 
 // TEAL #00ffff
 
+
+function pageTemplate(left) {
+    return ({
+        title: "",
+        drag_disabled: false,
+        bottom_bar: false,
+        video_aspect_ratio: false,
+        style: {
+            borderColor: "#0055ff",
+            color: "#0055ff",
+            position: "absolute",
+            overflow: "hidden",
+            width: '350px',
+            height: '520px',
+            left: left,
+            top: Math.floor(Math.random() * 50) + "%"
+        },
+        bodyStyle: {width: "100%", height: "100%"},
+    
+    });
+}
 
 const project_style = {
     borderColor: "#0055ff",
@@ -86,6 +108,7 @@ const picture_window_template = {
 
 };
 
+
 const video_content_template = {
     percent_of_screen_width: .55,
     header: true,
@@ -105,6 +128,11 @@ export const VIDEO_CONFIGS = {
         title: "",
     }],
     "IE": [],
+    "CD": [{
+        ...video_content_template,
+        src_path: './videos/AstropunkReel.mov',
+        title: "",
+    }],
     "AR": [{
         ...video_content_template,
         src_path: './videos/AnimationReel.mov',
@@ -115,12 +143,7 @@ export const VIDEO_CONFIGS = {
         src_path: './videos/Creature.mov',
         title: "",
     }],
-    "SH": [],
-    // 'VV': [{
-    //     ...video_content_template,
-    //     src_path: './videos/ViolinsVibrato.mov',
-    //     title: "",
-    // }],
+    // "SH": [],
     'CRT': [
         {
             ...video_content_template,
@@ -166,21 +189,34 @@ export let WINDOW_CONFIGS = {
             xH: 50,
             xS: 5,
             bodyStyle: {overflow: "auto", height: "100%", position: "relative"},
-            header: false}
-        ],
+            header: false
+        }
+    ],
+    "resume": [
+        {   
+            title: "",
+            drag_disabled: true,
+            style: about_style,
+            xH: 50,
+            xS: 5,
+            bodyStyle: {overflow: "auto", height: "100%", position: "relative"},
+            header: false
+        }
+    ],
     "AP": [{...video_window_template, style:{...video_window_template.style, top: '5%', left: '40%'}}, picture_window_template ],
     "AR": [video_window_template],
     "C": [video_window_template],
-    "CD": [],
+    "CD": [pageTemplate("25%"), pageTemplate("50%"), pageTemplate("75%")],
     "VV": [video_window_template],
     "CRT": [video_window_template, video_window_template],
-    "SH": [], // NO extra windows
+    // "SH": [], // NO extra windows
 }
 
 export const WINDOW_CONTENT = {
     "projects": [<ProjectDirectory config={WINDOW_CONFIGS["projects"][0]}/>],
     "terminal": [<TerminalT/>],
     "about": [<About/>],
+    "resume": [<Resume/>],
     "AP": [
         <Video config={VIDEO_CONFIGS["AP"][0]} id={"AP+1"}/>,
         <div style={{...picture_content_template,
@@ -190,8 +226,10 @@ export const WINDOW_CONTENT = {
     "C": [<Video config={VIDEO_CONFIGS["C"][0]} id={"C"}/>],
     // "VV": [<Video config={VIDEO_CONFIGS["VV"][0]} id={"VV"}/>],
     "CRT": [<Video config={VIDEO_CONFIGS["CRT"][0]} id={"crt"}/>,
-        <Video config={VIDEO_CONFIGS["CRT"][1]} id={"crt2"}/>
-]
+        <Video config={VIDEO_CONFIGS["CRT"][1]} id={"crt2"}/>],
+    "CD": [<div style={{...picture_content_template, 'backgroundImage':"url(/cd/1.png)"}} id={"cd1"}/>, 
+    <div style={{...picture_content_template, 'backgroundImage':"url(/cd/2.jpg)"}} id={"cd2"}/>, 
+    <div style={{...picture_content_template, 'backgroundImage':"url(/cd/3.png)"}} id={"cd3"}/>],
 }
 
 
@@ -205,28 +243,30 @@ export const projects = [
         title: "Untitled (CRT)",
         description: "interactive installation",
         writeup: generative_design_bio,
-        tags: ["A_V", "AI"]
+        tags: ["A_V"]
     },
     {
         id: "CD",
         title: "Cantaloupe Dadaism",
         description: "AI Fashion Look Book",
-        writeup: generative_design_bio,
-        tags: ["A_V", "AI"]
+        writeup: cant_write_up,
+        github: null, 
+        link: "https://mkskitka.notion.site/Canteloupe-Diadism-0c1d532fe464430a86ae3c13b804fda5",
+        tags: []
     },
     {
         id: "AP",
         title: "Astropunk",
         description: "Generative Music Video Game",
         writeup: astropunk_bio,
-        tags: ["A_V", "HCI", "AI"]
+        tags: ["A_V", "WEB"]
     },
     {
         id: "AR",
         title: "Animation Reel",
         description: "Sample of animation pieces",
         writeup: animation_bio,
-        tags: []
+        tags: ["A_V"]
 
     },
     {
@@ -234,22 +274,15 @@ export const projects = [
         title: "The Creature",
         description: "Interactive Web Children's Picture Book",
         writeup: creature_bio,
-        tags: ["A_V", "HCI"]
+        tags: ["WEB"]
     },
-    {
-        id: "SH",
-        title: "Sheldon",
-        description: "Experimental Sound Project",
-        writeup: sheldon_bio,
-        tags: [""]
-    }
     // {
-    //     id: 'VV',
-    //     title: "Violins Vibrato",
-    //     description: "Experimental Video and Sound Project",
-    //     writeup: music64_bio,
+    //     id: "SH",
+    //     title: "Sheldon",
+    //     description: "Experimental Sound Project",
+    //     writeup: sheldon_bio,
     //     tags: ["A_V"]
-    // },
+    // }
 
 ]
 

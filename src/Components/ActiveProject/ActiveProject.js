@@ -24,12 +24,7 @@ function ActiveProject(props) {
 
 
         if(active_project !== null) {
-            let videos = VIDEO_CONFIGS[active_project];
-            videos.map(function (config) {
-                console.log("in videos map")
                 dispatch({type: ADD_DIRECTORY_WINDOW, id: active_project})
-                return config;
-            })
         }
         if(active_project === null) {
             if(active_song === "sheldon.m4a" && record_open) {
@@ -82,7 +77,7 @@ function ActiveProject(props) {
 
         }
         else {
-
+            $(".Active-Project").fadeIn(0)
             $(".Desktop-Background").css("background-image", "");
         }
 

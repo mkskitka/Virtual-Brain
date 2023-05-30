@@ -89,6 +89,12 @@ function Desktop() {
                 </Draggable>
             } */}
 
+
+            <Draggable disabled={icon_drag_disabled}>
+                <div id="resume" className="Desktop-Icon">
+                    <div style={{top: '100%', position: 'absolute'}}>RESUME</div>
+                </div>
+            </Draggable>
             <Draggable disabled={icon_drag_disabled}>
                 <div id="projects" className={"Desktop-Icon"}>
                     <div style={{top: '100%', position: 'absolute'}}>PORFOLIO</div>
@@ -100,7 +106,7 @@ function Desktop() {
                 </div>
             </Draggable>
             <Draggable disabled={icon_drag_disabled}>
-                <a href='https://www.notion.so/mkskitka/MK-s-ITP-Blog-19a39e6f66bb46fd98ed022f7ff62452'>
+                <a target="_blank" rel="noopener noreferrer" href='https://www.notion.so/mkskitka/MK-s-ITP-Blog-19a39e6f66bb46fd98ed022f7ff62452'>
                     <div id="blog" className="Desktop-Icon">
                         <div style={{top: '100%', position: 'absolute'}}>BLOG</div>
                     </div>
@@ -113,12 +119,17 @@ function Desktop() {
     function Windows() {
 
         let DOM_windows = []
+            console.log(active_windows)
             for (const key of Object.keys(WINDOW_CONFIGS)) {
-                 if(active_windows.includes(key))
+                 if(active_windows.includes(key)) {
                      DOM_windows = DOM_windows.concat(WINDOW_CONFIGS[key].map(function(config, i) {
                          return (<Window key={"window-" + key +i} config={config} content={WINDOW_CONTENT[key][i]} id={key}/>);
                      }))
-                else DOM_windows.push("")
+                     console.log(key, " : ", DOM_windows)
+                }
+                else {
+                   // DOM_windows.push("")
+                } 
             };
 
         return(

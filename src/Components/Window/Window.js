@@ -48,6 +48,7 @@ function Window(props) {
       }
     }
 
+
     return (
 
         <Draggable disabled={config.drag_disabled || drag_disabled}>

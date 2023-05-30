@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./monster.css"
 import $ from "jquery"
+import Draggable from "react-draggable";
 
 const TELEPORT_ROTATE = ['rotate(180deg)', 'rotate(90deg)', 'rotate(-90deg)', 'rotate(0deg)' ];
 const TELEPORT_LEFT = ["50%", "0px", "90%", "20%"];
@@ -83,7 +84,9 @@ function Monster() {
     }
 
     return (
+        <Draggable disabled={false}>
             <img alt={"monster-animation"} className="monster" src="standing.png"/>
+            </Draggable>
         );
 
 }

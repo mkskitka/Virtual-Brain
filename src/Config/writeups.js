@@ -48,3 +48,5 @@ export const mental_health_tech_bio = "This visualization is based on survey dat
     " It is an interesting research question: how we can further personify data? "
 
 export const generative_design_bio = "Coming Soon."
+
+export const cant_write_up = "Cantaloupe Dadaism attempts to create fashion from non-traditional sources of inspiration. Most of the images used to generate the looks were from inanimate objects but also include animal and people source images. More broadly the project begins to explore how AI can contribute to new fashion trends and stretch our imagination of how we may express ourselves."
