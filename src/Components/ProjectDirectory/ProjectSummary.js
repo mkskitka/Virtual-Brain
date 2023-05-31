@@ -52,7 +52,7 @@ function ProjectSummary(props) {
                 }</div>
                 <br></br>
                 { link && 
-                <a target="_blank" rel="noopener noreferrer" href={link}>project info</a>
+                <a target="_blank" rel="noopener noreferrer" href={link}>{project.link_name}</a>
                 }
             </div>
         </div>

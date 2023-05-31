@@ -1,7 +1,7 @@
 import React from 'react';
 import ProjectDirectory from "../Components/ProjectDirectory/ProjectDirectory";
 import TerminalT from "../Components/Terminal/Terminal";
-import {astropunk_bio, sheldon_bio, music64_bio,
+import {astropunk_bio, sheldon_bio, music64_bio, aa_bio,
      creature_bio, animation_bio, generative_design_bio, cant_write_up} from "./writeups";
 import Video from "../Components/Video/Video";
 import About from "../Components/About/About";
@@ -128,11 +128,7 @@ export const VIDEO_CONFIGS = {
         title: "",
     }],
     "IE": [],
-    "CD": [{
-        ...video_content_template,
-        src_path: './videos/AstropunkReel.mov',
-        title: "",
-    }],
+    "CD": [],
     "AR": [{
         ...video_content_template,
         src_path: './videos/AnimationReel.mov',
@@ -143,7 +139,11 @@ export const VIDEO_CONFIGS = {
         src_path: './videos/Creature.mov',
         title: "",
     }],
-    // "SH": [],
+    "AA": [{
+        ...video_content_template,
+        src_path: './videos/aa.mov',
+        title: "",
+    }],
     'CRT': [
         {
             ...video_content_template,
@@ -209,7 +209,7 @@ export let WINDOW_CONFIGS = {
     "CD": [pageTemplate("25%"), pageTemplate("50%"), pageTemplate("75%")],
     "VV": [video_window_template],
     "CRT": [video_window_template, video_window_template],
-    // "SH": [], // NO extra windows
+    "AA": [video_window_template],
 }
 
 export const WINDOW_CONTENT = {
@@ -230,6 +230,7 @@ export const WINDOW_CONTENT = {
     "CD": [<div style={{...picture_content_template, 'backgroundImage':"url(/cd/1.png)"}} id={"cd1"}/>, 
     <div style={{...picture_content_template, 'backgroundImage':"url(/cd/2.jpg)"}} id={"cd2"}/>, 
     <div style={{...picture_content_template, 'backgroundImage':"url(/cd/3.png)"}} id={"cd3"}/>],
+    "AA": [<Video config={VIDEO_CONFIGS["AA"][0]} id={"AA"}/>],
 }
 
 
@@ -238,6 +239,15 @@ export const WINDOW_CONTENT = {
 
 
 export const projects = [
+    {
+        id: "AA",
+        title: "After Afghanistan",
+        description: "stories of Afghan refugees",
+        writeup: aa_bio,
+        link: "https://after-afghanistan-exp-013-d35f15a837954.webflow.io/",
+        link_name: "website",
+        tags: ["WEB"]
+    },
     {
         id: "CRT",
         title: "Untitled (CRT)",
@@ -252,6 +262,7 @@ export const projects = [
         writeup: cant_write_up,
         github: null, 
         link: "https://mkskitka.notion.site/Canteloupe-Diadism-0c1d532fe464430a86ae3c13b804fda5",
+        link_name: "project_info",
         tags: []
     },
     {
@@ -275,14 +286,7 @@ export const projects = [
         description: "Interactive Web Children's Picture Book",
         writeup: creature_bio,
         tags: ["WEB"]
-    },
-    // {
-    //     id: "SH",
-    //     title: "Sheldon",
-    //     description: "Experimental Sound Project",
-    //     writeup: sheldon_bio,
-    //     tags: ["A_V"]
-    // }
+    }
 
 ]
 

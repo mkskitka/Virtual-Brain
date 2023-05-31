@@ -108,7 +108,7 @@ function Desktop() {
             <Draggable disabled={icon_drag_disabled}>
                 <a target="_blank" rel="noopener noreferrer" href='https://www.notion.so/mkskitka/MK-s-ITP-Blog-19a39e6f66bb46fd98ed022f7ff62452'>
                     <div id="blog" className="Desktop-Icon">
-                        <div style={{top: '100%', position: 'absolute'}}>BLOG</div>
+                        <div style={{top: '100%', position: 'absolute'}}>ITP BLOG</div>
                     </div>
                 </a>
             </Draggable>    
