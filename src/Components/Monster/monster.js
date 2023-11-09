@@ -20,8 +20,8 @@ function Monster() {
             setTimeout(function () { squat() }, 10000)
             // setTimeout(function () { lookleft() }, 10000)
 
-            setTimeout(function(){$( ".monster" ).attr("src", "monster_fall.gif");}, 280)
-            setTimeout(function(){$( ".monster" ).attr("src", "standing.png");}, 1000)
+            setTimeout(function(){$( ".monster" ).attr("src", "kevin/monster_fall.gif");}, 280)
+            setTimeout(function(){$( ".monster" ).attr("src", "kevin/standing.png");}, 1000)
             setTimeout(function(){$( ".monster" ).css("bottom", "0px");}, 1000)
 
         }, 2000);
@@ -29,8 +29,8 @@ function Monster() {
             console.log(e.which)
             switch (e.which){
                 case 40:    //bottom arrow key
-                    if($( ".monster" ).attr("src") !== "monster_fall.gif") {
-                        $(".monster").attr("src", "monster_fall.gif");
+                    if($( ".monster" ).attr("src") !== "kevin/monster_fall.gif") {
+                        $(".monster").attr("src", "kevin/monster_fall.gif");
                     }
                     break;
                 default:
@@ -38,14 +38,14 @@ function Monster() {
             }
         });
         $(document).keyup(function(e){
-            $( ".monster" ).attr("src", "standing.png");
+            $( ".monster" ).attr("src", "kevin/standing.png");
         });
     }, []);
 
     function blink(){
-        if($( ".monster" ).attr("src") === "standing.png") {
-            $( ".monster" ).attr("src", "blink.gif");
-            setTimeout(function(){ $( ".monster" ).attr("src", "standing.png");}, 600)
+        if($( ".monster" ).attr("src") === "kevin/standing.png") {
+            $( ".monster" ).attr("src", "kevin/blink.gif");
+            setTimeout(function(){ $( ".monster" ).attr("src", "kevin/standing.png");}, 600)
             let after = Math.floor(Math.random() * 6000) + 3000
             setTimeout(function(){blink()},  after);
         }
@@ -61,7 +61,7 @@ function Monster() {
             $(".monster").css({'transform': TELEPORT_ROTATE[transport_to]});
             $(".monster").css("top", TELEPORT_TOP[transport_to]);
             $(".monster").css("left", TELEPORT_LEFT[transport_to]);
-            $(".monster").attr("src", "standing.png");
+            $(".monster").attr("src", "kevin/standing.png");
         }, 2000);
 
         let after = Math.floor(Math.random() * 30000) + 15000
@@ -71,9 +71,9 @@ function Monster() {
     }
 
     function squat(){
-        if($( ".monster" ).attr("src") === "standing.png") {
-            $( ".monster" ).attr("src", "monster_fall.gif");
-            setTimeout(function(){ $( ".monster" ).attr("src", "standing.png");}, 700)
+        if($( ".monster" ).attr("src") === "kevin/standing.png") {
+            $( ".monster" ).attr("src", "kevin/monster_fall.gif");
+            setTimeout(function(){ $( ".monster" ).attr("src", "kevin/standing.png");}, 700)
             let after = Math.floor(Math.random() * 30000) + 20000
             setTimeout(function(){squat()}, after);
         }
@@ -85,7 +85,7 @@ function Monster() {
 
     return (
         <Draggable disabled={false}>
-            <img alt={"monster-animation"} className="monster" src="standing.png"/>
+            <img alt={"monster-animation"} className="monster" src="kevin/standing.png"/>
             </Draggable>
         );
 

@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import './Desktop.css';
 import Draggable from "react-draggable";
@@ -23,7 +23,7 @@ function Desktop() {
     return (
         <div className={"Desktop"}>
             <Animations/>
-            <video style={{width: '100vw', height: '100vh', position: 'absolute'}} src="/background.mp4" muted autoPlay loop></video>
+            {/* <video style={{width: '100vw', height: '100vh', position: 'absolute'}} src="videos/background.mp4" muted autoPlay loop></video> */}
 
             <div className={"Desktop-Background"}>
             </div>
@@ -37,14 +37,14 @@ function Desktop() {
                 {/* Contact Bar */}
                     <div id={"contact-bar"}>
                         <a target="_blank" rel="noopener noreferrer" href="https://github.com/mkskitka">
-                        <img alt='github icon' className={"Icon Git"} src={"github.png"}/>
+                        <img alt='github icon' className={"Icon Git"} src={"icons/github-new.png"}/>
                         </a>
-                        {/*<img alt='mail icon' className={"Icon Mail"} src={"mail.png"}/>*/}
+                        {/* <img alt='mail icon' className={"Icon Mail"} src={"icons/mail.png"}/> */}
                         <a target="_blank" rel="noopener noreferrer" href='https://www.instagram.com/rgb__tears/'>
-                        <img alt='instagram icon' className={"Icon"} src={"insta.png"}/>
+                        <img alt='instagram icon' className={"Icon"} src={"icons/insta-new.png"}/>
                         </a>
                         <a target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/in/mk-skitka-6b6051135/'>
-                        <img alt='Linked In Icon' className={"Icon Li"} src={"linked_in.png"}/>
+                        <img alt='Linked In Icon' className={"Icon Li"} src={"/icons/linkedin-new.png"}/>
                         </a>
                     </div>
 
@@ -52,7 +52,7 @@ function Desktop() {
                     {DesktopIcons()}
                     
                     <div className={"monogram"}/>
-                    <div className={"watermark"}></div>
+                    <div className={"watermark"}>testing</div>
                     <Monster/>
 
                     {/* Multi Media Display Windows */}
@@ -88,8 +88,6 @@ function Desktop() {
                     <div id="terminal" className={"Desktop-Icon"}/>
                 </Draggable>
             } */}
-
-
             <Draggable disabled={icon_drag_disabled}>
                 <div id="resume" className="Desktop-Icon">
                     <div style={{top: '100%', position: 'absolute'}}>RESUME</div>
@@ -117,7 +115,6 @@ function Desktop() {
     }
 
     function Windows() {
-
         let DOM_windows = []
             console.log(active_windows)
             for (const key of Object.keys(WINDOW_CONFIGS)) {

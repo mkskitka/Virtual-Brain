@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import {ADD_DIRECTORY_WINDOW, OPEN_CLOSE_RECORD} from "../../Redux/actions"
 import $ from "jquery"
@@ -17,7 +17,6 @@ const dispatch = useDispatch()
 
 const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
 
-    const [isLoadingVirtualBrain, setIsLoadingVirtualBrain] = useState(true);
     const active_windows = useSelector(state => state.active_windows);
 
     $(".Desktop-Icon").mouseup(function (e) {
@@ -28,7 +27,6 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
 
     useEffect(() => {
         setTimeout(function (){
-            setIsLoadingVirtualBrain(false);
             $(".Desktop-Content").fadeOut(0);
             $(".loadingScreen").fadeOut(200);
             setTimeout(function () {

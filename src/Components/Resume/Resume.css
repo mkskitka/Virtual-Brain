@@ -20,7 +20,7 @@
     position: relative;
 }
 .Resume-Content {
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: lighter;
     text-align: left;
     position: relative;
@@ -46,20 +46,25 @@
     margin-top: 2vh;
     margin-bottom: 2vh;
 }
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 .mfont {
-    font-size: 24px;
     position: relative;
 }
 
 .left-align {
     float: left;
-    width: 75%;
+    width: 55%;
 }
 
 .right-align {
     float: right; 
-    width: 25%;
+    width: 35%;
 }
 
 .full-line {

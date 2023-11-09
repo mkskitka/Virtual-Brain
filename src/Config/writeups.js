@@ -52,3 +52,5 @@ export const generative_design_bio = "Coming Soon."
 export const cant_write_up = "Cantaloupe Dadaism attempts to create fashion from non-traditional sources of inspiration. Most of the images used to generate the looks were from inanimate objects but also include animal and people source images. More broadly the project begins to explore how AI can contribute to new fashion trends and stretch our imagination of how we may express ourselves."
 
 export const aa_bio = "A scrolly-telling website documenting the stories of afghan refugees and their exile from home. I designed and developed the website in webflow with help from Shawn Carrie (secondary developer), ‍Umar Farooq (journalist), and Oscar Durand (journalist). This project was supported with a grant from the National Geographic Society. "
+
+export const de_bio = "This is the bio for drunk elephant";

@@ -5,21 +5,24 @@ import {useSelector} from "react-redux";
 
 const bios= [
     "",
-    "Hi, I'm MK!",
-    "Welcome to my ~ VIRTUAL BRAIN ~ ",
-    "Here I plan to document my own inspirations, research, memories, fleeting thoughts, " +
-    "deep contemplations, failures, successes, dreams and beyond. ",
+    "Mary Kate Skitka -",
+    "*",
+    "*",
     "",
-    " I am a software engineer and artist motivated to investigate and expand the human experience though new media applications." +
-    " On the day to day you may find me coding up web apps, visualizations, or arduino contraptions " +
-    "on 'the floor' at 370 Jay St. Brooklyn," +
-    " where I am" +
-    " currently pursuing my masters degree in interactive communication technology with ITP NYU. ",
-    "In my free time I enjoy mentoring students at the ITP coding lab, " +
-    "rock climbing, and exploring my new living locale, Brooklyn. " +
-    "If you want to chat cool project ideas or just have a good coffee shop rec 8) ☕ , reach out @ mkskitka@gmail.com ",
+    "also known as MK, or by her stage name rgb__tears, is a software engineer and artist." +
+    " She is currently a post-doctoral fellow at Tisch ITP NYU, where she is studying embodied programming techniques, primarily " +
+     "coding as performance. She intends to re-evaluate the dogmas surrounding software engineering and " +
+     "seeks to understand liveness through the context of technology." +
+    " In her free time she enjoys teaching students to code, " +
+    "live coding, dancing, building cool websites, learning about a/v configurations, and making shit with her hands. 'I learn best by messing with the things around me and seeing what happens. " 
+     + " It never fails to suprise me the the insights you glean from observing the unexpected. '" ,
+     "*",
+    "If you want to chat cool project ideas or just have a good coffee shop rec 8) ☕ , reach out!",
+    "email: mkskitka@gmail.com ",
+     "ig: @rgb__tears ",
     "",
-    " - (M)ary (K)ate Skitka"
+    "*",
+    "*",
 ];
 
 
@@ -28,7 +31,7 @@ function About() {
     const record_open = useSelector(state=> state.record_open);
     
     useEffect(function() {
-        $(".About-Background").css("backgroundImage", "url(/color-static.gif)");
+        $(".About-Background").css("backgroundImage", "url(/gifs/color-static.gif)");
         $(".About-Background").height($(".About-Content").height()+50);
         $(".About-Content").fadeOut(0);
         if(record_open) {
@@ -46,7 +49,7 @@ function About() {
 
             $(".About-Content").fadeIn(500);
             changeBrightness(.8);
-        }, 1000)
+        }, 100)
     }, []);
 
     function changeBrightness(opacity) {
@@ -58,7 +61,7 @@ function About() {
     return (
         <div className={"About-Wrapper"} >
             <div className={"About-Background"} />
-            <div className={"About-Content"} >
+            <div style ={{display: "none"}}className={"About-Content"} >
                 {Bio()}
             </div>
         </div>

@@ -2,7 +2,7 @@ import Draggable from "react-draggable";
 import React, {useState} from 'react';
 import './Record.css'
 import {useSelector} from "react-redux";
-import P5Wrapper from 'react-p5-wrapper';
+import { ReactP5Wrapper } from "react-p5-wrapper";
 import record_sketch from './Record';
 import ReactAudioPlayer from 'react-audio-player';
 import {useMediaQuery} from "react-responsive";
@@ -31,7 +31,7 @@ function RecordWrapper() {
             <div id="record-wrapper" style={record_style}>
                 <div>
                     <div>
-                        <P5Wrapper song={active_song} stop={stop} sketch={record_sketch}/>
+                        <ReactP5Wrapper song={active_song} stop={stop} sketch={record_sketch}/>
                     </div>
                     <div style={{}}>
                         <ReactAudioPlayer

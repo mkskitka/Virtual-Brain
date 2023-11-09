@@ -36,21 +36,4 @@
 }
 
 
-#adj2-bigtext {
-    font-size: 100px;
-    visibility: hidden;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-}
-
-#brain {
-    font-size: 3em;
-    visibility: hidden;
-    position: absolute;
-    width: 500px;
-    height: 500px;
-    right: 0px;
-    bottom: 0px;
-}
 

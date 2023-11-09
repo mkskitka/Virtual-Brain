@@ -10,7 +10,7 @@ function Resume() {
     const record_open = useSelector(state=> state.record_open);
     
     useEffect(function() {
-        $(".Resume-Background").css("backgroundImage", "url(/color-static.gif)");
+        $(".Resume-Background").css("backgroundImage", "url(/gifs/color-static.gif)");
         $(".Resume-Background").height($(".Resume-Content").height()+50);
         $(".Resume-Content").fadeOut(0);
         if(record_open) {
@@ -25,46 +25,50 @@ function Resume() {
 
         }
         setTimeout(function () {
-
             $(".Resume-Content").fadeIn(500);
-            changeBrightness(.8);
-        }, 1000)
+            // changeBrightness(.9);
+        }, 0)
     }, []);
 
     function changeBrightness(opacity) {
         $(".Resume-Content").css("opacity", opacity);
         let after = Math.floor(Math.random() * 2000) + 500;
-        let newOpacity = (Math.floor(Math.random() * 100) + 70)/100;
+        let newOpacity = (Math.floor(Math.random() * 100) + 90)/100;
         setTimeout(function(){changeBrightness(newOpacity)}, after)
     }
     return (
         <div className={"Resume-Wrapper"} >
             <div className={"Resume-Background"} />
-            <div className={"Resume-Content"} >
+            <div className={"Resume-Content"} style ={{display: "none"}}>
+                <div className='flex-container'>
                 <div>Mary Kate Skitka</div>
 
                 <div className='resume-heading mfont'>Education</div>
-                <div className='group'>
+
                 <div className='left-align mfont'>New York University, Interactive Telecommunications Program</div>
                 <div className='right-align mfont'>May 2023</div>
-                <div className='full-line mfont'>Master of Professional Studies</div>
-                </div>
-                <div className='space'/>
-                <div className='group'>
+                <div className='left-align mfont'>Master of Professional Studies</div>
+                <div className='right-align mfont'></div>
+
+                <div className='space'></div>
+
                 <div className='left-align mfont'>Tufts University</div>
                 <div className='right-align mfont'>May 2018</div>
-                <div className='full-line mfont'>Bachelor of Science in Cognitive Brain Science and Computer Science</div>
-                </div>
+                <div className='left-align mfont'>Bachelor of Science in Cognitive Brain Science and Computer Science</div>
+                <div className='right-align mfont'></div>
+
 
                 <div className='resume-heading mfont'>Experience</div>
 
-                <div className='group'>
+
                 <div className='left-align mfont'>Creative Technologist Freelancer, Brooklyn NY</div>
                 <div className='right-align mfont'>September 2022 - Present</div>
-                </div>
-                <div className='space'/>
-                <div className='group'>
-                <div className='full-line mfont'>New York University, Brooklyn NY</div>
+
+                <div className='space'></div>
+
+                <div className='left-align mfont'>New York University, Brooklyn NY</div>
+                <div className='left-align mfont'>&emsp;Post Doctoral Research Fellow</div>
+                <div className='right-align mfont'>August 2023 - present</div>
                 <div className='left-align mfont'>&emsp;Coding Lab Student Lead</div>
                 <div className='right-align mfont'>September 2022 - May 2023</div>
                 <div className='left-align mfont'>&emsp;Coding Lab Mentor</div>
@@ -73,18 +77,19 @@ function Resume() {
                 <div className='right-align mfont'>September 2021 - January 2022</div>
                 <div className='left-align mfont'>&emsp;Graduate Teaching Assistant for Code!</div>
                 <div className='right-align mfont'>September 2021 - May 2022</div>
-                </div>
-                <div className='space'/>
-                <div className='group'>
+
+                <div className='space'></div>
+
                 <div className='left-align mfont'>Charles River Analytics, Cambridge MA</div>
                 <div className='left-align mfont'>Software Engineer</div>
                 <div className='right-align mfont'>June 2017 - August 2022</div>
-                </div>
-                <div className='space'/>
-                <div className='group'>
+
+                <div className='space'></div>
+  
                 <div className='left-align mfont'>Massachusetts Institute of Technology, Cambridge MA</div>
                 <div className='left-align mfont'>Web Developer (Lobbyview.org)</div>
                 <div className='right-align mfont'>November 2016  - March 2017</div>
+
                 </div>
             </div>
         </div>

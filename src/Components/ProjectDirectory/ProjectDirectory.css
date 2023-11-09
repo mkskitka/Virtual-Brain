@@ -25,14 +25,14 @@
     position: relative;
 }
 
-.Project-Wrapper::-webkit-scrollbar {
+/* .Project-Wrapper::-webkit-scrollbar {
     display: none;
-}
+} */
 
 .Project-Wrapper {
 
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    /* -ms-overflow-style: none;  IE and Edge */
+    /* scrollbar-width: none;  Firefox */
 }
 .Project-Header {
     width: 100%;
