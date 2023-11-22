@@ -11,7 +11,7 @@ export function pageTemplate(left) {
             overflow: "hidden",
             width: '350px',
             height: '520px',
-            left: left,
+            left: "32%",
             top: Math.floor(Math.random() * 50) + "%"
         },
         bodyStyle: {width: "100%", height: "100%"},
@@ -46,6 +46,18 @@ export const terminal_style = {
 export const about_style = {
     borderColor: '#00ffff',
     color:  '#00ffff',
+    width: '100%',
+    height: '100%',
+    position: "absolute",
+    left: "0%",
+    padding: "0px",
+    top: "0%",
+    zIndex: 2,
+}
+
+export const resume_style = {
+    borderColor: 'fuchsia',
+    color:  'fuchsia',
     width: '100%',
     height: '100%',
     position: "absolute",
@@ -99,8 +111,8 @@ export const video_content_template = {
 }
 
 export const picture_content_template = {
-    width: "100%",
-    height: "100%",
+    // width: '400px',
+    // height: "400px",
     header: false,
     backgroundSize: "cover",
 }

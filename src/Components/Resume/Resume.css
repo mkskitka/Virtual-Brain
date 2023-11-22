@@ -9,7 +9,10 @@
     top: 0px;
     z-index: 2;
     min-height: 100%;
+}
 
+.italic {
+    font-style: italic;
 }
 
 .Resume-Wrapper{
@@ -26,7 +29,7 @@
     position: relative;
     padding-left: 6vw !important;
     padding-right: 6vw !important;
-    padding-top: 6vw !important;
+    padding-top: 4vw !important;
     padding-bottom: 6vw !important;
     /*margin: 6vw;*/
 }
@@ -43,7 +46,7 @@
     font-weight: bold;
     width: 100%;
     position: relative;
-    margin-top: 2vh;
+    margin-top: 0vh;
     margin-bottom: 2vh;
 }
 .flex-container {
@@ -59,12 +62,13 @@
 
 .left-align {
     float: left;
-    width: 55%;
+    width: 60%;
 }
 
 .right-align {
     float: right; 
     width: 35%;
+    text-align: right;
 }
 
 .full-line {

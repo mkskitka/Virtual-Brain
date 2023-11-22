@@ -26,7 +26,7 @@ function Monster() {
 
         }, 2000);
         $(document).keydown(function(e){
-            console.log(e.which)
+            // console.log(e.which)
             switch (e.which){
                 case 40:    //bottom arrow key
                     if($( ".monster" ).attr("src") !== "kevin/monster_fall.gif") {

@@ -309,13 +309,13 @@ export default function record_sketch (p, canvasParentRef) {
             record_arm_x_total = 0
             record_arm_x_increment = 0;
             CURRENT_STYLUS_ACTION += 1
-            console.log("moving onto next action: ", CURRENT_STYLUS_ACTION)
+            // console.log("moving onto next action: ", CURRENT_STYLUS_ACTION)
         }
         if(record_arm_y_total > record_arm_y_max) {
             record_arm_y_total = 0
             record_arm_y_increment = 0;
             CURRENT_STYLUS_ACTION += 1
-            console.log("moving onto next action: ", CURRENT_STYLUS_ACTION)
+            // console.log("moving onto next action: ", CURRENT_STYLUS_ACTION)
         }
         if(CURRENT_STYLUS_ACTION === FINISHED) {
             CURRENT_STYLUS_ACTION = NONE;

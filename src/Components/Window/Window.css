@@ -9,7 +9,7 @@
     border-width: 3px;
     border-style: solid;
     background-color: rgba(0, 0, 0, .5)    /*  10% opaque green */ ;
-    backdrop-filter: blur(4px);
+    backdrop-filter: blur(12px);
     display: flex;
     flex-direction: column;
     position: relative;

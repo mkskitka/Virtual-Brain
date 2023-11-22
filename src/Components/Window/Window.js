@@ -5,15 +5,20 @@ import './Window.css'
 import {useDispatch} from "react-redux";
 import $ from 'jquery'
 import {useMediaQuery} from "react-responsive";
+import {video_window_template} from "../../Config/style_templates"
 
 const defaultConfigs = {
     "xH": 25, // x button height
     "xS": 3,  // x button thickness
+    ...video_window_template,
 }
 
 function Window(props) {
 
-    let { config, content, id } = props;
+    let { config, content, project, id, x } = props;
+    if(!config) {
+        config = defaultConfigs
+    }
     const dispatch = useDispatch()
     const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const isMobile = useMediaQuery({ maxWidth: 767 })
@@ -45,24 +50,49 @@ function Window(props) {
       else {
           width = $(window).width() * width * 1.1;
           height = width * .55;
+          if(project.media_dimensions) {
+            let media_dim = project.media_dimensions[x].split(":");
+            width = $(window).width() * parseFloat(media_dim[2]);
+            height = width * (media_dim[1]/media_dim[0])
+            // left = 
+          }
+          if(project.left_top) {
+            let left_top = project.left_top[x].split(":");
+            console.log(left_top)
+            config.style.left = left_top[0]
+            config.style.top = left_top[1]
+          }
+
       }
     }
+
+    // if(id == "projects" && isMobile) {
+    //     width = $(window).width()
+    //     config.style.width = $(window).width()
+    // }
+
+
 
 
     return (
 
         <Draggable disabled={config.drag_disabled || drag_disabled}>
-            <div className={"Window Window-"+id} key={"Window"+id} style={{...config.style, width: width, height: height, position: position}}>
-                    <div className={"Window-Header"} id={"Window-Header-"+id} style={(config.header) ? null : {height: '0px'} }>
+            <div className={"Window Window-"+id} key={"Window"+id+x} style={{
+                            ...config.style, 
+                            
+                            width: width, 
+                            height: height, 
+                            position: position}}>
+                    <div className={"Window-Header"} id={"Window-Header-"+id+x} style={(config.header) ? null : {height: '0px'} }>
                         <div onClick={closeWindow} className={"Close-Button"} style={{width: xH, height: xH, zIndex: 1}}></div>
                         <div  className="Close-Button" style={{width: xH, height: xH}} >
-                            <svg className={"Window-Close-button"} id={"Window-Close-button"+id} width="100%" height="100%" >
+                            <svg className={"Window-Close-button"} id={"Window-Close-button"+id+x} width="100%" height="100%" >
                                 <line x1="0" y1="0" x2={xH} y2={xH} style={{stroke:config.style.borderColor, strokeWidth:xS}} />
                                 <line x1={xH} y1="0" x2="0" y2={xH} style={{stroke:config.style.borderColor, strokeWidth:xS}} />
                             </svg>
                         </div>
                         <div style={(config.titleStyle) ? config.titleStyle : null} className={"Window-Title"}
-                             key={"title"+id}>{config.title.toUpperCase()}</div>
+                             key={"title"+id+x}>{config.title.toUpperCase()}</div>
                     </div>
                     <div className={"Window-Body"} id={"Window-Body-"+id} style={config.bodyStyle} >
                      {content}
@@ -72,7 +102,7 @@ function Window(props) {
     );
 
     function getV(config, v) {
-        if(typeof(config[v]) !== "undefined") {
+        if(config[v]) {
             return config[v]
         }
         else

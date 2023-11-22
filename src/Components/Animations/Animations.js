@@ -20,7 +20,7 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     const active_windows = useSelector(state => state.active_windows);
 
     $(".Desktop-Icon").mouseup(function (e) {
-        console.log("first engaggement")
+        // console.log("first engaggement")
         FIRST_ENGAGEMENT = true;
     });
 
@@ -38,7 +38,6 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
     }, [])
 
     useEffect(() => {
-        console.log(FIRST_ENGAGEMENT)
         if(FIRST_ENGAGEMENT && !FIRST_ENGAGEMENT_ANIMATION && !isTabletOrMobile) {
             console.log('animating')
             FIRST_ENGAGEMENT_ANIMATION= true

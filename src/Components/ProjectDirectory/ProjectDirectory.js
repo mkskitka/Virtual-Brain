@@ -13,13 +13,11 @@ const projectCategories = ["ALL", "research", "A_V", "WEB"]
 function ProjectDirectory(props) {
 
     const dispatch = useDispatch()
-    const {config} = props;
     const active_project_id = useSelector(state => state.active_project);
     const route_to_project = useSelector(state => state.route_to_project);
     const [projectCategory, setProjectCategory] = useState('ALL');
     const isMobile = useMediaQuery({ maxWidth: 767 })
-    const videoHeight = $(window).width() * .55;
-    const pwh =  $(window).height() - videoHeight;
+
 
     useEffect( () => {
         if(route_to_project !== null) {
@@ -29,7 +27,6 @@ function ProjectDirectory(props) {
     )
 
     useEffect(() => {
-        $(".Project-Directory-Wrapper").fadeTo(1000, 1);
         if(isMobile) {
             $(".Window-projects").css("width", "100%");
         }
@@ -55,9 +52,25 @@ function ProjectDirectory(props) {
                 <div key={p.id} id={p.id} className={"Project-Link Project-Link" + p.id}
                      onClick={(e) => onFileClick(p.id)}>
                     <div key={p.title} id={"Project-Title" + p.id}
-                         className={"Project-Title"}>{p.title.toUpperCase()}</div>
-                    <div key={p.title + "_desc"} id={"Project-Description" + p.id}
-                         className={"Project-Description"}>{p.description}</div>
+                         className={(p.coming_soon) ? "Inactive-Project-Title" : "Project-Title"}>{p.title.toUpperCase()}</div>
+                    {/* <div key={p.title + "_desc"} id={"Project-Description" + p.id}
+                         className={"Project-Description"}>{p.description}
+                    </div> */}
+                    {
+                    (p.thumbnail_url) &&
+                    <div style={{position: "relative"}}>
+                        <div className="project_thumbnail" style={{
+                            backgroundImage: "url(/"+p.project_path + p.thumbnail_url+")",
+                            }}>
+                        </div>
+                        {
+                        (p.coming_soon) &&
+                        <div className="project_thumbnail_overlay">coming soon
+                        </div>
+        }
+                    </div>
+                    
+                    }
                 </div>
             );
         }
@@ -74,7 +87,6 @@ function ProjectDirectory(props) {
             <div className={"Project-Summary-Wrapper"}>
                 <ProjectSummary
                     animateBackToMenu={animateBackToMenu}
-                    config={config}
                 />
             </div>
         </div>
@@ -82,15 +94,16 @@ function ProjectDirectory(props) {
 
     function ProjectDir() {
         return(
-            <div className={"Project-Wrapper"} style={{position: "relative"}}>
+            <div className={"Project-Wrapper"}>
                 <div className={"Project-Header"}>
                     <div className={"Project-Menu"}>
-                        <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={"Selected"}>MK's Picks</div>
+                        <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={"Selected"}>All</div>
                         <div id={'research'} onClick={() => setProjectCategory("research")}>Research</div>
                         <div id={'A_V'}  onClick={() => setProjectCategory("A_V")}>A/V</div>
                         <div id={'WEB'}  onClick={() => setProjectCategory("WEB")}>Web</div>
                     </div>
                 </div>
+                {/* <hr class="rounded"></hr> */}
                 <div className={"Project-Directory-Content"}>{
                     project_list}
                 </div>
@@ -115,9 +128,6 @@ function ProjectDirectory(props) {
     }
 
     function projectSelectAnimation(p) {
-        if(isMobile) {
-            $(".Window-projects").css("height", pwh);
-        }
         $(".Project-Directory-Wrapper").hide(1000);
         $(".Project-Summary-Wrapper").show(1000);
         dispatch({type: CHANGE_ACTIVE_PROJECT, project: p})

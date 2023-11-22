@@ -9,6 +9,10 @@ import { useMediaQuery } from 'react-responsive';
 import { WINDOW_CONFIGS, WINDOW_CONTENT } from '../../Config/constants'
 import RecordWrapper from "../Record/RecordWrapper";
 import Animations from '../Animations/Animations';
+import {projects} from '../../Config/constants'
+import _ from 'lodash';
+import { isVideo, isPhoto, makePhoto, makeVideo } from '../../Utils/helper-utils';
+
 
 
 
@@ -52,7 +56,7 @@ function Desktop() {
                     {DesktopIcons()}
                     
                     <div className={"monogram"}/>
-                    <div className={"watermark"}>testing</div>
+                    <div className={"watermark"}></div>
                     <Monster/>
 
                     {/* Multi Media Display Windows */}
@@ -116,17 +120,35 @@ function Desktop() {
 
     function Windows() {
         let DOM_windows = []
-            console.log(active_windows)
-            for (const key of Object.keys(WINDOW_CONFIGS)) {
-                 if(active_windows.includes(key)) {
-                     DOM_windows = DOM_windows.concat(WINDOW_CONFIGS[key].map(function(config, i) {
-                         return (<Window key={"window-" + key +i} config={config} content={WINDOW_CONTENT[key][i]} id={key}/>);
-                     }))
-                     console.log(key, " : ", DOM_windows)
-                }
-                else {
-                   // DOM_windows.push("")
-                } 
+            for (let i=0; i<active_windows.length; i++) {
+                    // console.log(active_windows[i])
+                    let key = active_windows[i]
+                    let project = _.find(projects, ['id', key]);
+                    // IF PROJECT WINDOW 
+                    if(project) {
+                        // and is DESKTOP
+                        if(!isTabletOrMobile) {
+                            //VIDEOS & IMAGES 
+                            DOM_windows = DOM_windows.concat(project.media.map(function(url, x) {
+                                return (<Window 
+                                    key={"window-" + key +x} 
+                                    x={x}
+                                    project={project} 
+                                    content={ isVideo(url) ? makeVideo(project, url, x) : isPhoto(url) ? makePhoto(project, url, x) : null}
+                                    id={key}
+                                />)
+                            }))
+                        }
+                        else {
+                            // VIEW IN PROJECT DIRECTORY - rendered in projectDirectory.js
+                        }
+                    }
+                    // SPECIAL WINDOW
+                    else {
+                        DOM_windows = DOM_windows.concat(WINDOW_CONFIGS[key].map(function(config, x) {
+                            return (<Window key={"window-" + key +x} config={config} content={WINDOW_CONTENT[key][x]} id={key}/>);
+                        }))
+                    }
             };
 
         return(
@@ -134,7 +156,6 @@ function Desktop() {
         )
 
     }
-
 
 }
 

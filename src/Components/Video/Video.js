@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useRef, useEffect} from 'react';
 import { Player, ControlBar} from 'video-react';
 import "./Video.css"
 import $ from "jquery";
@@ -7,7 +7,7 @@ import {useMediaQuery} from "react-responsive";
 
 function Video(props) {
 
-    const {config} = props
+    const {src_url, x, w, h} = props
     const isMobile = useMediaQuery({ maxWidth: 767 })
     let width;
     let height;
@@ -17,25 +17,43 @@ function Video(props) {
         height = width * .66;
     }
     else {
-        width = $(window).width() * config.percent_of_screen_width
+        width = $(window).width() * .55
         height = width * .66;
     }
 
     let top = -height * .08 + 'px';
 
+    if(w) {
+        width =w;
+        
+    }
+    if(h) {
+        height =h;
+        top = -height * .0 + 'px';
+    }
+
+    const vidRef=useRef();
+
+
     return (
         <div className={"Video"}
-             style={{
+             style={(!isMobile) ? {
                  overflow: "hidden",
-                 position: "absolute",
-                 left: config.left,
+                 position: "relative",
+                 left: "0%",
                  top: top,
+             } : {
+                overflow: "hidden",
+                position: "relative",
+                marginTop: "25px",
+                marginBottom:"25px", 
              }}>
             <div>
                 <Player
+                    muted
                     autoPlay
-                    muted={false}
-                    playsInline={false}
+                    ref={ vidRef }
+                    playsInline={true}
                     loop={true}
                     fluid={false}
                     videoHeight={height}
@@ -43,7 +61,7 @@ function Video(props) {
                     height={height}
                     aspectRatio={"16:9"}
                 >
-                    <source src={config.src_path} />
+                    <source src={src_url} />
                     <ControlBar disableCompletely={true} />
                 </Player>
             </div>

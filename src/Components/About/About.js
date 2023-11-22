@@ -9,15 +9,15 @@ const bios= [
     "*",
     "*",
     "",
-    "also known as MK, or by her stage name rgb__tears, is a software engineer and artist." +
-    " She is currently a post-doctoral fellow at Tisch ITP NYU, where she is studying embodied programming techniques, primarily " +
-     "coding as performance. She intends to re-evaluate the dogmas surrounding software engineering and " +
-     "seeks to understand liveness through the context of technology." +
+    "also known as MK, or by her stage name rgb__tears, is a creative technologist and a/v artist." +
+    " She is currently a post-doctoral research fellow at Tisch ITP NYU, where she is studying embodied programming techniques, primarily " +
+     "coding as performance. Through her art practice she " +
+     "seeks to understand liveness in the context of human-technology interactions." +
     " In her free time she enjoys teaching students to code, " +
-    "live coding, dancing, building cool websites, learning about a/v configurations, and making shit with her hands. 'I learn best by messing with the things around me and seeing what happens. " 
-     + " It never fails to suprise me the the insights you glean from observing the unexpected. '" ,
+    "live coding, dancing, building experimental websites, learning new a/v setup configurations, and ergonomic home design. " 
+     + "'" ,
      "*",
-    "If you want to chat cool project ideas or just have a good coffee shop rec 8) ☕ , reach out!",
+    "If you want to chat project ideas, are looking for a freelancer, or just have a good coffee shop rec 8) ☕ , reach out!",
     "email: mkskitka@gmail.com ",
      "ig: @rgb__tears ",
     "",

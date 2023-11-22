@@ -12,6 +12,8 @@
     color: #0091ff;
     font-size: 2em;
     color: #00ffff !important;
+    padding-left: 20px;
+    padding-top: 3px;
 }
 
 .Project-Summary-Wrapper {
@@ -19,36 +21,72 @@
     height: 100%;
     position: relative;
 }
-.Project-Directory-Wrapper {
-    opacity: 0;
-    height: 100%;
-    position: relative;
-}
+
 
 /* .Project-Wrapper::-webkit-scrollbar {
     display: none;
 } */
 
-.Project-Wrapper {
 
-    /* -ms-overflow-style: none;  IE and Edge */
-    /* scrollbar-width: none;  Firefox */
-}
 .Project-Header {
     width: 100%;
-    position: fixed;
-    background-color: transparent;
-    top: 30px;
-    height: 8%;
+    position: relative;
     z-index: 1;
-    backdrop-filter: blur(4px);
+    position: sticky;
+    top: 0px;
+    /* text-shadow: #000 3px 10px 10px; */
+    /* backdrop-filter: blur(4px); */
+     
 }
+
+.project_thumbnail_overlay {
+    position: absolute;
+    /* background-image: url('../../../public/gifs/color-static.gif');
+     */
+    opacity: .5;
+    height: 100px;
+    width: 100%;
+    color: #777;
+    font-size: 3em;
+    text-align: center;
+    top: 0px;
+    z-index: 1;
+    background-color: black;
+}
+
+
+.project_thumbnail {
+    width: 100%;
+    height: 100px;
+    background-color: transparent;
+    position: relative;
+    background-size:cover;
+    background-position:center;
+    /* border-top: 2px solid #0077ff; */
+    /* border-right: 2px solid #0077ff; */
+    border-radius: 5px;
+}
+
+
+/* Rounded border */
+hr.rounded {
+    border: 1.5px solid #0077ff;
+    border-radius: 5px;
+    margin-left: 10px;
+    margin-top: 20px;
+  }
+
 .Project-Menu {
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
     background-color: transparent ;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(4px);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 10px;
+
 }
 
 .Project-Menu > div {
@@ -56,22 +94,31 @@
     top: 10px;
     position: relative;
     color: #0091ff;
-    font-size: 1.3em;
+    font-size: 2em;
     cursor: pointer;
+    padding-left: 10px;
+    padding-right: 10px;
+
 }
 
 .Selected {
     font-weight: bolder;
     color: #00ffff !important;
+    
 }
 
+
 .Project-Directory-Content {
-    position: relative;
     width: 100%;
     height: 100%;
     padding-left: 25px;
     padding-right: 25px;
-    padding-top: 15%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    position: relative;
+}
+.Project-Wrapper {
+    /* display: none; */
 }
 .Project-Title:Hover {
     opacity: 1;
@@ -80,14 +127,20 @@
 }
 
 .Project-Title {
-    font-size: 1.7em;
+    font-size: 2em;
     position: relative;
+}
+
+.Inactive-Project-Title {
+    font-size: 2em;
+    position: relative;
+    opacity: .5;
 }
 
 .Project-Description {
      height: 30px;
      padding-left: 20px;
-     font-size: 1.0em;
+     font-size: 0em;
      opacity: .8;
      top: -10px;
      position: relative;
@@ -99,9 +152,11 @@
 .Back-Button-Container:Hover {
     cursor: pointer;
 }
+
 .Back-Button-Container {
     z-index: 30;
 }
+
 .Back-Button-Click {
     width: 25px;
     height: 25px;
