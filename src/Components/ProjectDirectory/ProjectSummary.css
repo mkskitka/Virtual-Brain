@@ -15,7 +15,12 @@
     
 }
 
-
+.caption {
+    color: #00ffff !important;
+    font-size: 1.1em;
+    position: relative;
+    top: -25px;
+}
 .Project-Date {
     font-size: 2em;
     padding-left: 20px;

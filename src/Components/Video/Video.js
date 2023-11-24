@@ -51,7 +51,7 @@ function Video(props) {
             <div>
                 <Player
                     muted
-                    // autoPlay
+                    autoPlay
                     ref={ vidRef }
                     playsInline={true}
                     loop={true}
@@ -63,8 +63,7 @@ function Video(props) {
                 >
                     <source src={src_url} />
                     <ControlBar 
-                        disableCompletely={true}
-                        autoHide={false} />
+                        disableCompletely={true}/>
                 </Player>
             </div>
         </div>

@@ -18,7 +18,7 @@ export const projects = [
         link_name: "visit the free open call exhibition",
         thumbnail_url: "thumbnail.png",
         project_path: "projects/evidence/",
-        media:[ "integration.jpg","video.mov","yes.mov", "opencall.jpg"],
+        media:[ "integration.jpg","app_demo.mov","user_demo.mov", "opencall.jpg"],
         media_dimensions: [ "6:4:.30", "16:9:.5","2.25:4:.15", "2.5:4:.155"],
         left_top: [ "58%:8%", "35%:45%","33%:5%","24%:23%"],
         date: "August '23 -"
@@ -173,8 +173,25 @@ export const projects = [
         coming_soon: true,
         date: "Jan '23 -"
     },
-
 ]
+
+export const ASSET_CAPTIONS = {
+    "integration.jpg": "integration testing with touch screen at the Shed",
+    "app_demo.mov": "weighted network graph visualization of archive", 
+    "user_demo.mov": "user interacting with digital archive",
+    "pamorama.mov": "3-wall projecton mapping set up",
+    'band.jpg': "Yasser Tejeda sound check, pre-show", 
+    'flier.gif': "Wild Birds show flier",
+    'djs.mov': "Yalla Yalla Party Proejct Dj's performing",
+    'explode.mov' : "users select from options in a a hair quiz. Custom text explode animations were added to create a more engaging design.",
+    'smoothie.gif': "at the end of the quiz user receives custom hair formula recommendation",
+    'installation.mov': "a user taking hair quiz",
+    "reel.jpg": "example photo output from photobooth", 
+    "dancing.mov": "users dancing infront of screen display",
+    "full_group.jpg": "screenshot of larger group photo output",
+    "network.jpg": "touch desinger network used to control photobooth displays",
+    "instructions.png": "instructions displayed next to photobooth display. Instructions were meant to make usage as easy as possible for users."
+}
 
 
 

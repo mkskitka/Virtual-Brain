@@ -46,7 +46,6 @@ export function makePhoto(project, url, x) {
 }
 //mobile
 export function makePhotoMobile(project, url, x) {
-    console.log("url", url)
     let media_dim = project.media_dimensions[x].split(":");
     let width = $(window).width()-50;
     let height = width * (media_dim[1]/media_dim[0])

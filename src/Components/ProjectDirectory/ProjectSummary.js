@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { projects } from '../../Config/projects'
+import { projects, ASSET_CAPTIONS } from '../../Config/projects'
 import { useSelector } from 'react-redux';
 import { project_style } from '../../Config/style_templates';
 import "./ProjectSummary.css"
@@ -87,9 +87,14 @@ function ProjectSummary(props) {
                 if(isMobile) {
                     //VIDEOS & IMAGES 
                     assets = assets.concat(project.media.map(function(url, x) {
-                        return (<div key={"asset-" + key +x} >
-                            {isVideo(url) ? makeVideoMobile(project, url, x) : isPhoto(url) ? makePhotoMobile(project, url, x) : null}
-                            </div> )
+                        return (
+                            <div>
+                                <div key={"asset-" + key +x} >
+                                    {isVideo(url) ? makeVideoMobile(project, url, x) : isPhoto(url) ? makePhotoMobile(project, url, x) : null}
+                                </div>
+                                <div className='caption'>{ASSET_CAPTIONS[url]}</div> 
+                            </div>
+                            )
  
                     }))
                 }

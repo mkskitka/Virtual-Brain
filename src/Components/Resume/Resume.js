@@ -14,10 +14,10 @@ function Resume() {
         $(".Resume-Background").css("backgroundImage", "url(/gifs/color-static.gif)");
         $(".Resume-Background").height($(".Resume-Content").height()+50);
         $(".Resume-Content").fadeOut(0);
-        if(isMobile) {
-            $(".left-align").css("fontSize", ".85em")
-            $(".right-align").css("fontSize", ".85em")
-        }
+        // if(isMobile) {
+        //     $(".left-align").css("fontSize", ".85em")
+        //     $(".right-align").css("fontSize", ".85em")
+        // }
         if(record_open) {
             let left =  $("#record-wrapper").offset().left
             let to_left =$(window).width() - left - 450

@@ -32,18 +32,6 @@ function ProjectDirectory(props) {
             dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])
 
-    // useEffect( () => {
-    //     projectCategories.forEach(cat => {
-    //             if (projectCategory.includes(cat)) {
-    //                 $("#" + cat).addClass("Selected")
-    //             }
-    //             else {
-    //                     $("#"+cat).removeClass("Selected")
-    //                 }
-    //         })
-    //     }, [projectCategory]
-    // )
-
 
     const project_list = projects.map(function(p) {
         if(projectCategory === "ALL" || p.tags.includes(projectCategory)) {
