@@ -32,17 +32,17 @@ function ProjectDirectory(props) {
             dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])
 
-    useEffect( () => {
-        projectCategories.forEach(cat => {
-                if (projectCategory.includes(cat)) {
-                    $("#" + cat).addClass("Selected")
-                }
-                else {
-                        $("#"+cat).removeClass("Selected")
-                    }
-            })
-        }, [projectCategory]
-    )
+    // useEffect( () => {
+    //     projectCategories.forEach(cat => {
+    //             if (projectCategory.includes(cat)) {
+    //                 $("#" + cat).addClass("Selected")
+    //             }
+    //             else {
+    //                     $("#"+cat).removeClass("Selected")
+    //                 }
+    //         })
+    //     }, [projectCategory]
+    // )
 
 
     const project_list = projects.map(function(p) {
@@ -96,10 +96,10 @@ function ProjectDirectory(props) {
             <div className={"Project-Wrapper"}>
                 <div className={"Project-Header"}>
                     <div className={"Project-Menu"}>
-                        <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={"Selected"}>All</div>
-                        <div id={'research'} onClick={() => setProjectCategory("research")}>Research</div>
-                        <div id={'A_V'}  onClick={() => setProjectCategory("A_V")}>A/V</div>
-                        <div id={'WEB'}  onClick={() => setProjectCategory("WEB")}>Web</div>
+                        <div id={'ALL'} onClick={() => setProjectCategory("ALL")} className={(projectCategory === "ALL") ? "Selected" :null}>All</div>
+                        <div id={'research'} onClick={() => setProjectCategory("research")} className={(projectCategory === "research") ? "Selected" :null}>Research</div>
+                        <div id={'A_V'}  onClick={() => setProjectCategory("A_V")} className={(projectCategory === "A_V") ? "Selected" :null}>A/V</div>
+                        <div id={'WEB'}  onClick={() => setProjectCategory("WEB")} className={(projectCategory === "WEB") ? "Selected" :null}>Web</div>
                     </div>
                 </div>
                 {/* <hr class="rounded"></hr> */}
@@ -119,7 +119,7 @@ function ProjectDirectory(props) {
 
     // Move to Project Summary
     function animateBackToMenu() {
-        // let project = _.find(projects, function(p) { return p.id === active_project_id; });
+        // setProjectCategory("ALL")
         dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})
         $(".Project-Summary-Wrapper").hide(100);
         $(".Project-Directory-Wrapper").show(1000);

@@ -31,7 +31,7 @@ export const projects = [
         tags: ["A_V"],
         thumbnail_url: "thumbnail.png",
         project_path: "projects/wild_birds/",
-        media:['pamorama.mov','band.jpg', /*'/projects/wild_birds/1.png',*/ '1.gif','djs.mov',],
+        media:['pamorama.mov','band.jpg', /*'/projects/wild_birds/1.png',*/ 'flier.gif','djs.mov',],
         media_dimensions: ["16:9:.40", "16:9:.30", /*"3.4:4:.1",*/"3.4:4:.2","16:9:.30"],
         left_top: ["32%:5%", "32%:55%",/*"13%:65%",*/"68%:34%","35%:59%"],
         date: "Sept '23 -",
@@ -72,7 +72,8 @@ export const projects = [
         tags: ["research"],
         thumbnail_url: "run.gif",
         project_path: "projects/cc/",
-        media:["loop.mov", "demo.mp4","portraits.png", "mk_codes.mp4"],
+        // mk_codes.mp4 not loading on mobile
+        media:["loop.mov", "demo.mp4","portraits.png", "MK_codes.mp4"],
         left_top: ["30%:5%", "30%:50%", "72%:11%","70%:15%"],
         media_dimensions:["16:9:.45","16:9:.45","5:2.6:.25", "5.2:2.9:.25"],
         date: "Sept '22 -"
@@ -174,6 +175,9 @@ export const projects = [
     },
 
 ]
+
+
+
 
 
 
