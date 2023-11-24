@@ -51,7 +51,7 @@ function Video(props) {
             <div>
                 <Player
                     muted
-                    autoPlay
+                    // autoPlay
                     ref={ vidRef }
                     playsInline={true}
                     loop={true}
@@ -62,7 +62,9 @@ function Video(props) {
                     aspectRatio={"16:9"}
                 >
                     <source src={src_url} />
-                    <ControlBar disableCompletely={true} />
+                    <ControlBar 
+                        disableCompletely={true}
+                        autoHide={false} />
                 </Player>
             </div>
         </div>

@@ -44,7 +44,7 @@ export const projects = [
         tags: ["WEB", "A_V"],
         thumbnail_url: "thumbnail.png",
         project_path:"projects/de/",
-        media: ['1.mov', '2.mov', 'de.mov'],
+        media: ['explode.mov', 'smoothie.gif', 'installation.mov'],
         media_dimensions: ["16:9:.30", "16:9:.30", "16:9:.45"],
         left_top: ["32%:5%", "35%:10%","46%:45%"],
         date: "Feb '23 -"
