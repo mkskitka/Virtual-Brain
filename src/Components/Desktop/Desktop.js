@@ -6,10 +6,10 @@ import Monster from '../Monster/monster';
 import Window from '../Window/Window';
 import ActiveProject from '../ActiveProject/ActiveProject'
 import { useMediaQuery } from 'react-responsive';
-import { WINDOW_CONFIGS, WINDOW_CONTENT } from '../../Config/constants'
+import { WINDOW_CONFIGS, WINDOW_CONTENT } from '../../Config/directories'
 import RecordWrapper from "../Record/RecordWrapper";
 import Animations from '../Animations/Animations';
-import {projects} from '../../Config/constants'
+import {projects} from '../../Config/projects'
 import _ from 'lodash';
 import { isVideo, isPhoto, makePhoto, makeVideo } from '../../Utils/helper-utils';
 

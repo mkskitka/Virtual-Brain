@@ -40,13 +40,15 @@ function Window(props) {
     }, [])
 
     if(config.video_aspect_ratio) {
+      //MOBILE
       if (isMobile) {
-          width = "100%";
+          width = $(window).width();
           height = $(window).width() * .55;
           config.style.left = "0%";
           config.style.top = "0%";
           position = "relative";
       }
+      //DESKTOP
       else {
           width = $(window).width() * width * 1.1;
           height = width * .55;
@@ -54,25 +56,17 @@ function Window(props) {
             let media_dim = project.media_dimensions[x].split(":");
             width = $(window).width() * parseFloat(media_dim[2]);
             height = width * (media_dim[1]/media_dim[0])
-            // left = 
           }
           if(project.left_top) {
             let left_top = project.left_top[x].split(":");
-            console.log(left_top)
             config.style.left = left_top[0]
             config.style.top = left_top[1]
           }
-
       }
     }
-
-    // if(id == "projects" && isMobile) {
-    //     width = $(window).width()
-    //     config.style.width = $(window).width()
-    // }
-
-
-
+    if(isMobile && id==="projects") {
+        width = $(window).width();
+    }
 
     return (
 

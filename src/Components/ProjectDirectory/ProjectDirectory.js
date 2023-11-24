@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ProjectSummary from './ProjectSummary';
-import { projects } from '../../Config/constants'
+import { projects } from '../../Config/projects'
 import { useSelector, useDispatch } from 'react-redux';
 import { CHANGE_ACTIVE_PROJECT } from "../../Redux/actions";
 import "./ProjectDirectory.css"
@@ -27,10 +27,9 @@ function ProjectDirectory(props) {
     )
 
     useEffect(() => {
-        if(isMobile) {
-            $(".Window-projects").css("width", "100%");
-        }
-        return function cleanup() { dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
+        $(".Project-Wrapper").fadeIn(500)
+        return function cleanup() { 
+            dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])
 
     useEffect( () => {
@@ -65,7 +64,7 @@ function ProjectDirectory(props) {
                         </div>
                         {
                         (p.coming_soon) &&
-                        <div className="project_thumbnail_overlay">coming soon
+                        <div className="project_thumbnail_overlay">
                         </div>
         }
                     </div>

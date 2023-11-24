@@ -1,6 +1,6 @@
 import {useEffect} from 'react';
 import $ from "jquery"
-import {projects} from "../../Config/constants";
+import {projects} from "../../Config/projects";
 import "./ActiveProject.css"
 import {useDispatch, useSelector} from "react-redux";
 import {
