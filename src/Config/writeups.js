@@ -1,17 +1,3 @@
-export const astropunk_bio =
-    "Astropunk is a generative music video game, imagined up at the 2020 MIT Hacking Arts festival. " +
-    "I organized a group consisting of an AI resercher, animator, HCI specialist, 3D modeler and web engineer. " +
-    "The idea: Create a intuitive way for lay musicians to be able to iteratively generate electronic beats by playing the " +
-    "character Astro Punk, who must navigate through the intro, melody, bridge, and outro levels to make it back home. " +
-    "By the end of the game you have developed your own song without needing to learn all that confusing audio software" +
-    ". Project development is currently on hold.";
-
-export const music64_bio = "A video collaboration with Bailey Warner. Together we compiled a list of intimate videos, " +
-    "that capture the chaotic nature of college and the humbling emotions that come with 'figuring it all out'. "+
-    'I composed the music and some of the collage film in this piece. ';
-
-export const sheldon_bio = "An experimental sound project that involved me carrying my phone with me everywhere I went for a " +
-    "day recording the audio of my life. Listen to the progression of my day unfold. This song reminds me of my sophomore year of college.";
 
 export const animation_bio = "(in order as they appear) "+
     "1. NOT NAMED using 35MM film projection, 2. Adults Only using Found Objects \" 3. A Puma Dance using mixed media" +
@@ -24,28 +10,6 @@ export const animation_bio = "(in order as they appear) "+
     " Animation showcases our brains beautiful ability to make sense of very little information " +
     "and our imaginative brain powers as well. ";
 
-export const visualization_bio = "(in order as they appear) 1. Lobbyview: Visualization is hosted on lobbyview.org, which" +
-    "is an tool to navigate and research open source US lobbying data. Site and lobbying research created by Professor In" +
-    "Song Kim of the MIT Political Science department."
-
-export const creature_bio = "A project done in two parts. One part, a children's story about a young boy coping with trauma." +
-    " Jordan's dreams in the story are analogous to his trauma. A more serious tale that can be used as a way to " +
-    "introduce young children to mental health topics and to be critical of the stigma surrounding mental illness." +
-    " The second part consisting " +
-    "of an experimental web platform to tell the story. The user can flip through a picture book of paintings inspired " +
-    "by Chinese ink paintings. "
-
-export const mental_health_tech_bio = "This visualization is based on survey data from employees working in tech industries" +
-    " in the US responding to" +
-    " questions about mental health in the workplace. Feeling gratitude towards these people," +
-    " I wanted a design that showcased their individuality. The graphical display opens with a small" +
-    " dot on a screen with the words, \"one person\".  The rest of the screen " +
-    " populates with people who proceeded to fly around as you cluster and color them by their survey responses." +
-    " Once a person is rendered as a dot they do not change identity or disappear to maintain presence." +
-    " I generalized this display to allow the loading of other datasets and it can be downloaded from github." +
-    "You can render any survey data with a little formatting, instantly humanized! " +
-    " Instead of reducing people to numbers, we can give them stories in graphics. " +
-    " It is an interesting research question: how we can further personify data? "
 
 export const generative_design_bio = "Coming Soon."
 
@@ -53,4 +17,14 @@ export const cant_write_up = "Cantaloupe Dadaism attempts to create fashion from
 
 export const aa_bio = "A scrolly-telling website documenting the stories of afghan refugees and their exile from home. I designed and developed the website in webflow with help from Shawn Carrie (secondary developer), ‍Umar Farooq (journalist), and Oscar Durand (journalist). This project was supported with a grant from the National Geographic Society. "
 
-export const de_bio = "This is the bio for drunk elephant";
+export const de_bio = "Volvox Labs and I worked with Drunk Elephant to create an immersive hair-care quiz kiosk. User's enter information on their hair type to receive a custom hair care smoothie reccomendation. The a/v set up includes a touch screen web application running in tandem with overhead animated visuals that bring to life the mixology of the product.";
+
+export const wild_birds_bio = "Wild Birds x was a two part show series that pairs multi-wall projection & vj-ing (visual jockeying) with live band/dj sets  As a co-producer on the project, I worked closely with the the owners and technical staff of Brooklyn Art Haus to set up the multiwall projection and vj system. I promoted and oversaw the events.";
+
+export const cc_bio = "Creative Coding is a reflection on coding as a process and embodied experience. It's form is a movement interface to code that uses the live code langauge, sonic pi, a rasperberry pi, and arduino. The custom built handheld device allows me to perform coding wirelessly, without internet. The arduino IMF classifies movement data which is converted to code and executed in real time. "
+
+export const photobooth_bio = "A customized interactive photobooth created with touch designer, kinect, and a web application. I worked with the client to match the filters to the theme of the wedding. The product allows for a more engaging photobooth expereince. Many users dance to stir up the reactive visals resulting in a candid and fun photo series."
+
+export const crt_bio = "A mult-output a/v interactive installation utilizing 12 found crt tv's. The installation is a homage to the age of old cinema and a reflection on post-modern cinematic experiences. It was displayed at the ITP NYU Spring show in April 22'"
+
+export const evidence_bio = "Evidence 071: Frederick Douglass and The Commission of Inquiry is A multimedia installation, based on Cruz’s research in the Dominican Republic, that explores the role of US imperialism and asks audiences to consider their relation to ongoing processes of colonization. I co-developed and designed a touch screen web application that acts as a digital archive of Lizania's research. This project and the web application is currently on display at The Shed, NYC. "

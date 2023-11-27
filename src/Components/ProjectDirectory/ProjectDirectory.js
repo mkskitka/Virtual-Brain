@@ -27,7 +27,10 @@ function ProjectDirectory(props) {
     )
 
     useEffect(() => {
-        $(".Project-Wrapper").fadeIn(500)
+        setTimeout(function() {
+            $(".Project-Directory-Wrapper").fadeIn(1000);
+        }, 0)
+
         return function cleanup() { 
             dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])
@@ -110,7 +113,7 @@ function ProjectDirectory(props) {
         // setProjectCategory("ALL")
         dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})
         $(".Project-Summary-Wrapper").hide(100);
-        $(".Project-Directory-Wrapper").show(1000);
+        $(".Project-Directory-Wrapper").fadeIn(1000);
         $(".Window-projects").css("height", "100%");
     }
 

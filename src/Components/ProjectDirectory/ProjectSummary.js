@@ -6,6 +6,7 @@ import "./ProjectSummary.css"
 import _ from "lodash"
 import {useMediaQuery} from "react-responsive";
 import { isVideo, isPhoto, makePhotoMobile, makeVideoMobile } from '../../Utils/helper-utils';
+import {Icon} from "semantic-ui-react"
 
 function ProjectSummary(props) {
 
@@ -62,7 +63,9 @@ function ProjectSummary(props) {
                 }</div>
                 <br></br>
                 { link && 
-                <a className='link-1' target="_blank" rel="noopener noreferrer" href={link}>{project.link_name}</a>
+                <div>
+                <a className='link-1' target="_blank" rel="noopener noreferrer" href={link}><Icon name='linkify' size='small' />{project.link_name}</a>
+                </div>
                 }
                 {/* start */}
                 {
