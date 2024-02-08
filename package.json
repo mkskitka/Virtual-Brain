@@ -28,7 +28,6 @@
     "video-react": "^0.16.0",
     "xterm": "^5.1.0"
   },
-  "devDependencies": {},
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

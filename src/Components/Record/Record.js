@@ -117,14 +117,14 @@ export default function record_sketch (p, canvasParentRef) {
         // TURNTABLE
 
         p.push()
-        p.translate(0, 30, -200)
+        p.translate(0, 10, -60)
         p.rotateX(50)
         p.strokeWeight(1.5)
         p.noLights()
         p.stroke(255, 0, 238)
-        p.fill(255, 0, 238, 50)
+        p.fill(255, 0, 238, 20)
 
-        p.box(500, 300, 40);
+        p.box(305, 240, 20);
         p.pop()
 
         // RECORD
@@ -133,7 +133,7 @@ export default function record_sketch (p, canvasParentRef) {
 
         p.translate(0, 0, record_z)
         record_z += depth_increment;
-        p.rotateX(60)
+        p.rotateX(50)
         p.rotateX(record_x);
         record_x += x_increment;
         record_x_total += Math.abs(x_increment);
@@ -193,7 +193,7 @@ export default function record_sketch (p, canvasParentRef) {
         p.stroke(255, 55, 0)
         p.fill(255, 55, 0, 150)
         p.rotateX(-20)
-        p.rotateY(-18)
+        p.rotateY(-10)
 
         p.rotateX(record_arm_x_rotate)
         p.rotateY(record_arm_y_rotate)
@@ -206,7 +206,7 @@ export default function record_sketch (p, canvasParentRef) {
 
         // RECORD ARM
 
-        p.translate(-15, 0, 100)
+        p.translate(-30, 0, 100)
         p.box(10, 10, 200)
 
         // NEEDLE
@@ -239,13 +239,13 @@ export default function record_sketch (p, canvasParentRef) {
         p.push();
 
         p.lights()
-        p.translate(135, 57, 10);
+        p.translate(120, 57, 20);
         p.strokeWeight(1)
-        p.rotateZ(-15)
+        p.rotateZ(-8)
         p.stroke(255, 0, 238)
         p.fill(0, 90)
         p.rotateX(-20)
-        p.rotateY(-18)
+        p.rotateY(-10)
         p.box(30, button_height, 30)
 
         p.pop();

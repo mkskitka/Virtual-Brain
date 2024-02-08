@@ -1,3 +1,4 @@
+import React from 'react';
 import { picture_content_template } from '../Config/style_templates';
 import $ from "jquery";
 import Video from '../Components/Video/Video';
