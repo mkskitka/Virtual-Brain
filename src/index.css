@@ -35,7 +35,7 @@ body .font {
 /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 @media screen and (min-width: 2001px) {
   body {
-    font-size: 26px;
+    font-size: 18px;
   }
 }
 

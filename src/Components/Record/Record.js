@@ -139,7 +139,7 @@ export default function record_sketch (p, canvasParentRef) {
         record_x_total += Math.abs(x_increment);
         p.rotateZ(record_angle);
         record_angle += angle_increment;
-        p.fill(20)
+        p.fill(20, 20, 20, 150)
 
         for(let i=12; i>2; i--) {
             p.stroke(150,150,150)

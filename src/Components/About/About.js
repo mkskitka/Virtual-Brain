@@ -9,16 +9,22 @@ const bios= [
     "*",
     "*",
     "",
-    "also known as MK, or by her stage name rgb__tears, is a creative technologist and a/v artist. " +
-    "She started her career as a software engineer working on a variety of AI research projects, and now uses her years of technical experience to create installation and performance art. " +
-    " She is currently a post-doctoral research fellow at Tisch ITP NYU, where she is studying embodied programming techniques, primarily " +
-     "coding as performance. Through her art practice she " +
-     "seeks to understand liveness in the context of human-technology interactions." +
-    " In her free time she enjoys teaching, " +
-    "dancing, building experimental websites and playing with new a/v setup configurations. " 
-     + "" ,
+    `Mary Kate “MK” Skitka (she/her, b. 1996) is a creative technologist and a/v artist based in Brooklyn. 
+    She began her career as a software engineer working  a wide array of AI research projects. 
+    Now, she leverages her years of technical experience 
+    in industry to create and inspire installation and performance art. 
+    Through her artistic practice, she explores the concept of liveness within human-computer interactions and ways we can rethink 
+    code culture on a societal and interpersonal level.`,
+    "*",
+    `Currently, she works as a post-doctoral research fellow at ITP NYU, researching embodied interfaces, 
+    primarily coding as a form of performance art. 
+    She holds a MPS from NYU Tisch’s Interactive Telecommunications Program (2023) and 
+    a BS in Cognitive Brain Science and Computer Science from Tufts University (2018). 
+    Her work takes form as experimental websites, interactive installation, 
+    event production, wearable programmable devices, and live coding performance.`, 
+     "" ,
      "*",
-    "If you are looking for a freelancer, or just have a good coffee shop rec 8) ☕, reach out!",
+     `Looking to collaborate? - or just have a good coffee shop rec 8) ☕, reach out!`,
     "email: mkskitka@gmail.com ",
      "ig: @rgb__tears ",
     "",
