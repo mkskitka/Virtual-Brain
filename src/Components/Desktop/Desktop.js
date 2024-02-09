@@ -52,6 +52,12 @@ function Desktop() {
                         </a>
                     </div>
 
+
+                    {/* Record Player */}
+                        <div style={{"zIndex": -1000}}>{(record_open) ?
+                        <RecordWrapper/> : ""}
+                    </div>
+
                     {/* Folders */}
                     {DesktopIcons()}
                     
@@ -68,10 +74,6 @@ function Desktop() {
                     {/* Active Project */}
                         <div>
                         <ActiveProject/>
-                        </div>
-                    {/* Record Player */}
-                        <div>{(record_open) ?
-                        <RecordWrapper/> : ""}
                         </div>
                 </div>
         </div>

@@ -40,7 +40,7 @@ function Resume() {
             <div className={"Resume-Background"} />
             <div className={"Resume-Content"} style ={{display: "none"}}>
                 <div className='flex-container'>
-                <div className="resume-heading">Mary  Skitka</div>
+                <div className="resume-heading">Mary Kate Skitka</div>
 
                 <div className='resume-heading mfont'>Education</div>
 

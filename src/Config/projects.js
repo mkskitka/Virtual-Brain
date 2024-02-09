@@ -15,6 +15,21 @@ import {
 
 export const projects = [
     {
+        id: "spam",
+        title: "Devolving Spam",
+        description: "#",
+        writeup: "",
+        tags: [""],
+        link: "https://hudsonweekly.com/spamtember-unveils-playful-creativity-a-humorous-exploration-of-cultural-identity-at-all-street-gallery/",
+        link_name: "SPAMtember",
+        thumbnail_url: "thumbnail.png",
+        project_path: "projects/spam/",
+        media:["spam.mov", "install.jpg", "digital.png", "explode.mov"],
+        media_dimensions: [ "3:3:.15", "9:16:.21","4:4:.3", "3:3:.15"],
+        left_top: [ "58%:8%", "30%:10%","63%:35%", "75%:0%"],
+        date: "August '23 -"
+    },
+    {
         id: "flora",
         title: "Flora.ai",
         description: "",
@@ -76,7 +91,7 @@ export const projects = [
         title: "Drunk Elephant Kiosk",
         description: "hair care quiz installation",
         writeup: de_bio,
-        tags: ["WEB", "A_V"],
+        tags: ["WEB"],
         thumbnail_url: "thumbnail.png",
         project_path:"projects/de/",
         media: ['installation.mov', 'explode.mov', 'smoothie.gif'],
@@ -202,12 +217,27 @@ export const projects = [
         thumbnail_url: "thumbnail.png",
         tags: ["WEB"],
         media:[]
+    }, { 
+        id: "td",
+        title: "Touch Designer Sketches",
+        description: "",
+        writeup: "",
+        link: "https://www.instagram.com/mk__hacks?igsh=bnE2MnQ4amczbmFo",
+        link_name: "see more sketches at my instagram",
+        project_path: "projects/td/",
+        thumbnail_url: "thumbnail.png",
+        tags: [""],
+        media:['landscapes.mp4'],
+        media_dimensions:["4:3:.45"],
+        left_top: ["35%:4%"],
     },
     {
         id: "LC",
         title: "Live Coding",
         description: "",
-        writeup: "coming soon.",
+        writeup: "Performance Documentation.",
+        link: [ "https://www.instagram.com/reel/CzrG1RkBH4e/?igsh=YXZ5M2Q3dHZodzY2" , "https://www.instagram.com/tv/Cqesl8AIs9L/?igsh=MXRuY3E1MDdyZzRqeg==", "https://www.instagram.com/p/CqHETkpsJa1/?igsh=N3d4a2pzaHh2YTQ4", "https://www.instagram.com/p/ClJk2AjuNyb/?igsh=eXRrc3N3eHpla3pt", "https://www.instagram.com/p/CkBdgLGAjlm/?igsh=MWVsc3o2a3d0bnZ6cQ%3D%3D", "https://www.instagram.com/p/Ci7N4GaOycf/"],
+        link_name: [ "Wonderville (Audio) - April 23", "Wonderville (Audio) - April 23", "ITP NYU Bathroom Rave (Visuals/Installation) - Dec 22", "Wonderville (Visuals) - Nov 22", "Wonderville (Visuals) - Oct 22", "WildBirds (Visuals) - Sept 22", ],
         tags: ["research", "A_V"],
         project_path:"projects/lc/",
         thumbnail_url: "thumbnail.png",
@@ -216,18 +246,18 @@ export const projects = [
         date: "May '22 -"
     },
     
-    {
-        id: "WC",
-        title: "WALKING CHOREO",
-        description: "",
-        writeup: "coming soon.",
-        tags: ["research"],
-        thumbnail_url: "thumbnail.png",
-        project_path: "projects/wc/",
-        media:[],
-        coming_soon: false,
-        date: "Jan '23 -"
-    },
+    // {
+    //     id: "WC",
+    //     title: "WALKING CHOREO",
+    //     description: "",
+    //     writeup: "coming soon.",
+    //     tags: ["research"],
+    //     thumbnail_url: "thumbnail.png",
+    //     project_path: "projects/wc/",
+    //     media:[],
+    //     coming_soon: false,
+    //     date: "Jan '23 -"
+    // },
 ]
 
 export const ASSET_CAPTIONS = {

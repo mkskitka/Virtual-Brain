@@ -51,7 +51,7 @@ function Video(props) {
             <div>
                 <Player
                     autoPlay
-                    muted={muted}
+                    muted={muted || isMobile}
                     ref={ vidRef }
                     playsInline={true}
                     loop={true}

@@ -96,6 +96,7 @@ hr.rounded {
 
 .Project-Directory-Wrapper {
     display: none;
+    z-index: 2;
 }
 .Project-Directory-Content {
     width: 100%;
@@ -105,9 +106,11 @@ hr.rounded {
     padding-top: 5%;
     padding-bottom: 5%;
     position: relative;
+    z-index: 2;
 }
 .Project-Wrapper {
     /* display: none; */
+    z-index: 2;
 }
 .hover {
     opacity: 1;

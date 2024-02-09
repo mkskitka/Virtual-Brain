@@ -34,6 +34,8 @@ function ProjectSummary(props) {
         }
     }
 
+    console.log(Array.isArray(link))
+
     function BackButton() {
         return (
             <div>
@@ -62,11 +64,25 @@ function ProjectSummary(props) {
                     writeup
                 }</div>
                 <br></br>
-                { link && 
+                { typeof link === "string" && 
                 <div>
-                <a className='link-1' target="_blank" rel="noopener noreferrer" href={link}><Icon name='linkify' size='small' />{project.link_name}</a>
+                    <a className='link-1' target="_blank" rel="noopener noreferrer" href={link}>
+                        <Icon name='linkify' size='small' />{project.link_name}
+                    </a>
                 </div>
                 }
+                <div>
+                { Array.isArray(link) && 
+                    link.map(function(x, i) {
+                        return(
+                        <div>
+                            <a className='link-1' target="_blank" rel="noopener noreferrer" href={x}>
+                                <Icon name='linkify' size='small' />{project.link_name[i]}
+                            </a>
+                        </div>)
+                    })
+                }
+                </div>
                 {/* start */}
                 {
                     isMobile ? 
