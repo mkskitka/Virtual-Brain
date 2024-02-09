@@ -9,7 +9,11 @@ import {
     cc_bio,
     photobooth_bio,
     crt_bio,
-    evidence_bio
+    evidence_bio,
+    spam_bio, 
+    flora_bio,
+    dreamcube_writeup, 
+    drift_bottle_writeup
 } from "./writeups";
 
 
@@ -18,7 +22,7 @@ export const projects = [
         id: "spam",
         title: "Devolving Spam",
         description: "#",
-        writeup: "",
+        writeup: spam_bio,
         tags: [""],
         link: "https://hudsonweekly.com/spamtember-unveils-playful-creativity-a-humorous-exploration-of-cultural-identity-at-all-street-gallery/",
         link_name: "SPAMtember",
@@ -27,13 +31,13 @@ export const projects = [
         media:["spam.mov", "install.jpg", "digital.png", "explode.mov"],
         media_dimensions: [ "3:3:.15", "9:16:.21","4:4:.3", "3:3:.15"],
         left_top: [ "58%:8%", "30%:10%","63%:35%", "75%:0%"],
-        date: "August '23 -"
+        date: "Sept '23"
     },
     {
         id: "flora",
         title: "Flora.ai",
         description: "",
-        writeup: "",
+        writeup: flora_bio,
         tags: ["WEB"],
         link: "https://www.florafauna.ai",
         link_name: "www.florafauna.ai",
@@ -42,7 +46,7 @@ export const projects = [
         media:["flora_demo.mp4", "comingsoon.gif"],
         media_dimensions: ["16:9:.7", "8:5:.1"],
         left_top: [ "28%:8%", "70%:60%"],
-        date: "Jan 15th -"
+        date: "Jan '24 -"
     },
     {
         id: "evidence71",
@@ -56,8 +60,8 @@ export const projects = [
         project_path: "projects/evidence/",
         media:[ "integration.jpg","app_demo.mov","user_demo.mov", "opencall.jpg"],
         media_dimensions: [ "6:4:.30", "16:9:.5","2.25:4:.15", "2.5:4:.155"],
-        left_top: [ "58%:8%", "35%:45%","33%:5%","24%:23%"],
-        date: "August '23 -"
+        left_top: [ "58%:8%", "35%:45%","33%:5%","28%:23%"],
+        date: "August '23 - "
     },
     {
         id: "WB",
@@ -133,7 +137,7 @@ export const projects = [
         id: "dreamcube",
         title: "Dreamcube",
         description: "",
-        writeup: "coming soon",
+        writeup: dreamcube_writeup,
         tags: ["A_V"],
         link: "",
         link_name: "",
@@ -178,7 +182,7 @@ export const projects = [
         id: "db",
         title: "Drift Bottle",
         description: "",
-        writeup: "coming soon",
+        writeup: drift_bottle_writeup,
         tags: ["A_V"],
         link: "",
         link_name: "",
@@ -190,18 +194,6 @@ export const projects = [
         date: "Jan 15th -",
         sound: true
     },
-    { 
-        id: "full_web",
-        title: "Complete Web Portfolio",
-        description: "",
-        writeup: "",
-        link: "https://www.notion.so/mkskitka/Web-Development-Portfolio-a54fe05efa6c4e2db0b1e077c9c0952e?pvs=4",
-        link_name: "complete portfolio",
-        project_path: "projects/full_web/",
-        thumbnail_url: "thumbnail.png",
-        tags: ["WEB"],
-        media:[]
-    }, 
     {
         id: "LC",
         title: "Live Coding",
@@ -238,7 +230,7 @@ export const projects = [
         id: "AR",
         title: "Animation Reel",
         description: "Sample of animation pieces",
-        writeup: "sample of animation pieces",
+        writeup: animation_bio,
         tags: [],
         thumbnail_url: "projects/ar/thumbnail.png",
         project_path:"",
@@ -248,6 +240,18 @@ export const projects = [
         date: "November '19 -"
 
     },
+    { 
+        id: "full_web",
+        title: "Complete Web Portfolio",
+        description: "",
+        writeup: "",
+        link: "https://www.notion.so/mkskitka/Web-Development-Portfolio-a54fe05efa6c4e2db0b1e077c9c0952e?pvs=4",
+        link_name: "complete portfolio",
+        project_path: "projects/full_web/",
+        thumbnail_url: "thumbnail.png",
+        tags: ["WEB"],
+        media:[]
+    }, 
     
     // {
     //     id: "WC",

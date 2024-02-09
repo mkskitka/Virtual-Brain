@@ -60,10 +60,6 @@ function ProjectSummary(props) {
             </div>
             <div className={"Project-Summary"}>
                 <br></br>
-                <div className={"Writeup"} > {
-                    writeup
-                }</div>
-                <br></br>
                 { typeof link === "string" && 
                 <div>
                     <a className='link-1' target="_blank" rel="noopener noreferrer" href={link}>
@@ -83,6 +79,11 @@ function ProjectSummary(props) {
                     })
                 }
                 </div>
+                <br></br>
+                <div className={"Writeup"} > {
+                    writeup
+                }</div>
+                <br></br>
                 {/* start */}
                 {
                     isMobile ? 

@@ -1,18 +1,7 @@
 
-export const animation_bio = `(in order as they appear) 
+export const animation_bio = `Animation Samples (in order as they appear) 
     1. NOT NAMED using 35MM film projection, 2. Adults Only using Found Objects \" 3. A Puma Dance using mixed media
-    4. Kevin Dances using paper shadow puppets,  4. NOT NAMED using paper scraps,\" 5. Monster House using Charcoal.  
-     Animation is fascinating to me in it's ability to make us question where the fictitious world we are observing 
-     collides with our own, recoloring it anew. 
-    The intimate tedious process of stop-motion animation 
-    has it's very own place in my heart. It's process is so intimate yet disparate from the output. Intimate in that 
-    every mark must be given the utmost attention and study to maintain a timeline that is coherent. Disparate in that one frame can never 
-    foreshadow the affective output. You don't really know what your going to get until you run the frames through.
-    Animation showcases our brains beautiful ability to make sense of very little information 
-    and our imaginative brain powers as well. `;
-
-
-export const generative_design_bio = "Coming Soon."
+    4. Kevin Dances using paper shadow puppets,  4. NOT NAMED using paper scraps,\" 5. Monster House using Charcoal.  `;
 
 export const cant_write_up = 
 `Cantaloupe Dadaism attempts to create fashion from non-traditional sources of inspiration. 
@@ -55,8 +44,29 @@ The installation is a homage to the age of old cinema and a reflection on post-m
  It was displayed at the ITP NYU Spring show in April 22'`
 
 export const evidence_bio = 
-`Evidence 071: Frederick Douglass and The Commission of Inquiry is A multimedia installation, 
+`
+Working with artist Lizania Cruz and co-developer Matt Ross, I developed and designed a touch screen data visualziation that acts as a digital archive of Lizania's 
+ongoing research.
+  This installation along with the web application & data vis was on display as part of the Open Call 2023 group exhibition at The Shed, NYC.
+'Evidence 071: Frederick Douglass and The Commission of Inquiry is A multimedia installation, 
 based on Cruz’s research in the Dominican Republic, that explores the role of US imperialism and asks
- audiences to consider their relation to ongoing processes of colonization. 
- I co-developed and designed a touch screen web application that acts as a digital archive of Lizania's research.
-  This project and the web application is currently on display at The Shed, NYC. `
+ audiences to consider their relation to ongoing processes of colonization.' 
+ `
+
+export const spam_bio = ` Devolving spam is an art installation created for Spamtember, a month of making exercise
+ concluding in a spam themed gallary exhibition. Inspired by the similarity to campbells soup, I wanted to use my own work with spam, 
+an iconic symbol of globalization and industrialization to contemplate contemporary generative art practices.
+I created a series of 9 spam renders with touch designer software for the show and displayed the ongoing td program in real time next to the 
+poster. Each piece is irrepreducable in its original form.` 
+
+
+export const flora_bio = 
+`Flora.ai is a software and company creating a tool for artists to seemless integrate ai models and workflows into their daily practice. 
+I am currently aiding with workflow ideation and software development of this node based visual programming lanugage. Add your email at 
+florafauna.ai to get updates on the product launch.` 
+
+export const dreamcube_writeup =
+`` 
+
+export const drift_bottle_writeup =
+`` 
