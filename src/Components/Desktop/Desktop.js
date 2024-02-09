@@ -32,10 +32,10 @@ function Desktop() {
             <div className={"Desktop-Background"}>
             </div>
 
-            <div className={"loadingScreen"}>
+            {/* <div className={"loadingScreen"}>
                 <div className={"computer-gif"}/>
                 <div className={"loading-bar-gif"} />
-            </div>
+            </div> */}
 
                 <div className={"Desktop-Content"}>
                 {/* Contact Bar */}

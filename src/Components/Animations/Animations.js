@@ -27,12 +27,12 @@ const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' });
 
     useEffect(() => {
         setTimeout(function (){
-            $(".Desktop-Content").fadeOut(0);
-            $(".loadingScreen").fadeOut(200);
+            // $(".loadingScreen").fadeOut(1000);
             setTimeout(function () {
                 onClickCallbacks()
                 responsiveCallbacks()
-                $(".Desktop-Content").fadeIn(1000);
+                console.log("fading in.")
+                // $(".Desktop-Content").fadeIn(1000);
             }, 500)
         }, timeToLoadDesktop);
     }, [])

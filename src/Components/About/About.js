@@ -10,11 +10,11 @@ const bios= [
     "*",
     "",
     `Mary Kate “MK” Skitka (she/her, b. 1996) is a creative technologist, developer, and a/v artist based in Brooklyn. 
-    She began her career as a software engineer working  across a wide array of AI research projects and consequentially softwares. 
+    She began her career as a software engineer working  across a wide array of AI research projects. 
     Now, she leverages her years of technical experience 
     in industry to create and inspire installation and performance art. 
-    Through her artistic practice, she explores the concept of liveness within human-computer interactions and ways we can rethink 
-    programming culture on a societal and personal level.`,
+    Through her artistic practice, she explores the concept of liveness within human-computer interactions and ways we can reimagine 
+    programming machines.`,
     "*",
     `Currently, she works as a post-doctoral research fellow at ITP NYU, researching embodied interfaces, 
     primarily coding as a form of performance art. 
