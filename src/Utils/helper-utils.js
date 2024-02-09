@@ -29,16 +29,26 @@ export function isPhoto(url) {
 }
 
 export function makeVideo(project, url, x) {
+    let muted = true; 
     if(project.media_dimensions) {
         let media_dim = project.media_dimensions[x].split(":");
         var width_ = $(window).width() * parseFloat(media_dim[2]);
         var height_ = width_ * (media_dim[1]/media_dim[0])
         // left = 
       }
-    return <Video src_url={project.project_path + url} x={x} id={project.id+"video"+x} w={width_} h={height_}/>
+      if(project.sound) {
+        muted = false; 
+      }
+    return <Video src_url={project.project_path + url} x={x} id={project.id+"video"+x} w={width_} h={height_} muted={muted}/>
 }
 export function makePhoto(project, url, x) {
-    let media_dim = project.media_dimensions[x].split(":");
+    let media_dim
+    if(project.media_dimensions[x]) {
+        media_dim = project.media_dimensions[x].split(":");
+    }
+    else {
+        media_dim = "1:1:.3"
+    }
     let width = $(window).width() * parseFloat(media_dim[2]);
     let height = width * (media_dim[1]/media_dim[0])
     return <div style={{...picture_content_template, 
@@ -47,7 +57,13 @@ export function makePhoto(project, url, x) {
 }
 //mobile
 export function makePhotoMobile(project, url, x) {
-    let media_dim = project.media_dimensions[x].split(":");
+    let media_dim
+    if(project.media_dimensions[x]) {
+        media_dim = project.media_dimensions[x].split(":");
+    }
+    else {
+        media_dim = "1:1:.3"
+    }
     let width = $(window).width()-50;
     let height = width * (media_dim[1]/media_dim[0])
     return <div style={{...picture_content_template, 

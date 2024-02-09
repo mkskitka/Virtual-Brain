@@ -11,7 +11,6 @@ function Resume() {
     const record_open = useSelector(state=> state.record_open);
     
     useEffect(function() {
-        $(".Resume-Background").css("backgroundImage", "url(/gifs/color-static.gif)");
         $(".Resume-Background").height($(".Resume-Content").height()+50);
         $(".Resume-Content").fadeOut(0);
         // if(isMobile) {
@@ -41,7 +40,7 @@ function Resume() {
             <div className={"Resume-Background"} />
             <div className={"Resume-Content"} style ={{display: "none"}}>
                 <div className='flex-container'>
-                <div className="resume-heading">Mary Kate Skitka</div>
+                <div className="resume-heading">Mary  Skitka</div>
 
                 <div className='resume-heading mfont'>Education</div>
 

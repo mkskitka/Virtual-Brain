@@ -15,11 +15,26 @@ import {
 
 export const projects = [
     {
+        id: "flora",
+        title: "Flora.ai",
+        description: "",
+        writeup: "coming soono",
+        tags: ["WEB"],
+        link: "https://www.florafauna.ai",
+        link_name: "www.florafauna.ai",
+        thumbnail_url: "thumbnail.png",
+        project_path: "projects/flora/",
+        media:["flora_demo.mp4", "comingsoon.gif"],
+        media_dimensions: ["16:9:.5", "8:5:.1"],
+        left_top: [ "35%:8%", "70%:60%"],
+        date: "Jan 15th -"
+    },
+    {
         id: "evidence71",
         title: "Evidence 71",
         description: "",
         writeup: evidence_bio,
-        tags: ["WEB", "A_V"],
+        tags: ["WEB"],
         link: "https://www.theshed.org/program/series/15-open-call",
         link_name: "visit the free open call exhibition",
         thumbnail_url: "thumbnail.png",
@@ -41,6 +56,20 @@ export const projects = [
         media_dimensions: ["16:9:.40", "16:9:.30", /*"3.4:4:.1",*/"3.4:4:.2","16:9:.30"],
         left_top: ["32%:5%", "32%:55%",/*"13%:65%",*/"68%:34%","35%:59%"],
         date: "Sept '23 -",
+    },
+    {
+        id: "CRT",
+        title: "Untitled (CRT)",
+        description: "interactive installation",
+        writeup: crt_bio,
+        tags: ["A_V"],
+        thumbnail_url: "3.gif",
+        project_path: "projects/tv/",
+        media: ['1.mp4',"phone.png", "2.png"],
+        media_dimensions:["16:9:.55", "2:4:.12","4:3.5:.22"],
+        left_top: ["32%:5%", "72%:35%", "22%:55%"],
+        date: "Feb - May '22",
+        sound: true,
     },
     {
         id: "DE",
@@ -79,24 +108,28 @@ export const projects = [
         thumbnail_url: "run.gif",
         project_path: "projects/cc/",
         // mk_codes.mp4 not loading on mobile
-        media:["loop.mov", "demo.mp4","portraits.png", "MK_codes.mp4"],
-        left_top: ["30%:5%", "30%:50%", "72%:11%","70%:15%"],
-        media_dimensions:["16:9:.45","16:9:.45","5:2.6:.25", "5.2:2.9:.25"],
-        date: "Sept '22 -"
+        media:["loop.mov", "demo.mp4","portraits.png", "MK_codes.mp4", "parts.jpg"],
+        left_top: ["30%:5%", "30%:50%", "72%:11%","70%:15%", "68%:20%"],
+        media_dimensions:["16:9:.4","16:9:.4","5:2.6:.25", "5.2:2.9:.25", "5.2:2.9:.25"],
+        date: "Sept '22 -",
+        sound: true,
     },
     {
-        id: "CRT",
-        title: "Untitled (CRT)",
-        description: "interactive installation",
-        writeup: crt_bio,
+        id: "dreamcube",
+        title: "Dreamcube",
+        description: "",
+        writeup: "coming soon",
         tags: ["A_V"],
-        thumbnail_url: "3.gif",
-        project_path: "projects/tv/",
-        media: ['1.mp4',"phone.png", "2.png"],
-        media_dimensions:["16:9:.55", "2:4:.12","4:3.5:.22"],
-        left_top: ["32%:5%", "72%:35%", "22%:55%"],
-        date: "Feb - May '22",
+        link: "",
+        link_name: "",
+        thumbnail_url: "thumbnail.jpg",
+        project_path: "projects/dreamcube/",
+        media:["diary.mp4", "im.mp4", "tedy.jpg", "wide.jpg"],
+        media_dimensions: ["16:9:.3", "16:9:.3", "16:9:.3", "16:9:.3"],
+        left_top: [ "30%:8%", "62%:50%", "30%:50%", "62%:8%"],
+        date: "September 22' - December 22'"
     },
+
     {
         id: "AA",
         title: "After Afghanistan",
@@ -127,6 +160,22 @@ export const projects = [
         media_dimensions: ["18:5:.65"],
         left_top: ["30%:30%"],
         date: "November '21"
+    },
+    {
+        id: "db",
+        title: "Drift Bottle",
+        description: "",
+        writeup: "coming soon",
+        tags: ["A_V"],
+        link: "",
+        link_name: "",
+        thumbnail_url: "thumbnail.png",
+        project_path: "projects/db/",
+        media:["drift.mp4", "5.jpg"],
+        media_dimensions: ["16:9:.5", "8:5:.2"],
+        left_top: [ "35%:8%", "70%:60%"],
+        date: "Jan 15th -",
+        sound: true
     },
     {
         id: "AR",
@@ -163,7 +212,7 @@ export const projects = [
         project_path:"projects/lc/",
         thumbnail_url: "thumbnail.png",
         media:[],
-        coming_soon: true,
+        coming_soon: false,
         date: "May '22 -"
     },
     
@@ -176,7 +225,7 @@ export const projects = [
         thumbnail_url: "thumbnail.png",
         project_path: "projects/wc/",
         media:[],
-        coming_soon: true,
+        coming_soon: false,
         date: "Jan '23 -"
     },
 ]

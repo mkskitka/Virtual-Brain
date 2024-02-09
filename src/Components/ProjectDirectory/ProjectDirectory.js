@@ -26,20 +26,32 @@ function ProjectDirectory(props) {
         }, [route_to_project]
     )
 
+
+
     useEffect(() => {
         setTimeout(function() {
             $(".Project-Directory-Wrapper").fadeIn(1000);
         }, 0)
 
+
+
         return function cleanup() { 
             dispatch({type: CHANGE_ACTIVE_PROJECT, project: null})};
     }, [])
 
+const highlight = (id) => {
+    $("#Project-Title" + id).addClass("hover")
+    $("#Project-Thumbnail" + id).addClass("box_shadow", 3000)
+}
+const dehighlight = (id) => {
+    $("#Project-Title" + id).removeClass("hover")
+    $("#Project-Thumbnail" + id).removeClass("box_shadow")
+}
 
     const project_list = projects.map(function(p) {
         if(projectCategory === "ALL" || p.tags.includes(projectCategory)) {
             return (
-                <div key={p.id} id={p.id} className={"Project-Link Project-Link" + p.id}
+                <div key={p.id} id={p.id} onMouseOver={(e) => highlight(p.id)} onMouseOut={(e) => dehighlight(p.id)} className={"Project-Link Project-Link" + p.id}
                      onClick={(e) => onFileClick(p.id)}>
                     <div key={p.title} id={"Project-Title" + p.id}
                          className={(p.coming_soon) ? "Inactive-Project-Title" : "Project-Title"}>{p.title.toUpperCase()}</div>
@@ -48,16 +60,11 @@ function ProjectDirectory(props) {
                     </div> */}
                     {
                     (p.thumbnail_url) &&
-                    <div style={{position: "relative"}}>
-                        <div className="project_thumbnail" style={{
+                    <div  style={{position: "relative"}}>
+                        <div className="project_thumbnail" id={"Project-Thumbnail" + p.id} style={{
                             backgroundImage: "url(/"+p.project_path + p.thumbnail_url+")",
                             }}>
                         </div>
-                        {
-                        (p.coming_soon) &&
-                        <div className="project_thumbnail_overlay">
-                        </div>
-        }
                     </div>
                     
                     }

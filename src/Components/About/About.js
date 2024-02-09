@@ -38,8 +38,7 @@ function About() {
     const record_open = useSelector(state=> state.record_open);
     
     useEffect(function() {
-        $(".About-Background").css("backgroundImage", "url(/gifs/color-static.gif)");
-        $(".About-Background").height($(".About-Content").height()+50);
+        // $(".About-Background").height($("#Window-Body-about").height()+200);
         $(".About-Content").fadeOut(0);
         if(record_open) {
             let left =  $("#record-wrapper").offset().left
@@ -55,16 +54,9 @@ function About() {
         setTimeout(function () {
 
             $(".About-Content").fadeIn(500);
-            changeBrightness(.8);
         }, 100)
     }, []);
 
-    function changeBrightness(opacity) {
-        $(".About-Content").css("opacity", opacity);
-        let after = Math.floor(Math.random() * 2000) + 500;
-        let newOpacity = (Math.floor(Math.random() * 100) + 70)/100;
-        setTimeout(function(){changeBrightness(newOpacity)}, after)
-    }
     return (
         <div className={"About-Wrapper"} >
             <div className={"About-Background"} />
@@ -78,7 +70,7 @@ function About() {
 function Bio() {
     let content = [];
     for(let i=0; i< bios.length; i++) {
-        content.push(<div className={"bio"}>{bios[i]}</div>)
+        content.push(<div className={"bio"} key={"bio-segment"+i} >{bios[i]}</div>)
     }
     return content;
 }

@@ -4,8 +4,10 @@
     opacity: 1;
     color: #0091ff;
     position: relative;
+    height: 20%;
     margin: 2px;
 }
+
 
 .Project-Title-Selected {
     opacity: 1;
@@ -39,25 +41,10 @@
      
 }
 
-.project_thumbnail_overlay {
-    position: absolute;
-    /* background-image: url('../../../public/gifs/color-static.gif');
-     */
-    opacity: .5;
-    height: 100px;
-    width: 100%;
-    color: #777;
-    font-size: 3em;
-    text-align: center;
-    top: 0px;
-    z-index: 1;
-    background-color: black;
-}
-
 
 .project_thumbnail {
     width: 100%;
-    height: 100px;
+    height: 130px;
     background-color: transparent;
     position: relative;
     background-size:cover;
@@ -122,10 +109,22 @@ hr.rounded {
 .Project-Wrapper {
     /* display: none; */
 }
-.Project-Title:Hover {
+.hover {
     opacity: 1;
     color: #00ffff !important;
     position: relative;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.box_shadow {
+    border: #00ffff solid;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .Project-Title {

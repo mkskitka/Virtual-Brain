@@ -52,16 +52,24 @@ function Window(props) {
       else {
           width = $(window).width() * width * 1.1;
           height = width * .55;
-          if(project.media_dimensions) {
-            let media_dim = project.media_dimensions[x].split(":");
+          let media_dim, left_top
+            if(project.media_dimensions[x]) {
+                media_dim = project.media_dimensions[x].split(":");
+            }
+            else {
+                media_dim = "5:5:.3".split(":")
+            }
             width = $(window).width() * parseFloat(media_dim[2]);
             height = width * (media_dim[1]/media_dim[0])
+          
+          if(project.left_top[x]) {
+            left_top = project.left_top[x].split(":");
           }
-          if(project.left_top) {
-            let left_top = project.left_top[x].split(":");
-            config.style.left = left_top[0]
-            config.style.top = left_top[1]
+          else {
+            left_top = "66%:30%".split(":");
           }
+          config.style.left = left_top[0]
+          config.style.top = left_top[1]
       }
     }
     if(isMobile && id==="projects") {

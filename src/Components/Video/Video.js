@@ -7,7 +7,7 @@ import {useMediaQuery} from "react-responsive";
 
 function Video(props) {
 
-    const {src_url, x, w, h} = props
+    const {src_url, x, w, h, muted} = props
     const isMobile = useMediaQuery({ maxWidth: 767 })
     let width;
     let height;
@@ -50,8 +50,8 @@ function Video(props) {
              }}>
             <div>
                 <Player
-                    muted
                     autoPlay
+                    muted={muted}
                     ref={ vidRef }
                     playsInline={true}
                     loop={true}

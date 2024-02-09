@@ -7,7 +7,7 @@ const initialState = {
     terminal_open: false,
     record_open: false,
     active_project: null,
-    active_song:"sound/heart.m4a",
+    active_song:"sound/murder.mp3",
     route_to_project: null,
 }
 
